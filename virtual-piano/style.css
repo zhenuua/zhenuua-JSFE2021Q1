@@ -281,6 +281,7 @@ body {
 		height: 160px;
 		border-radius: 0px 0px 8px 8px;
 		border: 2px solid #313940;
+		transition: all 0.5;
 	}
 	.keys-sharp {
 		left: 26px;
@@ -314,4 +315,15 @@ body {
 		width: 120px;
 		height: 40px;
 	}
+
+	
 }
+
+.playing {
+	transform: scale(0.9);
+	border-color: #ffc600;
+	border-width: 1px;
+	box-shadow: 0 0 10px #ffc600;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
