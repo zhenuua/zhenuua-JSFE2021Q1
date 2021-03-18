@@ -1,4 +1,6 @@
-document.addEventListener('keydown', playSound)
+/*работа кнопок*/
+
+window.addEventListener('keydown', playSound)
 
 function playSound(e){
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
@@ -18,7 +20,70 @@ const pianokeys = document.querySelectorAll('.piano-key');
 pianokeys.forEach(pianokey => pianokey.addEventListener('transitionend', removeTransitions))
 
 
-/* мышка одиночное нажатие
+
+
+/*fullscreen*/
+document.querySelector(".fullscreen").addEventListener("click", function() {
+  toggleFS()
+});
+
+function isFullScreen() {
+  return (document.fullScreenElement && document.fullScreenElement !== null) ||
+    (document.mozFullScreen || document.webkitIsFullScreen);
+}
+
+function enterFS() {
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  }
+}
+
+function exitFS() {                 /*добавить продержку выхода ерез кнопку , убратьдругие бразуеры*/
+  if (document.exitFullScreen)          
+  return document.exitFullScreen();
+  else if (document.webkitExitFullscreen) return document.webkitExitFullscreen();
+}
+
+function toggleFS() {
+  if (!isFullScreen()) {
+    enterFS();
+  } else {
+    exitFS();
+  }
+}
+
+
+
+/*работа мыши*/
+const piano = document.querySelector('.piano');
+const pianoKeys = document.querySelector('.piano-key');
+
+piano.addEventListener('click', function(event){
+  if(event.target.classList.contains('piano-key')) {
+    const note = event.target.dataset.note;
+    const src = `assets/audio/${note}.mp3`;
+    playAudio(src);
+  }   
+});
+
+function playAudio(src) {
+  const audio = new Audio();
+  audio.src = src;
+  audio.currentTime = 0;
+  audio.play();
+}
+
+window.addEventListener('keydown', (event) => {
+  if(event.code === 68) {
+    const note = event.target.dataset.note;
+    const src = `assets/audio/c.mp3`;
+    playAudio(src);
+  }
+});
+
+
+
+/*
 const piano = document.querySelector('.piano');
 const pianoKeys = document.querySelector('.piano-key');
 
