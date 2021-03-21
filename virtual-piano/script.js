@@ -1,4 +1,4 @@
-/*работа кнопок*/
+//работа кнопок
 
 window.addEventListener('keydown', playSound)
 
@@ -20,9 +20,99 @@ const pianokeys = document.querySelectorAll('.piano-key');
 pianokeys.forEach(pianokey => pianokey.addEventListener('transitionend', removeTransitions))
 
 
+//работа мыши
+const piano = document.querySelector('.piano');
+const pianoKeys = document.querySelector('.piano-key');
+
+piano.addEventListener('mousedown', function(event){
+  if(event.target.classList.contains('piano-key')) {
+    const note = event.target.dataset.note;
+    const src = `assets/audio/${note}.mp3`;
+    playAudio(src);
+  }   
+});
+
+function playAudio(src) {
+  const audio = new Audio();
+  audio.src = src;
+  audio.currentTime = 0;
+  audio.play();
+}
+
+piano.addEventListener('mousedown', function(e){
+  e.target.classList.add('playing')
+});
 
 
-/*fullscreen*/
+//наведение мыши
+const startSound = (e) => {
+  e.target.classList.add('playing')
+    const note = e.target.dataset.note;
+    const src = `assets/audio/${note}.mp3`;
+    playAudio(src);
+}
+
+const stopSound = (e) => {
+  e.target.classList.remove('playing')
+}
+
+const startCorespondOver = (e) => {
+  if (e.target.classList.contains('.piano-key')){
+    e.target.classList.add('playing')
+  }
+ 
+  pianokeys.forEach((elem) => {
+  elem.addEventListener('mouseover', startSound);
+  //elem.addEventListener('mouseout', stopSound);
+  })
+}
+
+const stopCorespondOver = () => {
+  pianokeys.forEach((elem) => {
+  elem.classList.remove('playing');
+  elem.removeEventListener('mouseover', startSound);
+  //elem.removeEventListener('mouseout', stopSound);
+  })
+}
+piano.addEventListener('mousedown', startCorespondOver);
+document.addEventListener('mouseup', stopCorespondOver);
+
+
+//Кнопки Notes/Letters
+const notes = document.querySelector('.btn-notes')
+const letters = document.querySelector('.btn-letters')
+const btn = document.querySelectorAll('.btn') 
+
+const changenotes = (e) =>{    
+
+  pianokeys.forEach(item => {
+    item.classList.remove('piano-key-letter')
+    item.classList.add('piano-key-note')
+  })
+  if (!e.target.classList.contains('btn-active')){
+    btn.forEach(item =>{
+      item.classList.toggle('btn-active')
+    })
+  }
+}
+
+const changeletters = (e) =>{
+  pianokeys.forEach(item => {
+    item.classList.remove('piano-key-note')
+    item.classList.add('piano-key-letter')
+  })
+  if (!e.target.classList.contains('btn-active')){
+    btn.forEach(item =>{
+      item.classList.toggle('btn-active')
+    })
+  }
+}
+
+notes.addEventListener('click', changenotes)
+letters.addEventListener('click', changeletters)
+
+
+//fullscreen
 document.querySelector(".fullscreen").addEventListener("click", function() {
   toggleFS()
 });
@@ -38,7 +128,7 @@ function enterFS() {
   }
 }
 
-function exitFS() {                 /*добавить продержку выхода ерез кнопку , убратьдругие бразуеры*/
+function exitFS() {                 
   if (document.exitFullScreen)          
   return document.exitFullScreen();
   else if (document.webkitExitFullscreen) return document.webkitExitFullscreen();
@@ -51,86 +141,3 @@ function toggleFS() {
     exitFS();
   }
 }
-
-
-
-/*работа мыши*/
-const piano = document.querySelector('.piano');
-const pianoKeys = document.querySelector('.piano-key');
-
-piano.addEventListener('click', function(event){
-  if(event.target.classList.contains('piano-key')) {
-    const note = event.target.dataset.note;
-    const src = `assets/audio/${note}.mp3`;
-    playAudio(src);
-  }   
-});
-
-function playAudio(src) {
-  const audio = new Audio();
-  audio.src = src;
-  audio.currentTime = 0;
-  audio.play();
-}
-
-window.addEventListener('keydown', (event) => {
-  if(event.code === 68) {
-    const note = event.target.dataset.note;
-    const src = `assets/audio/c.mp3`;
-    playAudio(src);
-  }
-});
-
-
-
-/*
-const piano = document.querySelector('.piano');
-const pianoKeys = document.querySelector('.piano-key');
-
-piano.addEventListener('click', function(event){
-    if(event.target.classList.contains('piano-key')) {
-      const note = event.target.dataset.note;
-      const src = `assets/audio/${note}.mp3`;
-      playAudio(src);
-    }   
-  });
-
-function playAudio(src) {
-    const audio = new Audio();
-    audio.src = src;
-    audio.currentTime = 0;
-    audio.play();
-  }
-
-
-/* подсвечивание клавиш
-  piano.addEventListener('click', (event) => {
-    if(event.target.classList.contains('piano-key')) {
-      pianoКeys.forEach((el) => {
-        if(el.classList.contains('active')) {
-          el.classList.remove('active');
-        }
-      });
-      event.target.classList.add('active');
-    }
-  });*/
-
-
-  /* ИЗ ВИДЕО епам
-  function playAudio(){
-    console.log(event.target);
-}
-pianoKeys.addEventListener('click', playAudio);
-
-function playAudio(){
-    console.log(event.target);
-}
-piano.addEventListener('click', playAudio);
-
-const pianoKeys = docoment.querySelector('.piano-key');
-pianoKeys.addEventListener('click', changecolor)
-function changecolor(){
-    console.log(event.target.classList);
-    event.target.classList.toggle('testcolor');
-}
-*/
