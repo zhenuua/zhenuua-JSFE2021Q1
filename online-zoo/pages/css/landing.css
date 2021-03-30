@@ -1,0 +1,142 @@
+body{
+    margin: 0 auto;
+}
+p{
+    margin: 0;
+}
+
+.background-header{
+    display: flex;
+    justify-content: center;
+    background-color:#F58021; 
+    margin-top: 0;
+    height: 110px;
+}
+
+.wrapper{
+    width: 1400px;
+}
+
+.wrapper-header{
+    display: flex;
+    flex-direction: column;
+}
+
+.headen-article{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo-header{
+   margin-top: 30px;
+}
+
+.headen-nav{
+    width: 556px;
+    margin-right: 67px;
+    margin-top: 42px;
+}
+
+.headen-list{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.headen-item a{
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #000000;
+    text-decoration: none;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.headen-item-onn a{
+    color: #00A092; 
+}
+
+.header-links{
+    width: 180px;
+    margin-top: 33px;
+}
+
+.header-list-address{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.header-menu{
+    display: flex;
+}
+
+/*Watch your favorite animal online*/
+
+.background-favorite-animal{
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    background-image:  url(../../assets/images/Background\ favorite\ animal.jpg);
+    height: 790px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+.favorite-animal-title{
+    margin-bottom: 0px;
+    margin-top: 129px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 82px;
+    line-height: 100px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #00A092;
+    width: 890px;
+    height: 280px;
+}
+.favorite-animal-text{
+    margin-top: 50px;
+    font-family: Montserrat;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 150%;
+    color: #000000;
+    width: 430px;
+}
+
+.view-life-cam-submit{
+    margin-top: 50px;
+    width: 240px;
+    height: 74px;
+    background: #F58021;
+    border-radius: 5px;
+    border: none;
+
+    font-family: Montserrat; 
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #F7F7F7;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+/*.view-life-cam-svg{
+    vertical-align: middle;
+    height: 24.28px;
+    width: 22px;
+}*/
+
+
