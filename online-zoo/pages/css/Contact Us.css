@@ -1,0 +1,237 @@
+body{
+    margin: 0 auto;
+}
+p{
+    margin: 0;
+}
+h3{
+    margin: 0;
+}
+.Online-zoo {
+    display:none;
+}
+/*fonts*/
+.contact-title{
+    margin-top: 150px;
+    width: 405px;
+    height: 66px;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 66px;
+    text-transform: uppercase;
+    color: #00A092;
+}
+.contact-text{
+    margin-top: 50px;
+    width: 545px;
+    height: 162px;
+    font-family: Montserrat;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 150%;
+    display: flex;
+    color: #000000;
+}
+
+/*header-menu*/
+
+.background-header{
+    display: flex;
+    justify-content: center;
+    background-color:#F58021; 
+    margin-top: 0;
+    height: 110px;
+}
+
+.wrapper{
+    width: 1400px;
+}
+
+.wrapper-header{
+    display: flex;
+    flex-direction: column;
+}
+
+.headen-article{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo-header{
+   margin-top: 30px;
+}
+
+.headen-nav{
+    width: 556px;
+    margin-right: 67px;
+    margin-top: 42px;
+}
+
+.headen-list{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.headen-item a{
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #000000;
+    text-decoration: none;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.headen-item-onn a{
+    color: #00A092; 
+}
+
+.header-links{
+    width: 180px;
+    margin-top: 33px;
+}
+
+.header-list-address{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.header-menu{
+    display: flex;
+}
+
+/*main*/
+.contact-background{
+    display: flex;
+    justify-content: center;
+    height: 1874px;
+    background: #ffffff;
+}
+
+.image-contact-us{
+    margin: 0 auto;
+    width: 1400px;
+    height: 815px;
+}
+.contact-us-about-and-form{
+    display: flex;
+}
+.contact-us-form{
+    margin-top: 150px;
+    margin-left: 175px;
+}
+
+
+
+
+
+/*footer*/
+
+.footer-backgroung {
+    display: flex;
+    justify-content: center;
+    background-color: #20113D;
+    height: 329px;
+}
+/*part1*/
+.footer-menu{
+    display: flex;
+    justify-content: space-between;
+    height: 214px;
+    align-items: center;
+}
+.footer-logo-list{
+    margin: 0;
+    display: flex;
+    justify-content: space-between; 
+    width: 414px;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list-nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    width: 426px;
+}
+.donate-for-volunteers-submit{
+    width: 359px;
+    height: 74px;
+    background: #20113D;
+    border-radius: 5px;
+    border: 1px solid #FFFFFF;
+
+    font-family: Montserrat; 
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #F7F7F7;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.donate-for-volunteers-svg-submit {
+    padding-right: 41px;
+    background: url(../../assets/icons/Union.svg) no-repeat 0 0 transparent;
+    background-position: 299px;
+}
+/*разделитель*/
+.hr-footer {
+    margin-top: 0px;
+    border: none; 
+    background-color: #FFFFFF; 
+    height: 1px;
+}
+/*part2*/
+.footer-adress-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 114px;
+}
+.footer-list{
+    display: flex;
+    justify-content: space-between;
+    width: 448px;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list-address{
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.foorer-item a{
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-decoration: none;
+    letter-spacing: 0em;
+}
+
+
+
+
+
