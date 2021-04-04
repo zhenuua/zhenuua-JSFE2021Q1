@@ -336,7 +336,7 @@ h3{
     justify-content: space-between;
     margin: auto;
     margin-top: 100px;
-    width: 185px;
+    width: 173px;
 }
 .slider-button{
     border: 0;
@@ -357,27 +357,47 @@ h3{
     flex-direction: column;
     margin-top: 50px;
 }
-.first-line-card{
+.line-card{
     display: flex;
     justify-content: space-between;
 }
-.second-line-card{
-    display: flex;
-    justify-content: space-between;
-}
+
 .card{
     margin-right: 40px;
     margin-bottom: 40px;
 }
-.card-Giant-Panda{
+.card-block{
     position: relative;
     height: 747px;
     width: 440px;
     background-color: #20113D;  
-    background-image:  url(../../assets/images/lucas.jpg);
     background-position: top;
     background-repeat: no-repeat;
     border-radius: 5px;
+}
+.card-Giant-Panda{
+    background-image:  url(../../assets/images/lucas.jpg);
+}
+.card-Madagascarian-Lemur{
+    background-image:  url(../../assets/images/andy.jpg);
+}
+.card-Gorilla-in-Congo{
+    background-image:  url(../../assets/images/glen.jpg);
+}
+.card-Chinese-Alligator{
+    background-image:  url(../../assets/images/mike\ .jpg);
+}
+.card-West-End-Bald-Eagles{
+    background-image:  url(../../assets/images/Sam\ and\ Lora.jpg);
+}
+.card-Australian-Koala{
+    background-image:  url(../../assets/images/Liz.jpg);
+}
+.card-African-Lion{
+    background-image:  url(../../assets/images/Shake.jpg);
+}
+.card-Sumatran-Tiger{
+    background-image:  url(../../assets/images/Senja.png);
 }
 .title-card{
     position: absolute;
@@ -387,9 +407,12 @@ h3{
     line-height: 130%;
     color: #FFFFFF;
     top: 62%;
-    left: 30%;
+    width: 100%;
+    text-align: center;
 }
 .name-animal{
+    padding-right: 6%;
+    padding-left: 6%;
     position: absolute;
     display: flex;
     font-family: Montserrat;
@@ -398,7 +421,6 @@ h3{
     line-height: 130%;
     text-align: center;
     color: #FFFFFF;
-    width: 134.29px;
     height: 60.78px;
     align-items: center;
     background-color: #20113D;
@@ -408,13 +430,14 @@ h3{
 .description-card{
     position: absolute;
     font-family: Montserrat;
-    font-weight: normal;
     font-size: 18px;
     line-height: 150%;
     text-align: center;
     color: #FFFFFF;
     height: 78px;
-    width: 380px;
+    width: 86%;
+    padding-left: 7%;
+    padding-right: 7%;
     top: 68.77%;
     display: flex;
     justify-content: center;
@@ -433,6 +456,7 @@ h3{
     text-transform: uppercase;
     text-align: center;
     color: #F58021;
+    cursor: pointer;
 }
 .card-bottom-svg-left{
     position: absolute;
@@ -442,6 +466,15 @@ h3{
     top: 84%;
     left: 8%;
 }
+.card-submit{
+    margin-top: 60px;
+}
+
+.gradint-card{
+   /*background-image: linear-gradient(to right, transparent, rgba(255, 255, 255)); */
+	opacity: 0.4;
+}
+
 
 /*Pay-and-feed*/
 
@@ -560,7 +593,6 @@ h3{
     justify-content: center;
     margin-top: 0;
     background-image:  url(../../assets/images/Background\ what\ our\ usres\ think.jpg);
-    height: 1828px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -746,8 +778,65 @@ h3{
     padding-right: 41px;
     background: url(../../assets/icons/Union-black.svg) no-repeat 0 0 transparent;
     background-position: 299px;
+    cursor: pointer;
 }
 
+.cards-care{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.image-koala{
+    height: 658px;
+    margin-right: 40px;
+}
+.card-care-block{
+    position: relative;
+    height: 658px;
+    width: 440px;
+    background-color: #20113D;
+    background-position: top;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+.care-submit-margin{
+    margin-top: 60px;
+}
+.card-img-panda{
+    background-image:  url(../../assets/images/panda\ with\ food.jpg);
+}
+.card-img-tiger{
+    background-image:  url(../../assets/images/tiger.jpg);
+}
+.card-img-limur{
+    background-image:  url(../../assets/images/limur.jpg);
+}
+.card-img-eagles-forcare{
+    background-image:  url(../../assets/images/eagle-care.jpg);
+}
+.description-card-care{
+    position: absolute;
+    font-family: Montserrat;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 61.5%;
+    left: 5.68%;
+    width: 390px;
+}
+.card-bottom-care-svg-left{
+    position: absolute;
+    padding-right: 32px;
+    background: url(../../assets/icons/orange\ right\ union.svg)  no-repeat 0 0 transparent;
+    background-position: 201px;
+    top: 81%;
+    left: 8%;
+}
 
 
 
@@ -839,7 +928,7 @@ h3{
     padding: 0;
 }
 
-.foorer-item a{
+.foorer-item-menu a{
     font-family: Montserrat;
     font-weight: 600;
     font-size: 18px;
@@ -848,5 +937,15 @@ h3{
     color: #FFFFFF;
     text-decoration: none;
     letter-spacing: 0em;
+}
+
+.foorer-item-coop a{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 150%;
+    color: #FFFFFF;
+    text-decoration: none;
 }
 

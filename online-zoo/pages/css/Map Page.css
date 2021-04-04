@@ -122,36 +122,36 @@ h3{
 
 
 .icon-eagles{
-    left: 21.77%;
-    top: 42.88%;
+    left: 9.5%;
+    top: 40.5%;
 }
 .icon-aligator{
-    left: 28.28%;
-    top: 43.63%;
+    left: 19.28%;
+    top: 42.63%;
 }
 .icon-lion{
-    left: 43.12%;
-    top: 46.33%;
+    left: 39.6%;
+    top: 47.9%;
 }
 .icon-gorilla{
-    left: 49.17%;
-    top: 47.65%;
+    left: 47.17%;
+    top: 49.65%;
 }
 .icon-lemur{
     left: 54.53%;
-    top: 54.54%;
+    top: 62.54%;
 }
 .icon-panda{
-    left: 62.71%;
-    top: 40.36%;
+    left: 65.71%;
+    top: 35.36%;
 }
 .icon-tiger{
-    left: 65.99%;
-    top: 49.43%;
+    left: 71%;
+    top: 54%;
 }
 .icon-koala{
-    left: 72.81%;
-    top: 55.97%;
+    left: 80.3%;
+    top: 66.3%;
 }
 /*
 .full-map__pin > .full-map__pin__body {
@@ -252,7 +252,7 @@ h3{
     padding: 0;
 }
 
-.foorer-item a{
+.foorer-item-menu a{
     font-family: Montserrat;
     font-weight: 600;
     font-size: 18px;
@@ -261,6 +261,16 @@ h3{
     color: #FFFFFF;
     text-decoration: none;
     letter-spacing: 0em;
+}
+
+.foorer-item-coop a{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 150%;
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 
