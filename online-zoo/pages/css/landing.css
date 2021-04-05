@@ -1,0 +1,1079 @@
+body{
+    margin: 0 auto;
+}
+p{
+    margin: 0;
+}
+h3{
+    margin: 0;
+}
+.Online-zoo {
+    display:none;
+}
+/*fonts*/
+.Montserrat-600-54{
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 66px;
+    text-transform: uppercase;
+    color: #00A092;
+}
+
+
+/*header-menu*/
+
+.background-header{
+    display: flex;
+    justify-content: center;
+    background-color:#F58021; 
+    margin-top: 0;
+    height: 110px;
+}
+
+.wrapper{
+    width: 1400px;
+}
+
+.wrapper-header{
+    display: flex;
+    flex-direction: column;
+}
+
+.headen-article{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo-header{
+   margin-top: 30px;
+}
+
+.headen-nav{
+    width: 556px;
+    margin-right: 67px;
+    margin-top: 42px;
+}
+
+.headen-list{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.headen-item a{
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #000000;
+    text-decoration: none;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.headen-item-onn a{
+    color: #00A092; 
+}
+
+.header-links{
+    width: 180px;
+    margin-top: 33px;
+}
+
+.header-list-address{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.header-menu{
+    display: flex;
+}
+
+/*Watch your favorite animal online*/
+
+.background-favorite-animal{
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    background-image:  url(../../assets/images/Background\ favorite\ animal.jpg);
+    height: 790px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 150px;
+}
+
+.favorite-animal-title{
+    margin-bottom: 0px;
+    margin-top: 129px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 82px;
+    line-height: 100px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #00A092;
+    width: 890px;
+    height: 280px;
+}
+.favorite-animal-text{
+    margin-top: 50px;
+    font-family: Montserrat;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 150%;
+    color: #000000;
+    width: 430px;
+}
+
+.view-life-cam-submit{      /*button in pay and feed too*/
+    margin-top: 50px;
+    width: 240px;
+    height: 74px;
+    border-radius: 5px;
+    border: none;
+
+    font-family: Montserrat; 
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #F7F7F7;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.view-life-cam-submit-slider-right{
+    padding-right: 36px;
+    background-image: url(../../assets/icons/Union.svg);
+    background-color: #F58021;
+    background-position: 186px;
+    background-repeat: no-repeat;
+}
+
+
+/*Welcome to the zoo / How it works*/
+
+.Welcome-to-the-zoo-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.How-we-work-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.Welcome-to-the-zoo-block{
+    margin-top: 68px;
+}
+.Welcome-to-the-zoo-How-we-work{
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    background-color: #FFFFFF;
+    height: 1362px;
+}
+.Welcome-zoo-image{
+    margin-bottom: 150px;
+    height: 531px;
+    width: 800px;
+}
+
+.How-we-work-image{
+    display: flex;
+    height: 531px;
+    width: 800px;
+    margin-bottom: 150px;
+}
+
+
+.Welcome-to-the-zoo-text{
+    margin-top: 50px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 150%;
+    width: 560px;
+    height: 213px;
+    color: #000000;
+}
+
+.How-we-work-text{
+    margin-top: 50px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 150%;
+    width: 560px;
+    height: 189px;
+    color: #000000;
+}
+
+.Welcome-to-the-zoo-title{
+    width: 523px;
+    height: 132px;
+}
+.How-we-work-title{
+    margin-top: 113px;
+    width: 462px;
+    height: 66px;
+}
+
+
+/*Your-donation-makes-difference*/
+
+.background-your-donation-makes-difference{
+    margin-top: 0;
+    background-color: #20113D;
+    height: 221px;
+    display: flex;
+    justify-content: center;
+    
+}
+.your-donation-makes-difference-block{
+    display: flex;
+    justify-content: space-between;
+}
+.Your-donation-makes-difference-title{
+    display: flex;
+    margin-top: 50px;
+    margin-right: 0;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 51px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    width: 889px;
+    height: 51px;   
+}
+.Your-donation-makes-difference-text{
+    margin-top: 20px;
+    width: 609px;
+    height: 50px;
+    font-family: Montserrat;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 150%;
+    color: #FFFFFF;
+}
+
+.Quick-donate-title{
+    margin-top: 52px;
+    margin-bottom: 10px;
+    width: 182px;
+    height: 34px;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 130%;
+    color: #FFFFFF;
+}
+
+.Quick-donate-submit{
+    padding-left: 27px;
+    border-radius: 5px;
+    border-color: #FFFFFF;
+    margin-top: 0px;
+    width: 320px;
+    height: 74px;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background: #20113D;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.serch-form-submit-slider-right{
+    padding-right: 87px;
+    padding-top: 2px;
+    background: url(../../assets/icons/orange\ frame\ right\ union\ .svg)  no-repeat 0 0 transparent;
+    background-position: right;
+    box-sizing: border-box;
+}
+
+
+/*meet some our Pets */
+
+.Meet-some-our-friends{
+    max-width: 1920px;
+    margin: auto;
+    display: none;
+    overflow:hidden;
+    display: flex;
+    justify-content: center;
+    background: #FFFFFF;
+    height: 2422px;
+}
+
+.Meet-some-our-friends-title{
+    margin: auto;
+    margin-top: 136px;
+    width: 637px;
+    height: 66px;
+}
+.Meet-some-our-friends-text{
+    margin: auto;
+    margin-top: 50px;
+    width: 920px;
+    height: 102px;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 130%;
+    color: #000000;
+}
+.slider-button-block{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 100px;
+    width: 173px;
+}
+.slider-button{
+    border: 0;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.slider-to-left{
+    background: url(../../assets/icons/slider-to-left.svg) no-repeat 0 0 transparent;
+}
+.slider-to-right{
+    background: url(../../assets/icons/slider-to-right.svg) no-repeat 0 0 transparent;
+}
+.cards{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.line-card{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card{
+    margin-right: 40px;
+    margin-bottom: 40px;
+    transition: 800ms;
+}
+.card-block{
+    position: relative;
+    height: 747px;
+    width: 440px;
+    background-color: #20113D;  
+    background-position: top;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+.card-Giant-Panda{
+    background-image:  url(../../assets/images/lucas.jpg);
+}
+.card-Madagascarian-Lemur{
+    background-image:  url(../../assets/images/andy.jpg);
+}
+.card-Gorilla-in-Congo{
+    background-image:  url(../../assets/images/glen.jpg);
+}
+.card-Chinese-Alligator{
+    background-image:  url(../../assets/images/mike\ .jpg);
+}
+.card-West-End-Bald-Eagles{
+    background-image:  url(../../assets/images/Sam\ and\ Lora.jpg);
+}
+.card-Australian-Koala{
+    background-image:  url(../../assets/images/Liz.jpg);
+}
+.card-African-Lion{
+    background-image:  url(../../assets/images/Shake.jpg);
+}
+.card-Sumatran-Tiger{
+    background-image:  url(../../assets/images/Senja.png);
+}
+.title-card{
+    position: absolute;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 130%;
+    color: #FFFFFF;
+    top: 62%;
+    width: 100%;
+    text-align: center;
+}
+.name-animal{
+    padding-right: 6%;
+    padding-left: 6%;
+    position: absolute;
+    display: flex;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 130%;
+    text-align: center;
+    color: #FFFFFF;
+    height: 60.78px;
+    align-items: center;
+    background-color: #20113D;
+    border-radius: 0 0 5px 0;
+    justify-content: center;
+}
+.description-card{
+    position: absolute;
+    font-family: Montserrat;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    color: #FFFFFF;
+    height: 78px;
+    width: 86%;
+    padding-left: 7%;
+    padding-right: 7%;
+    top: 68.77%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-bottom{
+    width: 240px;
+    height: 74px;
+    border: none;
+}
+.card-bottom-svg-left{
+    position: absolute;
+    padding-right: 32px;
+    background: url(../../assets/icons/orange\ right\ union.svg)  no-repeat 0 0 transparent;
+    background-position: 200px;
+    top: 83.5%;
+
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #F58021;
+    cursor: pointer;
+    justify-content: center;
+}
+.card-bottom-form{
+    display: flex;
+    justify-content: center;
+}
+
+.card-submit{
+    margin-top: 60px;
+}
+
+.gradint-card{
+   /*background-image: linear-gradient(to right, transparent, rgba(255, 255, 255)); */
+	opacity: 0.4;
+}
+
+
+/*Pay-and-feed*/
+
+.Pay-and-feed-background{
+    display: flex;
+    justify-content: center;
+    background-color: #20113D;
+    height: 2205px;
+}
+.Pay-and-feed-title{
+    width: 421px;
+    height: 66px;
+    margin-top: 91px;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 66px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.right-line-number:after{
+    content: "";
+    border-bottom: 1px solid #FFFFFF;
+    width: 100%;
+    height: 0.5em;
+    position: absolute;
+    top: 0px;
+    margin-left: 93px;
+}
+
+.number-part-pay-and-feed{
+    position: relative;
+    overflow: hidden;
+    margin-top: 100px;
+    height: 34px;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 130%;
+    color: #FFFFFF;
+}
+.part-pay-and-feed-marginfor3pat{
+    margin-top: 86px;
+}
+
+.part-pay-and-feed{
+    margin-top: 82px;
+    display: flex;
+
+}
+.part-pay-and-feed-block-icon-text{
+    margin-top: 19px;
+    margin-left: 160px;
+
+}
+.image-pay-and-feed{
+    height: 364px;
+    width: 560px;
+}
+.Pay-and-feed-part-title{
+    margin-top: 30px;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 130%;
+    color: #FFFFFF;
+}
+.Pay-and-feed-text{
+    margin-top: 50px;
+    font-family: Montserrat;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 150%;
+    color: #FFFFFF;
+}
+.part-one-text{
+    width: 560px;
+    height: 251px;
+}
+.part-two-text{
+    width: 560px;
+    height: 136px;
+}
+.part-three-text{
+    width: 549px;
+    height: 113px;
+}
+.pay-and-feed-first-part-title{
+    height: 34px;
+}
+.pay-and-feed-two-part-title{
+    width: 221px;
+    height: 34px;
+}
+.pay-and-feed-three-part-title{
+    width: 502px;
+    height: 69px;
+}
+
+
+
+.donate-now-submit-slider-right{
+    padding-right: 36px;
+    background-image: url(../../assets/icons/Union.svg);
+    background-color: #F58021;
+    background-position: 180px;
+    background-repeat: no-repeat;
+}
+
+
+/*What-users-think*/
+
+.What-users-think-background{
+    max-width: 1920px;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    background-image:  url(../../assets/images/Background\ what\ our\ usres\ think.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.what-our-users-think-title{
+    margin: 0;
+    width: 440px;
+    height: 120px;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 66px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+.what-our-users-think-text{
+    margin-top: 50px;
+    margin-right: 40px;
+    width: 560px;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 130%;
+    color: #FFFFFF;
+}
+
+.What-users-think-column{
+    margin-top: 100px;
+    display: flex;
+}
+.comment-one-block{
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 20px 50px 70px 50px;
+    margin: 0 30px 30px 0;
+    background-color: #FFFFFF;
+    width: 515px;
+    height: 463px;
+}
+.quotes-comment{
+  margin: 23px 0;
+}
+.comment-title{ 
+    margin: 0;
+    margin-top: 20px;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 130%;
+    color: #000000;
+}
+.comment-text{
+    margin-top: 20px;
+    font-family: Montserrat;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 150%;
+    color: #000000;
+}
+.comment-author{
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #000000;
+}
+.comment-author-1-2-3{
+    margin-top: 46px;
+}
+.comment-author-4{
+    margin-top: 19px;
+}
+.slider-button-block-comment{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 30px;
+    width: 180px;
+}
+.slider-button{
+    border: 0;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.slider-to-left-comment{
+    background: url(../../assets/icons/slider\ white\ to\ left.svg) no-repeat 0 0 transparent;
+}
+.slider-to-right-comment{
+    background: url(../../assets/icons/slider\ white\ to\ right.svg) no-repeat 0 0 transparent;
+}
+
+.leave-feedback-bottom{
+    margin-top: 376px;
+    margin-bottom: 150px;
+    width: 359px;
+    height: 74px;
+    
+    border-radius: 5px;
+    border: 1px solid #FFFFFF;
+
+    font-family: Montserrat; 
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #F7F7F7;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.leave-feedback-bottom-svg-left{
+    padding-right: 32px;
+    background: url(../../assets/icons/Union.svg)  no-repeat 0 0 transparent;
+    background-position: 257px;
+}
+
+
+/*Care for the animals you love */
+
+.care-for-the-animals-you-love-background{
+    display: flex;
+    justify-content: center;
+    height: 2965px;
+    background: #FFFFFF;
+}
+
+.care-for-the-animals-title{
+    margin: auto;
+    margin-top: 136px;
+    width: 655px;
+    height: 132px;  
+    text-align: center
+}
+.care-for-the-animals-text{
+    margin: auto;
+    margin-top: 50px;
+    width: 537px;
+    height: 65px;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 130%;
+    text-align: center;
+    color: #20113D;
+}
+
+.care-for-the-animals-first-block{
+    display: flex;
+    justify-content: space-between;
+    height: 658px;
+}
+
+
+
+.choose-your-favourite-form{
+    display: flex;
+    justify-content: center;
+}
+
+.image-touch-the-animal{
+    margin-top: 150px;
+    height: 652px;
+}
+
+.choose-your-favourite-submit{
+    width: 359px;
+    height: 74px;
+    border-radius: 5px;
+    border: 1px solid #20113D;
+
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #20113D;
+    
+}
+.choose-your-favourite-svg-submit {
+    padding-right: 41px;
+    background: url(../../assets/icons/Union-black.svg) no-repeat 0 0 transparent;
+    background-position: 299px;
+    cursor: pointer;
+}
+
+.cards-care{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.image-koala{
+    height: 658px;
+    margin-right: 40px;
+}
+.card-care-block{
+    position: relative;
+    height: 658px;
+    width: 440px;
+    background-color: #20113D;
+    background-position: top;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+.care-submit-margin{
+    margin-top: 60px;
+}
+.card-img-panda{
+    background-image:  url(../../assets/images/panda\ with\ food.jpg);
+}
+.card-img-tiger{
+    background-image:  url(../../assets/images/tiger.jpg);
+}
+.card-img-limur{
+    background-image:  url(../../assets/images/limur.jpg);
+}
+.card-img-eagles-forcare{
+    background-image:  url(../../assets/images/eagle-care.jpg);
+}
+.description-card-care{
+    position: absolute;
+    font-family: Montserrat;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 61.5%;
+    left: 5.68%;
+    width: 390px;
+}
+.card-bottom-care-svg-left{
+    position: absolute;
+    padding-right: 32px;
+    background: url(../../assets/icons/orange\ right\ union.svg)  no-repeat 0 0 transparent;
+    background-position: 95px;
+    top: 81%;
+}
+.care-bottom-form{
+    display: flex;
+    justify-content: center;
+}
+
+.card-bottom-care{
+    width: 142px;
+    height: 74px;
+    border: none;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #F58021;
+    cursor: pointer;
+}
+
+
+
+/*footer*/
+
+.footer-backgroung {
+    display: flex;
+    justify-content: center;
+    background-color: #20113D;
+    height: 329px;
+}
+/*part1*/
+.footer-menu{
+    display: flex;
+    justify-content: space-between;
+    height: 214px;
+    align-items: center;
+}
+.footer-logo-list{
+    margin: 0;
+    display: flex;
+    justify-content: space-between; 
+    width: 414px;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list-nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    width: 426px;
+}
+.donate-for-volunteers-submit{
+    width: 359px;
+    height: 74px;
+    background: #20113D;
+    border-radius: 5px;
+    border: 1px solid #FFFFFF;
+
+    font-family: Montserrat; 
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #F7F7F7;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.donate-for-volunteers-svg-submit {
+    padding-right: 41px;
+    background: url(../../assets/icons/Union.svg) no-repeat 0 0 transparent;
+    background-position: 299px;
+}
+/*разделитель*/
+.hr-footer {
+    margin: 0px;
+    border: none; 
+    background-color: #FFFFFF; 
+    height: 1px;
+}
+/*part2*/
+.footer-adress-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 114px;
+}
+.footer-list{
+    display: flex;
+    justify-content: space-between;
+    width: 448px;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list-address{
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.foorer-item-menu a{
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-decoration: none;
+    letter-spacing: 0em;
+}
+
+.foorer-item-coop a{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 150%;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/*animation*/
+
+.headen-item a:hover{
+    color:#00A092;
+}
+.foorer-item-menu a:hover{
+    color:#00A092;
+}
+.link-online-zoo:hover{
+    transform: scale(1.2);
+    transition: 400ms;
+    filter: alpha(Opacity=50);
+    opacity: 0.5; 
+}
+.view-life-cam-submit:hover{
+    background-color: #D26004;
+   /* stroke: red; 
+    fill: red; */
+}
+
+.leave-feedback-bottom-svg-left:hover{
+    
+    background: url(../../assets/icons/Union.svg) no-repeat 0 0 #05786E;
+    background-position: 257px;
+}
+.choose-your-favourite-submit:hover{
+    color: #FFFFFF;
+    padding-right: 41px;
+    background: url(../../assets/icons/Union.svg) no-repeat 0 0 #20113D;
+    background-position: 299px;
+    cursor: pointer;
+}
+
+.card-bottom-svg-left:hover{
+    color: #FFFFFF;
+    position: absolute;
+    padding-right: 32px;
+    background: url(../../assets/icons/Union.svg)  no-repeat 0 0 #F58021;
+    background-position: 200px;
+}
+
+.card-bottom-care:hover{
+    color: #FFFFFF;
+    position: absolute;
+    padding-right: 32px;
+    background: url(../../assets/icons/Union.svg)  no-repeat 0 0 #F58021;
+    background-position: 95px;
+    top: 81%;
+}
+
+.card:hover{
+    transform: scale(1.085);
+    transition: 800ms;
+}
+.donate-for-volunteers-svg-submit:hover{
+    background-color: #00A092;;
+}
+
+.slider-to-left:hover{
+    background: url(../../assets/icons/to\ rigth\ black\ bg.svg) no-repeat 0 0 transparent;
+    transform: rotate(180deg);
+
+}
+.slider-to-right:hover{
+    background: url(../../assets/icons/to\ rigth\ black\ bg.svg) no-repeat 0 0 transparent;
+}
+.Quick-donate{
+    position: relative;
+}
+.Quick-donate-submit::placeholder{
+    color: #FFFFFF;
+}
+.Quick-donate::before{
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    content: '$';
+    display: inline-block;
+    width: 20px;
+    height: 40px;
+    color: #fff;
+    position: absolute;
+    bottom: 7px;
+    left: 13px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}    
+.slider-to-left-comment:hover{
+    background: url(../../assets/icons/btn-hover-feedback.svg) no-repeat 0 0 transparent;
+    transform: rotate(180deg);
+}
+.slider-to-right-comment:hover{
+    background: url(../../assets/icons/btn-hover-feedback.svg) no-repeat 0 0 transparent;
+}
