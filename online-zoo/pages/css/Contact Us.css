@@ -178,6 +178,14 @@ h3{
 /*.area-input:invalid{
     background-color: red;
 }*/
+.error {
+    display:none;
+}
+
+.area-input:invalid ~ .error {
+    display: block;
+
+}
 .textarea-input{
     margin-top: 10px;
     margin-bottom: 0;
@@ -314,4 +322,27 @@ h3{
 }
 
 
+/*animation*/
 
+.headen-item a:hover{
+    color:#00A092;
+}
+
+.link-online-zoo:hover{
+    transform: scale(1.2);
+    transition: 400ms;
+    filter: alpha(Opacity=50);
+    opacity: 0.5; 
+}
+
+.foorer-item-menu a:hover{
+    color:#00A092;
+}
+
+.donate-for-volunteers-svg-submit:hover{
+    background-color: #00A092;
+}
+
+.send-message-svg-left:hover{
+    background-color: #05786E;
+}

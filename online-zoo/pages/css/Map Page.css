@@ -274,6 +274,48 @@ h3{
 }
 
 
+/*animation*/
+
+.headen-item a:hover{
+    color:#00A092;
+}
+
+.link-online-zoo:hover{
+    transform: scale(1.2);
+    transition: 400ms;
+    filter: alpha(Opacity=50);
+    opacity: 0.5; 
+}
+
+.foorer-item-menu a:hover{
+    color:#00A092;
+}
+
+.donate-for-volunteers-svg-submit:hover{
+    background-color: #00A092;;
+}
 
 
+.icon-eagles:hover{
+    background-image: url(../../assets/icons/eagle-map-active.svg);
+}
+.icon-gorilla:hover{
+    background-image: url(../../assets/icons/gorilla-map-active.svg);
+}
+.icon-lemur:hover{
+    background-image: url(../../assets/icons/limur-map-active.svg);
+}
+.icon-panda:hover{
+    background-image: url(../../assets/icons/panda-map-active.svg);
+}
+/*
+.icon-tiger:hover{
+    background-image: url(../../assets/icons/tiger-map-active.svg);
+}
+.icon-koala:hover{
+    background-image: url(../../assets/icons/koala-map-active.svg);
+}
+.icon-aligator:hover{
+    background-image: url(../../assets/icons/aligator-map-active.svg.svg);
+}*/
 
