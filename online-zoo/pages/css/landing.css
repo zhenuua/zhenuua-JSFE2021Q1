@@ -308,6 +308,10 @@ h3{
 /*meet some our Pets */
 
 .Meet-some-our-friends{
+    max-width: 1920px;
+    margin: auto;
+    display: none;
+    overflow:hidden;
     display: flex;
     justify-content: center;
     background: #FFFFFF;
@@ -424,7 +428,7 @@ h3{
     height: 60.78px;
     align-items: center;
     background-color: #20113D;
-    border-radius: 5px;
+    border-radius: 0 0 5px 0;
     justify-content: center;
 }
 .description-card{
@@ -589,6 +593,9 @@ h3{
 /*What-users-think*/
 
 .What-users-think-background{
+    max-width: 1920px;
+    margin: auto;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     margin-top: 0;
@@ -898,7 +905,7 @@ h3{
 }
 /*разделитель*/
 .hr-footer {
-    margin-top: 0px;
+    margin: 0px;
     border: none; 
     background-color: #FFFFFF; 
     height: 1px;
