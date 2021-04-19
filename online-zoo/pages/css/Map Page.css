@@ -45,20 +45,14 @@ h3{
     flex-direction: column;
 }
 
-.headen-article{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.logo-header{
-   margin-top: 30px;
-}
-
 .headen-nav{
     width: 556px;
     margin-right: 67px;
     margin-top: 42px;
+}
+
+.logo-header{
+   margin-top: 30px;
 }
 
 .headen-list{
@@ -101,26 +95,110 @@ h3{
 .header-menu{
     display: flex;
 }
+.headen-article{
+    display: flex;
+    justify-content: space-between;  
+}
+.hamburger-menu {
+    display: none;
+}
+input[type="checkbox"] {
+    display: none;
+}
+@media screen and (min-width:1200px) and (max-width:1440px) {
 
+    .headen-article{
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    .headen-nav{
+        width: 481px;
+        margin-right: 80px;
+    }
+    
+    .wrapper{
+        width: 1200px;
+    }
+
+}
+@media screen and (min-width:640px) and (max-width:1199px) {
+
+    .wrapper{
+        width: 640px;
+    }
+    .headen-article{
+        position: fixed;
+        height: 108px;
+        background-color: #F58021;
+        z-index: 1;
+    }
+    .headen-nav{
+        margin-right: 47px;
+        width: 100%;
+    }
+    .hamburger-menu {
+        display: block;
+        margin-left: 447px;
+        cursor: pointer;
+    }
+    .header-links {
+        display: none;
+    }
+    
+    .headen-nav > .headen-list {
+        display: none;
+    }
+    .logo-online-zoo-header{
+        margin-left: 20px;
+    }
+
+}
+@media screen and (min-width: 320px) and (max-width: 639px) {
+
+    .wrapper{
+        width: 320px;
+    }
+    .hamburger-menu {
+        display: block;
+        margin-left: 146px;
+        cursor: pointer;
+    }
+    .header-links {
+        display: none;
+    }
+    
+    .headen-nav > .headen-list {
+        display: none;
+    }
+    .logo-online-zoo-header{
+        margin-left: 20px;
+    }
+    .img-burger{
+        width: 22px;
+        height: 30px;
+    }
+    .headen-nav {
+        width: 137px;
+    }
+}
 /*map*/
 .map-background{
+    margin-bottom: 150px;
     display: flex;
     justify-content: center;
-    height: 1303px;
     background: #ffffff;
 }
 .map{
     position:relative; 
-    width:100%; 
-    max-width: 1406px;
+}
+.main-map{
+    width: 1406px;
 }
 
 .icons{
     position: absolute;
     filter: drop-shadow(0px 4px 30px rgba(245, 128, 33, 0.7));
 }
-
-
 .icon-eagles{
     left: 9.5%;
     top: 40.5%;
@@ -153,6 +231,166 @@ h3{
     left: 80.3%;
     top: 66.3%;
 }
+@media screen and (min-width:1200px) and (max-width:1440px) {
+
+    .map-title{
+        margin-bottom: 30px;
+    }
+    .map-background{
+        margin-bottom: 100px;
+    }
+    .main-map{ 
+        width: 1198px;
+    }
+    .icon-eagles{
+        left: 8.4%;
+        top: 38%;
+    }
+    .icon-aligator{
+        left: 18.28%;
+        top: 39.63%;
+    }
+    .icon-lion{
+        left: 38%;
+        top: 44.5%;
+    }
+    .icon-gorilla{
+        left: 45.8%;
+        top: 46.65%;
+    }
+    .icon-lemur{
+        left: 53%;
+        top: 59.54%;
+    }
+    .icon-panda{
+        left: 64.71%;
+        top: 33%;
+    }
+    .icon-tiger{
+        left: 69.7%;
+        top: 50.8%;
+    }
+    .icon-koala{
+        left: 79.1%;
+        top: 63.3%;
+    }
+}
+
+@media screen and (min-width:640px) and (max-width:1199px) {
+    
+    .map-title{
+        margin-bottom: 50px;
+        font-weight: 500;
+        font-size: 42px;
+        line-height: 51px;
+        margin: 30px 0px 67px 14px;
+    }
+    .main-map{ 
+        width: 639.86px;
+    }
+
+    .icons >a > svg{
+        width: 68px;
+        height: 90px;
+     }
+     .icons > svg{
+        width: 68px;
+        height: 90px;
+     }
+    .icon-eagles{
+        left: 9.5%;
+        top: 40.5%;
+    }
+    .icon-aligator{
+        left: 19.28%;
+        top: 42.63%;
+    }
+    .icon-lion{
+        left: 39.6%;
+        top: 47.9%;
+    }
+    .icon-gorilla{
+        left: 47.17%;
+        top: 49.65%;
+    }
+    .icon-lemur{
+        left: 54.53%;
+        top: 62.54%;
+    }
+    .icon-panda{
+        left: 65.71%;
+        top: 35.36%;
+    }
+    .icon-tiger{
+        left: 71%;
+        top: 54%;
+    }
+    .icon-koala{
+        left: 80.3%;
+        top: 66.3%;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 639px) {
+
+    .map-title{
+        margin: 20px 10px 30px;
+        text-transform: lowercase;
+        width: 301px;
+        height: 58px;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 130%;
+    }
+    .main-map{ 
+        width: 361.72px;
+    }
+    .map-background{
+        margin-bottom: 53px;
+    }
+    .map{
+        display: flex;
+        justify-content: center;
+    }
+    .icons > a > svg{
+        width: 55px;
+        height: 80px;
+     }
+    .icon-eagles{
+        left: 2.5%;
+        top: 33.5%;
+    }
+    .icon-aligator{
+        left: 12.28%;
+        top: 32.63%;
+    }
+    .icon-lion{
+        left: 35.6%;
+        top: 36.9%;
+    }
+    .icon-gorilla{
+        left: 44.17%;
+        top: 41.65%;
+    }
+    .icon-lemur{
+        left: 52.53%;
+        top: 55.54%;
+    }
+    .icon-panda{
+        left: 65.71%;
+        top: 28.36%;
+    }
+    .icon-tiger{
+        left: 70%;
+        top: 44%;
+    }
+    .icon-koala{
+        left: 81.3%;
+        top: 56.3%;
+    }
+}
+
+
 /*
 .full-map__pin > .full-map__pin__body {
     stroke: #fff;
@@ -173,7 +411,6 @@ h3{
     display: flex;
     justify-content: center;
     background-color: #20113D;
-    height: 329px;
 }
 /*part1*/
 .footer-menu{
@@ -273,6 +510,78 @@ h3{
     text-decoration: none;
 }
 
+@media screen and (min-width:1200px) and (max-width:1440px) {
+    .footer-logo-list{
+        width: 344px;
+    }
+    .footer-menu{
+        margin: 0 40px;
+    }
+    .footer-adress-links{
+        margin: 0 40px;
+    }
+    .footer-list-nav{
+        width: 347px;
+    }
+
+}
+@media screen and (min-width:640px) and (max-width:1199px) {
+    .footer-menu{
+        flex-direction: column;
+        margin: 50px 0;
+        height: 246px;
+    }
+    .footer-adress-links{
+        flex-direction: column-reverse;
+        margin: 50px 0;
+        height: 100px;
+    }
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 639px) {
+    .footer-backgroung{
+        height: 710px;
+    }
+    .footer-menu{
+        flex-direction: column;
+        margin-top: 50px;
+        height: 338px;
+        margin-bottom: 30px;
+    }
+    .footer-logo-list{
+        
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        height: 210px;
+        width: 320px;
+    }
+    .footer-adress-links{
+        flex-direction: column-reverse;
+    }
+    .footer-list{
+        flex-direction: column;
+        text-align: center;
+        height: 141px;
+        margin-top: 62px;
+        margin-bottom: -52px;
+        width: 320px;
+    }
+    .footer-list-nav{
+        width: 300px;
+    }
+    .donate-for-volunteers-submit{
+        height: 45px;
+        width: 299px;
+    }
+    .hr-footer {
+        margin-top: 102px;
+    }
+    .donate-for-volunteers-svg-submit{
+        background-position: 265px;
+    }
+}
 
 /*animation*/
 

@@ -68,7 +68,6 @@ input::-webkit-inner-spin-button {
 .headen-article{
     display: flex;
     justify-content: space-between;
-    width: 100%;
 }
 
 .logo-header{
@@ -120,6 +119,88 @@ input::-webkit-inner-spin-button {
 
 .header-menu{
     display: flex;
+}
+.hamburger-menu {
+    display: none;
+}
+input[type="checkbox"] {
+    display: none;
+}
+@media screen and (min-width:1200px) and (max-width:1440px) {
+
+    .headen-article{
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    .headen-nav{
+        width: 481px;
+        margin-right: 80px;
+    }
+    
+    .wrapper{
+        width: 1200px;
+    }
+
+}
+@media screen and (min-width:640px) and (max-width:1199px) {
+
+    .wrapper{
+        width: 640px;
+    }
+    .headen-article{
+        position: fixed;
+        height: 108px;
+        background-color: #F58021;
+        z-index: 1;
+    }
+    .headen-nav{
+        margin-right: 47px;
+        width: 100%;
+    }
+    .hamburger-menu {
+        display: block;
+        margin-left: 447px;
+        cursor: pointer;
+    }
+    .header-links {
+        display: none;
+    }
+    
+    .headen-nav > .headen-list {
+        display: none;
+    }
+    .logo-online-zoo-header{
+        margin-left: 20px;
+    }
+
+}
+@media screen and (min-width: 320px) and (max-width: 639px) {
+
+    .wrapper{
+        width: 320px;
+    }
+    .hamburger-menu {
+        display: block;
+        margin-left: 146px;
+        cursor: pointer;
+    }
+    .header-links {
+        display: none;
+    }
+    
+    .headen-nav > .headen-list {
+        display: none;
+    }
+    .logo-online-zoo-header{
+        margin-left: 20px;
+    }
+    .img-burger{
+        width: 22px;
+        height: 30px;
+    }
+    .headen-nav {
+        width: 137px;
+    }
 }
 /*aside*/
 .alimal-menu{
@@ -443,7 +524,6 @@ input::-webkit-inner-spin-button {
     display: flex;
     justify-content: center;
     background-color: #20113D;
-    height: 329px;
 }
 /*part1*/
 .footer-menu{
@@ -544,6 +624,78 @@ input::-webkit-inner-spin-button {
 }
 
 
+@media screen and (min-width:1200px) and (max-width:1440px) {
+    .footer-logo-list{
+        width: 344px;
+    }
+    .footer-menu{
+        margin: 0 40px;
+    }
+    .footer-adress-links{
+        margin: 0 40px;
+    }
+    .footer-list-nav{
+        width: 347px;
+    }
+
+}
+@media screen and (min-width:640px) and (max-width:1199px) {
+    .footer-menu{
+        flex-direction: column;
+        margin: 50px 0;
+        height: 246px;
+    }
+    .footer-adress-links{
+        flex-direction: column-reverse;
+        margin: 50px 0;
+        height: 100px;
+    }
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 639px) {
+    .footer-backgroung{
+        height: 710px;
+    }
+    .footer-menu{
+        flex-direction: column;
+        margin-top: 50px;
+        height: 338px;
+        margin-bottom: 30px;
+    }
+    .footer-logo-list{
+        
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        height: 210px;
+        width: 320px;
+    }
+    .footer-adress-links{
+        flex-direction: column-reverse;
+    }
+    .footer-list{
+        flex-direction: column;
+        text-align: center;
+        height: 141px;
+        margin-top: 62px;
+        margin-bottom: -52px;
+        width: 320px;
+    }
+    .footer-list-nav{
+        width: 300px;
+    }
+    .donate-for-volunteers-submit{
+        height: 45px;
+        width: 299px;
+    }
+    .hr-footer {
+        margin-top: 102px;
+    }
+    .donate-for-volunteers-svg-submit{
+        background-position: 265px;
+    }
+}
 /*animation*/
 
 .headen-item a:hover{

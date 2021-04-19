@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./pages/css/landing.css">
+  <link rel="icon" href="./assets//images/Favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -21,6 +22,10 @@
         </a>
         <div class="header-menu">
           <nav class="headen-nav">
+            <div class="hamburger-menu">
+              <input type="checkbox" name="menu" id="btn-menu" />
+              <label for="btn-menu"><img src="./assets/icons/hamburger.svg" alt="img of hamburger menu" class="img-burger"></label> 
+            </div>
             <ul class="headen-list">
               <li class="headen-item headen-item-onn"><a href="#top">About</a></li>
               <li class="headen-item"><a href="./pages/Map Page/Map Page.html">Map</a></li>
@@ -67,9 +72,11 @@
             <p class="Welcome-to-the-zoo-text">
               On our website, using live webcams, fans of all ages can observe various animals. 
               Among them, are Giant pandas, eagles, alligators, forest gorillas, African lions, and others. 
-              It is the whole natural world in real-time in front of our cameras. We hope you will enjoy 
-              watching closely and explore animals’ behavior and habitats! Note: animals are not always on 
-              view on cameras, so please check back if you don't see anything.
+              It is the whole natural world in real-time in front of our cameras.
+              <span class="delete-for-with-320px">We hope you will enjoy 
+                watching closely and explore animals’ behavior and habitats! Note: animals are not always on 
+                view on cameras, so please check back if you don't see anything.
+              </span> 
             </p>
           </div>
             <img src="assets/images/Group 11.jpg" alt="Welcome-zoo-image" class='Welcome-zoo-image'>
@@ -80,8 +87,12 @@
             <h3 class="How-we-work-title Montserrat-600-54">How we work</h3>
             <p class="How-we-work-text">
               Online Zoo is a nonprofit committed to inspiring awareness and preservation of 
-              nature and wild animals in our zoo and worldwide. Every day, our experts work to 
-              safeguard the health and wellness of the animals. To continue these efforts, we need your help. 
+              nature and wild animals in our zoo and worldwide. 
+              <span class="delete-for-with-320px">
+              Every day, our experts work to 
+              safeguard the health and wellness of the animals. 
+              </span>
+              To continue these efforts, we need your help. 
               We're so grateful to our numerous supporters. All donations, large and small, 
               go a long way to the conservation efforts of our pets.
             </p>
@@ -123,7 +134,7 @@
           <button class="slider-button slider-to-right"></button>
         </div>
         <div class="cards">
-          <div class="line-card">
+          <div class="line-card line-card-one">
             <a class="card" href="./pages/zoos/panda/Zoos Page Panda.html">
               <div class="card-Giant-Panda card-block">
                 <p class="name-animal">Lucas</p>
@@ -169,7 +180,7 @@
             </a>
             </div>
           <div class="line-card">
-            <a class="card" href="./pages/zoos/eagles/Zoos Page Eagles.html">
+            <a class="card card-one" href="./pages/zoos/eagles/Zoos Page Eagles.html">
               <div class="card-West-End-Bald-Eagles card-block">
                 <p class="name-animal">Sam & Lora</p>
                 <p class="title-card">West End Bald Eagles</p>
@@ -191,7 +202,7 @@
                   </form>
                 </div>
               </a>
-              <a class="card" href="#.html">
+              <a class="card card-two" href="#.html">
                 <div class="card-African-Lion card-block">
                   <p class="name-animal">Shake</p>
                   <p class="title-card">African Lion</p>
@@ -202,7 +213,7 @@
                   </form>
                 </div>
               </a>
-              <a class="card" href="#.html">
+              <a class="card card-one" href="#.html">
                 <div class="card-Sumatran-Tiger card-block gradint-card">
                   <p class="name-animal">Senja</p>
                   <p class="title-card">Sumatran Tiger</p>
@@ -236,8 +247,12 @@
                   care at our Zoo. We do all the best so that our animals can eat food similar to what they 
                   might find in their natural habitats while making sure they get the right mix of nutrients, 
                   proteins, and vitamins to be happy and healthy. Please help us provide nutritious food for 
-                  our animals by donating. The generosity of people like you can help us make sure that our 
-                  animals enjoy good food that keeps them in great condition.
+                  our animals by donating. 
+                  <span class="delete-for-with-320px">
+                    The generosity of people like you can help us make sure that our 
+                    animals enjoy good food that keeps them in great condition.
+                  </span>
+                  
                 </p>
               </div>
             </div>
@@ -251,15 +266,18 @@
                 <p class="Pay-and-feed-text part-two-text">
                   You can donate through your credit card without any fees. It is easy and safe. 
                   We do not keep donors' personal information on an online network. Choose an amount to 
-                  give and the pet's name if needed. One of the most effective ways you can give is by making 
+                  give and the pet's name if needed. 
+                  <span class="delete-for-with-320px">
+                  One of the most effective ways you can give is by making 
                   regular donations.
+                  </span>
                 </p>
               </div>
           </div>
           <h4 class="number-part-pay-and-feed right-line-number part-pay-and-feed-marginfor3pat">03</h4>
           <div>
             <div class="part-pay-and-feed">
-              <img src="./assets/images/monkey with bananas.jpg" alt="image of monkey with bananas" class="image-pay-and-feed">
+              <img src="./assets/images/monkey with bananas.jpg" alt="image of monkey with bananas" class="image-pay-and-feed image-pay-and-feed-last-monky">
               <div class="part-pay-and-feed-block-icon-text">
                 <img src="./assets/icons/box with food.svg" alt="icon box with food" class="">
                 <h5 class="Pay-and-feed-part-title pay-and-feed-three-part-title">Bring your food charity — straight to your favorites pets.</h5>
@@ -268,7 +286,7 @@
                   animals or any animal you care about and make a real personal impact. Never doubt that your 
                   donation can make a difference even if it is small. 
                 </p>
-                <input type="submit" value="donate now" class="view-life-cam-submit donate-now-submit-slider-right">
+                <input type="submit" value="donate now" class="view-life-cam-submit-pay-feed donate-now-submit-slider-right">
               </div>
           </div>
         
@@ -305,7 +323,7 @@
                 <p class="comment-author comment-author-1-2-3">C. Stockman</p>
             </div>
           </div>
-          <div class="comment-column">
+          <div class="comment-column display-none-feedback">
             <div class="comment-one-block">
                 <img src="./assets/icons/quotes.svg" alt="image of quotes" class="quotes-comment">
                 <h4 class="comment-title">Toronto, November 2020</h4>
@@ -323,6 +341,12 @@
                 <p class="comment-author comment-author-4">Tomas Ray</p>
             </div>
           </div>
+        </div>
+        <div class="radio-points">
+          <span class="radio-one-point active-point"></span>
+          <span class="radio-one-point"></span>
+          <span class="radio-one-point"></span>
+          <span class="radio-one-point"></span>
         </div>
         <div class="slider-button-block-comment">
           <button class="slider-button slider-to-left-comment"></button>
@@ -354,7 +378,7 @@
               </a>
             </div>
 
-            <div class="line-card">
+            <div class="line-card line-card-for-disp-none">
               <a class="card" href="#.html">
                 <div class="card-img-tiger card-care-block">
                   <p class="description-card-care"> Your $150 will help to care for Senja, a Sumatran tiger, for three weeks.
@@ -383,6 +407,12 @@
                 </div>
               </a>
           </div>
+        </div>
+        <div class="radio-points-care">
+          <span class="radio-one-point-care active-point-care"></span>
+          <span class="radio-one-point-care"></span>
+          <span class="radio-one-point-care"></span>
+          <span class="radio-one-point-care"></span>
         </div>
         <form action="./pages/Map Page/Map Page.html" class="choose-your-favourite-form">
           <input type="submit" value="choose your favourite" class="choose-your-favourite-submit choose-your-favourite-svg-submit care-submit-margin">
