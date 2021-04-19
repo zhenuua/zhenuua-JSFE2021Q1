@@ -199,7 +199,7 @@ input[type="checkbox"] {
         height: 30px;
     }
     .headen-nav {
-        width: 50%;
+        width: 137px;
     }
 }
 /*aside*/
@@ -664,6 +664,7 @@ input[type="checkbox"] {
         justify-content: space-between;
         text-align: center;
         height: 210px;
+        width: 320px;
     }
     .footer-adress-links{
         flex-direction: column-reverse;
@@ -674,6 +675,7 @@ input[type="checkbox"] {
         height: 141px;
         margin-top: 62px;
         margin-bottom: -52px;
+        width: 320px;
     }
     .footer-list-nav{
         width: 300px;
@@ -685,7 +687,9 @@ input[type="checkbox"] {
     .hr-footer {
         margin-top: 102px;
     }
-
+    .donate-for-volunteers-svg-submit{
+        background-position: 265px;
+    }
 }
 /*animation*/
 
