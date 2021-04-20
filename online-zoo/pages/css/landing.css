@@ -1314,6 +1314,14 @@ input[type="checkbox"] {
     margin-top: 100px;
     display: flex;
 }
+.comments-all{
+    display: flex;
+    flex-direction: column;
+}
+.string-new{
+    display: flex;
+
+}
 .comment-one-block{
     box-sizing: border-box;
     border-radius: 5px;
@@ -1407,7 +1415,14 @@ input[type="checkbox"] {
 }
 
 @media screen and (min-width:1200px) and (max-width:1440px) {
-
+    .comments-all{
+        display: flex;
+      margin-left: 100px;
+    }
+    .string-new{
+        display: flex;
+    
+    }
     .What-users-think-column{
         margin-left: 40px;
         flex-direction: column;
@@ -1424,6 +1439,7 @@ input[type="checkbox"] {
     .comment-one-block{
         margin: 0;
         margin-bottom: 30px;
+        margin-right: 30px;
     }
     .slider-button-block-comment{
         margin-top: 70px;
@@ -1437,6 +1453,18 @@ input[type="checkbox"] {
 }
 
 @media screen and (min-width:640px) and (max-width:1199px) {
+    .comments-all{
+        display: flex;
+        flex-direction: row;
+    }
+    .string-new{
+        display: flex;
+    }
+    .comment-title {
+        width: 289px;
+        height: 68px;
+        margin: 0 auto;
+    }   
     .What-users-think-background{
         height: 1670px;
         background-image:  url(../../assets/images/bg-comments-for\ 640px.jpeg);
@@ -1444,9 +1472,11 @@ input[type="checkbox"] {
         background-position: bottom;
         max-width: 640px;
     }
-    
-
-
+    .comment-one-block{
+        margin: 0;
+        flex-direction: column;
+        margin-right: 20px;
+    }
 
     .What-users-think-column{
         margin-left: 40px;
@@ -1456,30 +1486,26 @@ input[type="checkbox"] {
         margin-top: 30px;
         margin-bottom: 50px;
     }
-    .comment-column{
-        display: flex;
-        flex-wrap: nowrap;
-        margin-left: 20px;
-    }
-    
+
     .slider-button-block-comment{
-        margin-top: 70px;
-        margin-left: 980px;
+        display: none;
     }
     .leave-feedback-bottom{
         margin-top: 97px;
         margin-left: 135px;
     }
-    .display-none-feedback{
-        display: none;
-    }
     .comment-one-block{
         display: flex;
-        
+        padding: 50px 30px;
         margin: 0;
         margin-right: 20px;
         width: 523px;
         height: 371px;
+        text-align: center;
+    }
+    .quotes-comment{
+        margin: 0;
+        position: absolute;
     }
     .leave-feedback-bottom{
         margin-top: 50px;
@@ -1487,6 +1513,10 @@ input[type="checkbox"] {
     }
 }
 @media screen and (min-width: 320px) and (max-width: 639px) {
+    .comments-all{
+        flex-direction: row;
+    }
+
     .What-users-think-background{
         height: 1461px;
         background-image:  url(../../assets/images/bg-comments-for\ 640px.jpeg);
@@ -1520,17 +1550,10 @@ input[type="checkbox"] {
         margin-top: 30px;
         margin-bottom: 50px;
     }
-    .comment-column{
-        display: flex;
-        flex-wrap: nowrap;
-        margin-left: 0px;
-        
-    }
-    
     .slider-button-block-comment{
-        margin-top: 70px;
-        margin-left: 980px;
+        display: none;
     }
+   
     .leave-feedback-bottom{
         margin-top: 97px;
         margin-left: 135px;
@@ -1540,19 +1563,19 @@ input[type="checkbox"] {
     }
     .comment-one-block{
         display: flex;
-        
+        flex-direction: column;
         margin: 0;
         margin-right: 10px;
         width: 300px;
         height: 549px;
+        padding: 20px 20px 50px 20px;
+        text-align: center;
     }
-
-    .leave-feedback-bottom{
-        margin-top: 0px;
-        margin-left: 20px;
+    .quotes-comment{
+        padding-right: 154px;
     }
     .leave-feedback-bottom{
-        margin: 0px 10px 0;
+        margin: 50px 10px 0;
         width: 299px;
         height: 45px;
     }
@@ -1610,15 +1633,6 @@ input[type="checkbox"] {
     text-align: center;
     color: #20113D;
 }
-
-.care-for-the-animals-first-block{
-    display: flex;
-    justify-content: space-between;
-    height: 658px;
-}
-
-
-
 .choose-your-favourite-form{
     display: flex;
     justify-content: center;
@@ -1651,10 +1665,17 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
+.card-item{
+    
+    margin-bottom: 40px;
+    transition: 800ms;
+}
+
 .cards-care{
     display: flex;
-    flex-direction: column;
     margin-top: 100px;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .image-koala{
@@ -1685,6 +1706,7 @@ input[type="checkbox"] {
 .card-img-eagles-forcare{
     background-image:  url(../../assets/images/eagle-care.jpg);
 }
+
 .description-card-care{
     position: absolute;
     font-family: Montserrat;
@@ -1736,29 +1758,98 @@ input[type="checkbox"] {
         margin-top: 30px;
     }
 
-
     .image-touch-the-animal{
         margin: 150px 0;
         height: 668px;
         width: 1200px;
     }
-    
+    .care-item-1{
+        order: 1;
+    }
+    .care-item-2{
+        order: 2;
+    }
+    .care-item-3{
+        order: 4;
+    }
+    .care-item-4{
+        order: 3;
+    }
+    .care-item-5{
+        order: 5;
+    }
+
+    .image-koala{
+        margin: 0 auto;
+        height: 470px;
+        width: 930px;
+        transform: scale(-1, 1);
+        margin-bottom: 20px;
+    }
+    .cards-care{
+        margin: 100px auto 0;
+        width: 930px;
+    }
+    .card-item{
+        margin-bottom: 20px;
+    }
+    .card-care-block{
+        width: 455px;
+        height: 639px;
+        background-size: auto 383px;
+    }
+    .description-card-care{
+        top: 64.5%;
+    }
 }
 @media screen and (min-width:640px) and (max-width:1199px) {
-  
+    
+    .care-for-the-animals-you-love-background{
+        max-width: 640px;
+        overflow: hidden;
+        margin: auto;
+    }
+    .cards-care{
+        max-width: 640px;
+        display: flex;
+        margin-top: 70px;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .card-item{
+        margin-left: 20px;
+        margin-bottom: 50px;
+    }
+    .card-care-block{
+        width: 600px;
+        height: 297px;
+        background-position: left;
+        background-size: 297px 300px;
+    }
+    .care-item-2{
+        order: -1;
+    }
+    .description-card-care{
+        width: 260px;
+        top: 23.5%;
+        left: 52.68%;
+    }
+    .card-bottom-care-svg-left{
+        top: 63%;
+        left: 62%;
+    }
     .image-koala{
         display: none;
     }
-    .line-card-for-disp-none{
-        display: none;
-    }
+
     .image-touch-the-animal{
         margin: 100px 0;
         height: 379px;
         width: 641px;
     }
+
     .radio-points-care{
-        margin: 30px auto 0; 
+        margin: 0 auto; 
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -1777,11 +1868,29 @@ input[type="checkbox"] {
     .care-submit-margin{
         margin-top: 50px;
     }
-    .line-card{
-        justify-content: center;
-    }
+
 }
 @media screen and (min-width: 320px) and (max-width: 639px) {
+    .care-for-the-animals-you-love-background{
+        max-width: 320px;
+        overflow: hidden;
+        margin: auto;
+    }
+    .cards-care{
+        
+        display: flex;
+        margin-top: 30px;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .card-item{
+        margin-left: 10px;
+        margin-bottom: 50px;
+    }
+    .care-item-2{
+        order: -1;
+    }
+ 
     .care-for-the-animals-title{
         font-weight: 500;
         font-size: 26px;
@@ -1801,16 +1910,8 @@ input[type="checkbox"] {
     .image-koala{
         display: none;
     }
-    .line-card-for-disp-none{
-        display: none;
-    }
-    .line-card{
-        justify-content: center;
-    }
-    .cards-care{
-        margin: 30px
-    }
-    .card-img-panda{
+
+    .card-care-block{
         margin: 0;
         width: 300px;
         height: 570px;
@@ -1830,7 +1931,7 @@ input[type="checkbox"] {
     }
 
     .radio-points-care{
-        margin: 30px auto 0; 
+        margin: 0 auto; 
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -2086,13 +2187,15 @@ input[type="checkbox"] {
     padding-right: 32px;
     background: url(../../assets/icons/Union.svg)  no-repeat 0 0 #F58021;
     background-position: 95px;
-    top: 81%;
+    top: 63%;
+    left: 62%;
 }
 
-.card:hover{
+.card:hover, .card-item:hover{
     transform: scale(1.085);
     transition: 800ms;
 }
+
 .donate-for-volunteers-svg-submit:hover{
     background-color: #00A092;;
 }
