@@ -323,7 +323,14 @@ input[type="checkbox"] {
 .slider-video{
     margin-top: 91px;
 }
-
+.video-panda-main{
+    width: 1401.09px;
+    height: 787.5px;
+}
+.video-panda-main-1{
+    width: 320px;
+    height: 209px;
+}
 
 
 /*Your-donation-makes-difference*/
@@ -421,7 +428,115 @@ input[type="checkbox"] {
     bottom: 61px;
     left: 13px;
 }
+@media screen and (min-width:1200px) and (max-width:1440px) {
 
+    .background-your-donation-makes-difference{
+        height: 313px;
+    }
+    .Your-donation-makes-difference-title{
+        height: 102px;
+        width: 577px;
+    }
+    .Your-donation-makes-difference-text{
+        margin-top: 30px;
+        height: 81px;
+        width: 576px;
+    }
+    .Your-donation-makes-difference{
+        margin-left: 97px;
+    }
+    .Quick-donate{
+        margin-right: 98px;
+    }
+    .Quick-donate::before{
+        bottom: 100px;
+    }
+
+}
+@media screen and (min-width:640px) and (max-width:1199px) {
+
+    .background-your-donation-makes-difference{
+        height: 459px;
+    }
+    .your-donation-makes-difference-block{
+        flex-direction: column;
+    }
+    .Your-donation-makes-difference-title{
+        margin: 30px auto 0;
+        text-align: center;
+        height: 102px;
+        width: 565px;
+    }
+    .Your-donation-makes-difference-text{
+        margin: 30px auto 0;
+        text-align: center;
+        height: 79px;
+        width: 600px;
+    }
+    .Quick-donate-title{
+        margin-top: 30px;
+        margin-left: 229px;
+    }
+    .Quick-donate{
+        text-align: center;
+        justify-content: center;
+    }
+    .Quick-donate::before{
+        bottom: 7px;
+        left: 167px;
+    }
+    .Quick-donate-submit{
+        width: 363px;
+        padding-left: 45px;
+    }
+
+}
+@media screen and (min-width: 320px) and (max-width: 639px) {
+
+    .background-your-donation-makes-difference{
+        height: 446px;
+    }
+    .your-donation-makes-difference-block{
+        flex-direction: column;
+    }
+    .Your-donation-makes-difference-title{
+        margin: 30px 10px 0;
+        text-align: center;
+        height: 92px;
+        width: 300px;
+        font-size: 26px;
+        line-height: 32px;
+    }
+    .Your-donation-makes-difference-text{
+        margin: 30px auto 0;
+        text-align: center;
+        height: 135px;
+        width: 300px;
+    }
+    .Quick-donate-title{
+        margin-top: 30px;
+        margin-left: 69px;
+    }
+    .Quick-donate{
+        text-align: center;
+        justify-content: center;
+    }
+    .Quick-donate::before{
+        top: 85px;
+        left: 29px;
+    }
+    .Quick-donate-submit{
+        width: 300px;
+        height: 45px;
+        padding-left: 36px;
+    }
+    .serch-form-submit-slider-right{
+        background: url(../../assets/icons/quick-don-320px.svg) no-repeat 0 0 transparent;
+        background-position: right;
+        padding-right: 58px;
+    }
+    
+}
 /*Did you know*/
 
 .Did-you-know-background{
