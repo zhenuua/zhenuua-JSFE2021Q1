@@ -19,7 +19,7 @@
       <label>
         Blur:
         <input name="blur" data-sizing="px" type="range" min="0" max="10" value="0" />
-        <output name="result">0</output>
+        <output name="result">0</output>   
       </label>
       <label>
         Invert:
@@ -48,11 +48,16 @@
         <button class="btn btn-next btn-active">Next picture</button>
         <label class="btn btn-load" for="btnInput">
           Load picture
-          <input class="btn-load--input" id="btnInput" name="upload" type="file" placeholder="Load picture" />
+          <input class="btn-load--input" id="btnInput" name="upload" type="file" placeholder="Load picture" accept="image/jpg,image/jpeg,image/png,image/gif"/>
         </label>
         <button class="btn btn-save">Save picture</button>
       </div>
-      <img src="assets/img/img.jpg" alt="image" />
+      <canvas class="canvas"></canvas>
+      
+
+      <!--<img id="image" src="assets/img/img.jpg" alt="image" />-->
+      
+      
     </div>
   </main>
   <footer class="footer">
