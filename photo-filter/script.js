@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", function (){drawImage('./assets/img/img.jpg')} );
+document.addEventListener("DOMContentLoaded", function (){
+          imageSrc = './assets/img/img.jpg'
+          drawImage('./assets/img/img.jpg')} );
 const canvas = document.querySelector('canvas');
 const allBtn = document.querySelectorAll('.btn') 
 let imageSrc = '' 
@@ -53,7 +55,7 @@ function handleInputUpdate(e){
     this.nextElementSibling.innerHTML = this.value;
 }
 
-inputs.forEach(input => input.addEventListener('change', handleInputUpdate))  //mousemove
+inputs.forEach(input => input.addEventListener('input', handleInputUpdate))  //mousemove
 //inputs.forEach(input => input.addEventListener('mousemove', handleInputUpdate))
 
 // --------- Reset --------
@@ -195,7 +197,7 @@ function chancheColorBottonLoad(e){
 
   function saveImage(e) {
     let link = document.createElement("a");
-    link.download = 'image.jpg';   
+    link.download = 'image.png';   
     link.href = canvas.toDataURL(); 
     link.click(); 
     link.delete;
