@@ -99,10 +99,9 @@ if (now >= 0 && now <= 5){
   now ='morning/'
 } if (now >= 12 && now <= 17){
   now ='day/'
-} else {
+} if (now >= 18 && now <= 24){
   now ='evening/'
 }
-//console.log(now);
 
 const base = 'https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/';
 const images = ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'];
