@@ -351,6 +351,7 @@ input[type="checkbox"] {
     height: 787.5px;
 }
 .video-panda-main-1{
+    position: relative;
     width: 320px;
     height: 209px;
 }
@@ -1154,3 +1155,13 @@ input[type="checkbox"] {
 .slider-video:hover{
     transform: scale(1.2);
 }
+
+.cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+  
