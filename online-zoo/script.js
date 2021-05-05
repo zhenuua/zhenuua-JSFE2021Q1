@@ -6,9 +6,7 @@ let popupDonateWindow = document.querySelector('.popup-1')
 let popupDonateWindowPrice = document.querySelector('.popup-2')
 let popupDonateWindowName = document.querySelector('.popup-3')
 let popupDonateCreditCard = document.querySelector('.popup-4')
-
 let popupClose = document.querySelector('.popup-close')
-
 let popup1Botton = document.querySelectorAll('.popup-1-botton')
 let popup2Botton = document.querySelectorAll('.popup-2-botton')
 let donateValue = '';
@@ -20,26 +18,30 @@ let backBotton1 = document.getElementById('back-btn-1')
 let backBotton2 = document.getElementById('back-btn-2')
 const forSpecialPetBotton = document.querySelector('.botton-for-special-pet')
 const quickDonateSubmit = document.querySelector('.Quick-donate-submit-ok')
-const OtherAmountDotton = document.querySelector('.botton-other-amount')
 let quickDonateInput = document.querySelector('.Quick-donate-submit')
 const otherAmountInput = document.querySelector('.other-amount-input')
+const OtherAmountDotton = document.querySelector('.botton-other-amount')
 const forSpecialPetInput = document.querySelector('.for-special-pet-input')
 let popupBody0 = document.querySelectorAll('.popup-body')[0]
 let popupBody1 = document.querySelectorAll('.popup-body')[1]
 let popupBody2 = document.querySelectorAll('.popup-body')[2]
 let popupBody3 = document.querySelectorAll('.popup-body')[3]
+//for correct inputs
+const yourName = document.getElementById('1-name-popup') 
+const yourMail = document.getElementById('email-popup') 
+const cardNumber = document.getElementById('card-num-popup')
+const cvv = document.getElementById('cvv-popup')
+const cardMonth = document.getElementById('mounth')
+const cardYear = document.getElementById('year')
 
-let prevBtn = document.querySelector('.slider-to-left')
-let nextBtn = document.querySelector('.slider-to-right')
-let lineOneSlide = document.querySelector('.line-card-one')
-let lineTwoSlide = document.querySelector('.line-card-two')
-let counter = 0;
+
 function donatePopup() {
   popupDonateWindow.style.display = "block";
   popup1Botton.forEach(item => {
     item.addEventListener('click', openPopup2)
   })
 }
+
 function closeDonatePopup() {
   popupDonateWindow.style.display = "none";
 }
@@ -48,6 +50,7 @@ popupMain.forEach(item => {item.addEventListener('mouseup', e => {
   if (e.target === popupBody0 || e.target === popupBody1 || e.target === popupBody2 || e.target === popupBody3) {
     item.style.display = "none";
     otherAmountInput.value = '';
+    otherAmountInput.setAttribute('disabled',"");
     forSpecialPetBotton.classList.remove('price-active-btn');
     forSpecialPetInput.setAttribute('disabled',"");
     popup2Botton.forEach(item => {
@@ -57,10 +60,11 @@ popupMain.forEach(item => {item.addEventListener('mouseup', e => {
 })}) 
 
 function openPopup2(){
-  console.log(this.innerText);
+  
+  //console.log(this.innerText);
   popupDonateWindow.style.display = "none";
   popupDonateWindowPrice.style.display = "block";
-
+  
   popup2Botton.forEach(item => {
     if (item.value == this.innerText){
       item.classList.add('price-active-btn')
@@ -70,8 +74,15 @@ function openPopup2(){
 
 function quickopenPopup2(){
   popupDonateWindowPrice.style.display = "block";
-  OtherAmountDotton.classList.add('price-active-btn')
-  otherAmountInput.value = quickDonateInput.value
+  
+  if (quickDonateInput.value === ''){
+    document.querySelector('.if-quick-none').classList.add('price-active-btn') 
+  } else {
+    otherAmountInput.removeAttribute('disabled');
+    OtherAmountDotton.classList.add('price-active-btn')
+    otherAmountInput.value = quickDonateInput.value
+    otherAmountInput.focus();
+  }
 }
 
 function forSpecialPetToggle(){
@@ -84,6 +95,7 @@ function forSpecialPetToggle(){
 }
 
 function addActiveBotton(e){
+  //nextPpup2Botton.removeAttribute('disabled');
   if (!e.target.classList.contains('price-active-btn')){
     popup2Botton.forEach(
       item =>{
@@ -94,6 +106,12 @@ function addActiveBotton(e){
 
 
 function openPopup3() {
+  // if (OtherAmountDotton.classList.contains('price-active-btn') &&  (otherAmountInput.value === '' || otherAmountInput.value === 0)){
+  //   console.log('ggg');
+  //   nextPpup2Botton.setAttribute('disabled',"");
+  // } else {
+  //   nextPpup2Botton.removeAttribute('disabled');
+  // }
   popupDonateWindowPrice.style.display = "none";
   popupDonateWindowName.style.display = "block";
 }
@@ -102,90 +120,96 @@ function openPopup4() {
   popupDonateWindowName.style.display = "none";
   popupDonateCreditCard.style.display = "block";
 }
+
 function competeDonation() {
+  otherAmountInput.setAttribute('disabled',"");
   popupDonateCreditCard.style.display = "none";
   alert("Thank you for your donation!")
-
-
+                                      
   popup2Botton.forEach(item => {
     item.classList.remove('price-active-btn')
   })
 }
 
 
-
-//-----------------Slider meet our pets
-
-function prevSlide(){
-  lineOneSlide.style.transition = '0.5s';
-  lineOneSlide.style.left = '-480px';
-console.log('prev');
+function unBlockNext2(){
+  const re = /\S+@\S+\.\S+/;
+if (yourName.value === ''){
+  yourName.classList.add('error-input-bg')
+  yourName.classList.remove('correct-input-bg')
+} else {
+  yourName.classList.remove('error-input-bg')
+  yourName.classList.add('correct-input-bg')
+}
+if (re.test(yourMail.value) === false){
+  yourMail.classList.add('error-input-bg')
+  yourMail.classList.remove('correct-input-bg')
+} else {
+  yourMail.classList.remove('error-input-bg')
+  yourMail.classList.add('correct-input-bg')
+}
+  if (yourName.value !== '' && re.test(yourMail.value)){
+    nextPpup3Botton.removeAttribute('disabled');
+    nextPpup3Botton.classList.remove('disabled-opasity')
+  } else{
+    nextPpup3Botton.setAttribute('disabled',"");
+    nextPpup3Botton.classList.add('disabled-opasity')
+  }
 }
 
-function nextSlide(){
-  counter++;
-  let value = -480*counter;
-  lineOneSlide.style.transition = '0.5s';
-  lineOneSlide.style.left =   `${value}px`;
+function unBlockCompleteDonate(){
 
-  console.log(counter);
+    if (cvv.value.length < 3){
+      cvv.classList.add('error-input-bg')
+      cvv.classList.remove('correct-input-bg')
+    } else{
+      cvv.classList.remove('error-input-bg')
+      cvv.classList.add('correct-input-bg')
+    } 
+    if (cardNumber.value.length <= 10){
+      cardNumber.classList.add('error-input-bg')
+      cardNumber.classList.remove('correct-input-bg')
+    } else{
+      cardNumber.classList.remove('error-input-bg')
+      cardNumber.classList.add('correct-input-bg')
+    }
+    if (cardMonth.value === 'none'){
+      cardMonth.classList.add('error-input-bg')
+      cardMonth.classList.remove('correct-input-bg')
+    } else{
+      cardMonth.classList.remove('error-input-bg')
+      cardMonth.classList.add('correct-input-bg')
+    }
+    if (cardYear.value === 'none'){
+      cardYear.classList.add('error-input-bg')
+      cardYear.classList.remove('correct-input-bg')
+    } else{
+      cardYear.classList.remove('error-input-bg')
+      cardYear.classList.add('correct-input-bg')
+    }
+   
+    if (cvv.value.length > 3 || cardNumber.value.length > 10){
+    cvv.value = cvv.value.slice(0, 3)
+    cardNumber.value = cardNumber.value.slice(0, 16)
+    }
+
+    if (cvv.value.length === 3 && cardNumber.value.length > 10 && cardMonth.value !== 'none' && cardYear.value !== 'none'){
+      completeDonationBotton.removeAttribute('disabled');
+      completeDonationBotton.classList.remove('disabled-opasity')
+    } else {
+      completeDonationBotton.setAttribute('disabled',"");
+      completeDonationBotton.classList.add('disabled-opasity')
+    }
 }
 
-
-popup2Botton.forEach(item => item.addEventListener('click', addActiveBotton))
-
-donateNowBtn.addEventListener('click', donatePopup)
-donateVolunteersBtn.addEventListener('click', donatePopup)
-popupClose.addEventListener('click', closeDonatePopup)
-nextPpup2Botton.addEventListener('click', openPopup3)
-nextPpup3Botton.addEventListener('click', openPopup4)
-completeDonationBotton.addEventListener('click', competeDonation)
-quickDonateSubmit.addEventListener('click', quickopenPopup2)
-forSpecialPetBotton.addEventListener('click', forSpecialPetToggle)
-
-
-
-
-const namecard = document.getElementById('name-popup')
-const email = document.getElementById('email-popup')
-const cvv = document.getElementById('cvv-popup')
-const card = document.getElementById('card-num-popup')
-
-
-cvv.addEventListener('input', function(){
-
-if (cvv.value.length === 3){
-completeDonationBotton.disabled = true
-}else {
-  completeDonationBotton.disabled = false
+function unBlockInputOther(){
+  if  (OtherAmountDotton.classList.contains('price-active-btn')){
+    otherAmountInput.removeAttribute('disabled');
+    otherAmountInput.focus();
+    } else {
+      otherAmountInput.setAttribute('disabled',"");
+    }
 }
-
-}
-)
-
-
-
-// completeDonationBotton.addEventListener('mouseover', function(){
-//   console.log('comlete');
-// const namecard = document.getElementById('name-popup')
-// const email = document.getElementById('email-popup')
-// const cvv = document.getElementById('cvv-popup')
-// const card = document.getElementById('card-num-popup')
-  
-//   if (namecard.value !== '' && email.value !== '' && cvv.value.length === 3 && card.length >= 10 && card.length <= 16){
-//     completeDonationBotton.disabled = false
-//   } else {
-//     completeDonationBotton.disabled = true
-//   }
-// })
-
-
-prevBtn.addEventListener('click', prevSlide)
-nextBtn.addEventListener('click', nextSlide)
-
-
-
-
 //Btn-back
 function backBtn1(){
   popupDonateWindowPrice.style.display = "block";
@@ -195,34 +219,98 @@ function backBtn2(){
   popupDonateWindowName.style.display = "block";
   popupDonateCreditCard.style.display = "none";
 }
-backBotton1.addEventListener('click', backBtn1)
-backBotton2.addEventListener('click', backBtn2)
-//popup1Botton[0].addEventListener('click', openPopup2)
 
-
-
-
-
-
-//ограничение ввода знаков в input
+//ограничение ввода знаков в quick donate input
 
 function checkValueDonate(){
- if (quickDonateInput.value.length > 4){
-  quickDonateInput.value = quickDonateInput.value.slice(0, 4)
- }
-}
-function checkValueDonatePop2(){
-  if (otherAmountInput.value.length > 4){
-    otherAmountInput.value = otherAmountInput.value.slice(0, 4)
+  if (quickDonateInput.value.length > 4){
+   quickDonateInput.value = quickDonateInput.value.slice(0, 4)
   }
  }
-function checkCvv(){
-  if (cvv.value.length > 3){
-    cvv.value = cvv.value.slice(0, 3)
+ 
+ function checkValueDonatePop2(){
+   if (otherAmountInput.value.length > 4){
+     otherAmountInput.value = otherAmountInput.value.slice(0, 4)
    }
-}
+  }
 
+popup2Botton.forEach(item => item.addEventListener('click', addActiveBotton))
+donateNowBtn.addEventListener('click', donatePopup)
+donateVolunteersBtn.addEventListener('click', donatePopup)
+popupClose.addEventListener('click', closeDonatePopup)
+nextPpup2Botton.addEventListener('click', openPopup3)
+nextPpup3Botton.addEventListener('click', openPopup4)
+completeDonationBotton.addEventListener('click', competeDonation)
+quickDonateSubmit.addEventListener('click', quickopenPopup2)
+forSpecialPetBotton.addEventListener('click', forSpecialPetToggle)
+
+OtherAmountDotton.addEventListener('click', unBlockInputOther)
+yourName.addEventListener('input', unBlockNext2)
+yourMail.addEventListener('input', unBlockNext2)
+cardNumber.addEventListener('input', unBlockCompleteDonate)
+cvv.addEventListener('input', unBlockCompleteDonate)
+cardMonth.addEventListener('input', unBlockCompleteDonate)
+cardYear.addEventListener('input', unBlockCompleteDonate)
+
+backBotton1.addEventListener('click', backBtn1)
+backBotton2.addEventListener('click', backBtn2)
 
 quickDonateInput.addEventListener('input', checkValueDonate)
-cvv.addEventListener('input', checkCvv)
 otherAmountInput.addEventListener('input', checkValueDonatePop2)
+
+//-----------------Slider meet our pets-------------------
+
+//slider meet pets
+let prevBtn = document.querySelector('.slider-to-left')
+let nextBtn = document.querySelector('.slider-to-right')
+let lineOneSlide = document.querySelector('.line-card-one')
+let lineTwoSlide = document.querySelector('.line-card-two')
+let counter = 0;
+
+function prevSlide(){
+  if (counter > 0){
+    counter--;
+    let value = -480*counter;
+    lineOneSlide.style.transition = '0.5s';
+    lineTwoSlide.style.transition = '0.5s';
+
+    lineOneSlide.style.left = `${value}px`;
+    lineTwoSlide.style.left = `${value}px`;
+    //console.log(counter);
+  }
+}
+
+function nextSlide(){
+  if (counter < 5){
+    counter++;
+    let value = -480*counter;
+    lineOneSlide.style.transition = '0.5s';
+    lineTwoSlide.style.transition = '0.5s';
+
+    lineOneSlide.style.left = `${value}px`;
+    lineTwoSlide.style.left = `${value}px`;
+    //console.log(counter);
+  }
+}
+
+prevBtn.addEventListener('click', prevSlide)
+nextBtn.addEventListener('click', nextSlide)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

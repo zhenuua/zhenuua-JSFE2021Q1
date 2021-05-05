@@ -1370,7 +1370,6 @@ h3{
 }
 .string-new{
     display: flex;
-
 }
 .comment-one-block{
     box-sizing: border-box;
@@ -2306,7 +2305,9 @@ input::-webkit-inner-spin-button {
     top: 0;
     left: 0;
     z-index: 100;
-    /* для анимации:opacity: 0;visibility: hidden;
+    overflow-y: auto;
+    /* transition: all 0.8s ease 0s;
+    для анимации:opacity: 0;visibility: hidden;
     */
 }
 .popup-1{
@@ -2319,9 +2320,6 @@ input::-webkit-inner-spin-button {
     display: none;
 }
 .popup-4{
-    display: none;
-}
-.popup-5{
     display: none;
 }
 .popup-body{
@@ -2821,3 +2819,14 @@ select{
     border-color: green;
     outline: 0; */
   }
+.error-input-bg{
+    background: rgba(245, 128, 33, 0.2);
+    border: 1px solid #F58021;
+}
+.disabled-opasity{
+    opacity: 0.5;
+}
+.correct-input-bg{
+    border: rgba(0, 160, 146,1);
+    box-shadow: 0 0 10px 0 rgba(0, 160, 146,0.6)
+}
