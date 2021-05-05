@@ -2830,3 +2830,20 @@ select{
     border: rgba(0, 160, 146,1);
     box-shadow: 0 0 10px 0 rgba(0, 160, 146,0.6)
 }
+
+
+
+.string-comment-one, .string-comment-two{
+    transition: all 0.8s ease 0s;
+}
+.wrapper-comment{
+    width: 1920px;
+    padding-left: 515px;
+}
+ .string-new {
+    width: 2180px;
+} 
+.comments-all{
+    overflow: hidden;
+    /* position: relative; */
+}

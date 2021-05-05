@@ -116,9 +116,16 @@
           <a href="#.html">
             <img src="../../../assets/icons/slider-video-left.svg" alt="slider to left" class="slider-video">
           </a>
-          <iframe class="video-panda-main-1" src="https://www.youtube.com/embed/65JHo3Cy2tY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <iframe class="video-panda-main-1" src="https://www.youtube.com/embed/OObOQ2GElhA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <iframe class="video-panda-main-1 video-panda-main-none" src="https://www.youtube.com/embed/tCcd6ZkExuo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="video-panda-main-1">
+            <div class="cover"></div>
+            <iframe  src="https://www.youtube.com/embed/65JHo3Cy2tY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-panda-main-1">
+            <iframe src="https://www.youtube.com/embed/OObOQ2GElhA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-panda-main-1 video-panda-main-none">
+            <iframe  src="https://www.youtube.com/embed/tCcd6ZkExuo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
           <a href="#.html">
             <img src="../../../assets/icons/slider-video-rigth.svg" alt="slider to rigth" class="slider-video">
           </a>
@@ -282,5 +289,13 @@
 </div>
 </footer>
 </body>
+<script>
+  const ff = document.querySelectorAll('.video-panda-main-1')[0] 
 
+function changeVideo(){
+console.log('gg');
+
+}
+  ff.addEventListener('click', changeVideo)
+</script>
 </html>

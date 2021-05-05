@@ -296,17 +296,68 @@ function nextSlide(){
 prevBtn.addEventListener('click', prevSlide)
 nextBtn.addEventListener('click', nextSlide)
 
+//-----------------Slider Comments-------------------
+
+const nextCommentBtn = document.querySelector('.slider-to-right-comment');
+const prevCommentBtn = document.querySelector('.slider-to-left-comment');
+const stringComment1 = document.getElementsByClassName('string-comment-one')[0];
+const stringComment2 = document.querySelector('.string-comment-two');
+//все коменты
+const allComments1 = document.querySelectorAll('.comment-one-str')
+const allComments2 = document.querySelectorAll('.comment-two-str')
+
+let counter2 = 0;
+let Slider = []
 
 
+function nextCommentSlide(){
+
+//   const allComments1 = document.querySelectorAll('.comment-one-str')
+//   const allComments2 = document.querySelectorAll('.comment-two-str')
+//  //let el1and2 = Array.from(allComments1).slice(0,1)
+
+  stringComment1.style.transform = "translate(-545px, 0%)";
+  stringComment2.style.transform = "translate(-545px, 0%)";
+  
+  let clone1 = stringComment1.firstElementChild.cloneNode(true)
+  let clone2 = stringComment2.firstElementChild.cloneNode(true)
+
+  stringComment1.firstElementChild.remove()
+  stringComment2.firstElementChild.remove()
+
+  stringComment1.append(clone1)
+  stringComment2.append(clone2)
+}
 
 
+function prevCommentSlide(){
 
+  stringComment1.style.transform = "translate(+0px, 0%)";
+  stringComment2.style.transform = "translate(+0px, 0%)";
+  
+  let clone1 = stringComment1.lastElementChild.cloneNode(true)
+  let clone2 = stringComment2.lastElementChild.cloneNode(true)
 
+  stringComment1.lastElementChild.remove()
+  stringComment2.lastElementChild.remove()
 
+  stringComment1.prepend(clone1)
+  stringComment2.prepend(clone2)
+}
 
+nextCommentBtn.addEventListener('click', () => {
+  clearInterval(slideTimer);
+  slideTimer =  setInterval(nextCommentSlide, 45000);
+});
+prevCommentBtn.addEventListener('click', () => {
+  clearInterval(slideTimer);
+  slideTimer =  setInterval(nextCommentSlide, 45000);
+});
 
+let slideTimer =  setInterval(nextCommentSlide, 15000);
 
-
+nextCommentBtn.addEventListener('click', nextCommentSlide)
+prevCommentBtn.addEventListener('click', prevCommentSlide)
 
 
 
