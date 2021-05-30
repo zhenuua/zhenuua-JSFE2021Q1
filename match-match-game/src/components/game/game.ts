@@ -15,10 +15,10 @@ export class Game extends BaseComponent {
 
   private isAnimation = false;
 
-  constructor() {
+  constructor() { // time: string
     super('section', ['background-play-zone']);
 
-    this.timer = new Timer('00:30');
+    this.timer = new Timer('00:30'); // time
 
     this.element.appendChild(this.timer.element);
     this.cardsField = new CardsField();

@@ -1,6 +1,6 @@
 import { BaseComponent } from '../base-components';
 
-//import './title.scss';
+// import './title.scss';
 
 export class Title extends BaseComponent {
   constructor(text: string, styleTitle: string[] = []) {

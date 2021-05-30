@@ -12,7 +12,7 @@
   для анимации:opacity: 0;visibility: hidden;
   */
 
-  display: none;
+  display: block; //надо none!
 }
 .popup-body{
   min-height: 100%;

@@ -21,6 +21,6 @@ export class About extends BaseComponent {
     this.element.appendChild(this.aboutItems.element);
 
     this.popup = new PopUp();
-    this.element.appendChild(this.popup.element)
+    this.element.appendChild(this.popup.element);
   }
 }

@@ -4,14 +4,15 @@ import { InputText } from './input-text';
 import { InputCheckBox } from './input-checkbox';
 
 export class PopUpInput extends BaseComponent {
-
   private readonly inputTitle: InputTitle;
+
   private readonly inputText: InputText;
+
   private readonly inputCheckBox: InputCheckBox;
 
-  constructor(option: {inputTitleText: string, placeHolder: string}) {
+  constructor(option: { inputTitleText: string, placeHolder: string }) {
     super('div', ['pop-up-input']);
-    //Name-Block  
+    // Name-Block
     const nameBlock = new BaseComponent('div', ['name-block']);
     this.element.appendChild(nameBlock.element);
 
@@ -21,12 +22,11 @@ export class PopUpInput extends BaseComponent {
     this.inputText = new InputText(option.placeHolder);
     nameBlock.element.appendChild(this.inputText.element);
 
-    //CheckBox
+    // CheckBox
     const checkbox = new BaseComponent('div', ['backgroung-checkbox']);
     this.element.appendChild(checkbox.element);
 
     this.inputCheckBox = new InputCheckBox();
     checkbox.element.appendChild(this.inputCheckBox.element);
-
   }
 }

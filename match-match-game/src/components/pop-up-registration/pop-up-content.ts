@@ -5,9 +5,8 @@ import { Title } from '../title/title';
 import './pop-up.scss';
 
 export class PopUpContent extends BaseComponent {
-
-
   private readonly title: Title;
+
   private readonly popUpField: PopUpField;
 
   constructor() {
@@ -18,6 +17,5 @@ export class PopUpContent extends BaseComponent {
 
     this.popUpField = new PopUpField();
     this.element.appendChild(this.popUpField.element);
-
   }
 }
