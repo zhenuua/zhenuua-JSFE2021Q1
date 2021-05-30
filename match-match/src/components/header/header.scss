@@ -67,7 +67,7 @@
 //     text-decoration: none;
 //     color: #2196F3;
 // } 
-.botton-stop-game {
+.botton-game {
     margin-top: 14px;
     margin-right: 37px;
     padding: 10px;
@@ -84,7 +84,9 @@
 }
 
 /*animation*/
-
+.active-botton-menu{
+    background-color: #1E88E5;
+}
 .header-item:hover{
     background-color: #1E88E5;
 }

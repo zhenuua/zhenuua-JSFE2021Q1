@@ -1,23 +1,21 @@
-import {BaseComponent} from '../base-components';
-import {LogoProfile} from './logo-profile';
-import {Button} from '../botton/button'
+import { BaseComponent } from '../base-components';
+import { LogoProfile } from './logo-profile';
+import { Button } from '../button/button';
 
 import './header.scss';
 
 export class ControlGame extends BaseComponent {
-    private readonly logoPofile: LogoProfile;
-    private readonly button: Button;
+  private readonly logoPofile: LogoProfile;
 
-    constructor(){
-      super('div', ['header-stop-game', 'Roboto-500-14'])
+  private readonly button: Button;
 
-      this.button = new Button('Start Game');
-      this.element.appendChild(this.button.element);
+  constructor() {
+    super('div', ['header-stop-game', 'Roboto-500-14']);
 
-      this.logoPofile = new LogoProfile();
-      this.element.appendChild(this.logoPofile.element);
-     
-     
-      
-    }
+    this.button = new Button('Start Game', ['botton-game']);
+    this.element.appendChild(this.button.element);
+
+    this.logoPofile = new LogoProfile();
+    this.element.appendChild(this.logoPofile.element);
+  }
 }
