@@ -9,9 +9,8 @@ export class InputText extends BaseComponent {
     this.element.addEventListener('keydown', (event) => {
       const el = this.element as HTMLInputElement;
       if (el.value) {
-        console.log(1, el.value);
         validate(el.value);
-        // this.element.addClasslist('.')
+        // this.element.Classlist.add('.mistake')
       }
     });
   }

@@ -21,10 +21,5 @@ export class SelectItemDifficulty extends BaseComponent {
 
     this.hr = new HrElement(['demarcation-line-setting']);
     this.element.appendChild(this.hr.element);
-
-    // this.selectDifficulty.element.addEventListener('input', ()=>{
-    //   console.log( this.element);
-
-    // })
   }
 }

@@ -1,6 +1,7 @@
 import './styles.scss';
 import { App } from './app';
 import { Header } from './components/header/header';
+import { Views, ButtonsNames } from './shared/constants';
 
 let page = 'About';
 let app: App | undefined;
@@ -15,20 +16,16 @@ window.onload = () => {
   function changeCurrentView(newView: string) {
     page = newView;
     if (appElement) {
-      if (page !== 'Game') {
-        console.log('12345');
+      if (page !== Views.Game) {
         app?.game?.stopGame();
       }
-      app = new App(appElement, page);
+      app = new App(appElement);
       app.refreshPage(page);
     }
-
-    console.log(page);
   }
 
   const header = new Header(changeCurrentView);
   document.body.insertBefore(header.element, appElement);
-  // document.body.appendChild(header.element);
 
   const logoButton = document.querySelector('.logo-header');
   if (!logoButton) throw Error('mainButton not found');
@@ -39,21 +36,21 @@ window.onload = () => {
   mainButton.addEventListener('click', () => {
     if (!app?.game) {
       if (appElement) {
-        app = new App(appElement, 'Game');
-        app.refreshPage('Game');
-        mainButton.textContent = 'Stop Game';
+        app = new App(appElement);
+        app.refreshPage(Views.Game);
+        mainButton.textContent = ButtonsNames.stopGame;
       }
     } else {
       app.game.stopGame();
-      mainButton.textContent = 'Start Game';
+      mainButton.textContent = ButtonsNames.startGame;
       if (appElement) {
-        app = new App(appElement, 'Score');
+        app = new App(appElement);
       }
-      app.refreshPage('Score');
+      app.refreshPage(Views.Score);
     }
   });
 
   if (!appElement) throw Error('App root element not found');
-  app = new App(appElement, page);
+  app = new App(appElement);
   app.refreshPage(page);
 };

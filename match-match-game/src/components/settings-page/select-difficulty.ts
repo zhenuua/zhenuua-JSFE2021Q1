@@ -16,13 +16,14 @@ export class SelectDifficulty extends BaseComponent {
     const el = this.element as HTMLInputElement;
 
     this.options = [
-      new Option('4x3', '4'),
-      new Option('4x4', '6'),
-      new Option('4x5', '8'),
+      new Option('4x2', '4'),
+      new Option('4x3', '6'),
+      new Option('4x4', '8'),
     ];
     for (const value of this.options) {
       this.element.appendChild(value.element);
     }
+
     el.value = difficulty.cardsCount.toString();
 
     this.element.addEventListener('input', () => {

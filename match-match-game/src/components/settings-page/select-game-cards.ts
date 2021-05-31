@@ -23,7 +23,8 @@ export class SelectCards extends BaseComponent {
     for (const value of this.options) {
       this.element.appendChild(value.element);
     }
-    el.value = 'animals';
+
+    // el.value = typeCards.cardsCount.toString();
 
     this.element.addEventListener('input', () => {
       if (el.value === 'animals') {

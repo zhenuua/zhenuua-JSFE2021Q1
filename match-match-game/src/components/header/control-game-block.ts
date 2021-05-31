@@ -1,6 +1,7 @@
 import { BaseComponent } from '../base-components';
 import { LogoProfile } from './logo-profile';
 import { Button } from '../button/button';
+import { ButtonsNames } from '../../shared/constants';
 
 import './header.scss';
 
@@ -12,7 +13,7 @@ export class ControlGame extends BaseComponent {
   constructor() {
     super('div', ['header-stop-game', 'Roboto-500-14']);
 
-    this.button = new Button('Start Game', ['button-game']);
+    this.button = new Button(ButtonsNames.startGame, ['button-game']);
     this.element.appendChild(this.button.element);
 
     this.logoPofile = new LogoProfile();

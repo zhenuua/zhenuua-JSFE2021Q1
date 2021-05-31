@@ -3,11 +3,11 @@ import { BaseComponent } from '../base-components';
 import { Card } from '../card/card';
 import { CardsField, SHOW_TIME } from '../cards-field/cards-field';
 import { Timer } from '../timer/timer';
+import { ButtonsNames } from '../../shared/constants';
 
 const FLIP_DELAY = 1000;
 
 export class Game extends BaseComponent {
-
   private cards?: Card[];
 
   private timerId?: number;
@@ -30,40 +30,24 @@ export class Game extends BaseComponent {
     this.element.appendChild(this.cardsField.element);
   }
 
-  stopGame() {
+  stopGame() : void {
     window.clearInterval(this.timerId);
-    console.log('stop game');
     this.timer.stopTimer();
     this.cardsField.openCards();
     const mainButton = document.querySelector('.button-game');
+
     if (mainButton) {
-      console.log('fff');
-
-      mainButton.textContent = 'Start Game';
+      mainButton.textContent = ButtonsNames.startGame;
     }
-
-    // alert('Game over, start new game!');
   }
 
-  newGame(images: string[]) {
+  newGame(images: string[]) : void {
     this.timerId = window.setTimeout(() => this.timer.startTimer(), SHOW_TIME * 1000);
-    // сюда добавить таймер при старте новой игры, метод финиш подсчет очков
-
     this.cardsField.clear();
     this.cards = images
       .concat(images)
       .map((url) => new Card(url))
       .sort(() => Math.random() - 0.5);
-
-    // сделать лучше рандом
-
-    // function shuffle(images: string[]) {
-    //   for (let i = images.length - 1; i > 0; i--) {
-    //     let j = Math.floor(Math.random() * (i + 1));
-    //     [images[i], images[j]] = [images[j], images[i]];
-    //   }
-    // }
-    // shuffle(images);
 
     this.cards.forEach((card) => {
       card.element.addEventListener('click', () => this.cardHandler(card));
@@ -72,13 +56,10 @@ export class Game extends BaseComponent {
     this.cardsField.addCards(this.cards);
   }
 
-  checkGameOver(){
-    const allCardIsFlipped = this.cards?.every((card) => {
-      return card.isFlipped === false;
-    });
-    //console.log(allCardIsFlipped);
-    if (allCardIsFlipped){
-      this.stopGame()
+  checkGameOver() : void {
+    const allCardIsFlipped = this.cards?.every((card) => card.isFlipped === false);
+    if (allCardIsFlipped) {
+      this.stopGame();
     }
   }
 
@@ -97,14 +78,10 @@ export class Game extends BaseComponent {
     }
 
     if (this.activeCard.image !== card.image) {
-      // если не совпали карточки
-      // this.activeCard.showError() - добавить метод showError() -
-      // становится красной и на карту переданную в hendler тоже саамое передаем
       await delay(FLIP_DELAY);
       await Promise.all([this.activeCard.flipToBack(), card.flipToBack()]);
     } else {
-      // при совпаданеии: else{делаем зелеными}
-      this.checkGameOver()
+      this.checkGameOver();
     }
 
     this.activeCard = undefined;

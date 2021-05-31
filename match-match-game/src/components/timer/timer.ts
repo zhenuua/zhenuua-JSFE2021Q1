@@ -35,12 +35,9 @@ export class Timer extends BaseComponent {
   }
 
   startTimer() : void {
-    console.log('startTimer');
-
     this.timeId = window.setInterval(
       () => {
         this.sec += 1;
-        console.log(this.sec);
         this.timerText.element.innerHTML = this.getTime();
       }, 1000,
     );

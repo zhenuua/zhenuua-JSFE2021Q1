@@ -18,35 +18,11 @@ export class App {
 
   private readonly currentView?: string;
 
-  // private selectDifficulty: SelectDifficulty;
+  constructor(private readonly rootElement: HTMLElement) {
 
-  constructor(private readonly rootElement: HTMLElement, page: string) {
-    console.log(1, page);
-    // this.game = new Game();
-    // this.rootElement.appendChild(this.game.element);
-    // this.start();
-
-    // this.about = new About();
-    // this.rootElement.appendChild(this.about.element);
-
-    // this.settings = new Settings();
-    // this.rootElement.appendChild(this.settings.element);
-
-    // this.bestscore = new BestScore();
-    // this.rootElement.appendChild(this.bestscore.element);
   }
 
-  //   findOption(selectDifficulty: string) {
-  //     const option = selectDifficulty;
-
-  //     selectDifficulty.addEventListener('select', (event) => {
-  //       const el = this.element as HTMLInputElement;
-
-  //     })
-  //     // Действия над option
-  //  }
-
-  refreshPage(page: string) {
+  refreshPage(page: string) : void {
     this.rootElement.innerHTML = '';
 
     if (page === Views.About) {
@@ -65,11 +41,11 @@ export class App {
     }
   }
 
-  async start() {
+  async start() : Promise<void> {
     const res = await fetch('./images.json');
     const categories: ImageCategoryModel[] = await res.json();
 
-    const cat = categories[typeCards.cardsCount]; // менять в зависимости от настроки
+    const cat = categories[typeCards.cardsCount];
     const images = cat.images.slice(0, difficulty.cardsCount).map((name) => `${cat.category}/${name}`);
     if (this.game) {
       this.game.newGame(images);
