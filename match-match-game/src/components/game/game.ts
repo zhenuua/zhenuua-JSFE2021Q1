@@ -7,6 +7,9 @@ import { Timer } from '../timer/timer';
 const FLIP_DELAY = 1000;
 
 export class Game extends BaseComponent {
+
+  private cards?: Card[];
+
   private timerId?: number;
 
   private readonly timer: Timer;
@@ -47,7 +50,7 @@ export class Game extends BaseComponent {
     // сюда добавить таймер при старте новой игры, метод финиш подсчет очков
 
     this.cardsField.clear();
-    const cards = images
+    this.cards = images
       .concat(images)
       .map((url) => new Card(url))
       .sort(() => Math.random() - 0.5);
@@ -62,11 +65,21 @@ export class Game extends BaseComponent {
     // }
     // shuffle(images);
 
-    cards.forEach((card) => {
+    this.cards.forEach((card) => {
       card.element.addEventListener('click', () => this.cardHandler(card));
     });
 
-    this.cardsField.addCards(cards);
+    this.cardsField.addCards(this.cards);
+  }
+
+  checkGameOver(){
+    const allCardIsFlipped = this.cards?.every((card) => {
+      return card.isFlipped === false;
+    });
+    //console.log(allCardIsFlipped);
+    if (allCardIsFlipped){
+      this.stopGame()
+    }
   }
 
   private async cardHandler(card: Card) {
@@ -89,7 +102,10 @@ export class Game extends BaseComponent {
       // становится красной и на карту переданную в hendler тоже саамое передаем
       await delay(FLIP_DELAY);
       await Promise.all([this.activeCard.flipToBack(), card.flipToBack()]);
-    } // при совпаданеии: else{делаем зелеными}
+    } else {
+      // при совпаданеии: else{делаем зелеными}
+      this.checkGameOver()
+    }
 
     this.activeCard = undefined;
     this.isAnimation = false;

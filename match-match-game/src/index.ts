@@ -2,7 +2,7 @@ import './styles.scss';
 import { App } from './app';
 import { Header } from './components/header/header';
 
-let page = 'About'; // НАДО! -  About
+let page = 'About';
 let app: App | undefined;
 
 window.onload = () => {
@@ -40,7 +40,6 @@ window.onload = () => {
     if (!app?.game) {
       if (appElement) {
         app = new App(appElement, 'Game');
-        // app.rootElement.innerHTML = '';
         app.refreshPage('Game');
         mainButton.textContent = 'Stop Game';
       }

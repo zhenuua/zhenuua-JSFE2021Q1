@@ -4,6 +4,7 @@ import { Game } from './components/game/game';
 import { BestScore } from './components/best-score-page/best-score-page';
 import { ImageCategoryModel } from './models/image-category-model';
 import { difficulty } from './components/settings-page/select-difficulty';
+import { typeCards } from './components/settings-page/select-game-cards';
 import { Views } from './shared/constants';
 
 export class App {
@@ -24,7 +25,6 @@ export class App {
     // this.game = new Game();
     // this.rootElement.appendChild(this.game.element);
     // this.start();
-    console.log(difficulty);
 
     // this.about = new About();
     // this.rootElement.appendChild(this.about.element);
@@ -69,7 +69,7 @@ export class App {
     const res = await fetch('./images.json');
     const categories: ImageCategoryModel[] = await res.json();
 
-    const cat = categories[2]; // менять в зависимости от настроки
+    const cat = categories[typeCards.cardsCount]; // менять в зависимости от настроки
     const images = cat.images.slice(0, difficulty.cardsCount).map((name) => `${cat.category}/${name}`);
     if (this.game) {
       this.game.newGame(images);

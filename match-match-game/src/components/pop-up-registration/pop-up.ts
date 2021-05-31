@@ -15,4 +15,8 @@ export class PopUp extends BaseComponent {
     this.PopUpcontent = new PopUpContent();
     popUpBody.element.appendChild(this.PopUpcontent.element);
   }
+
+  // showPopUp(){
+  //   this.element.classList.add('')
+  // }
 }

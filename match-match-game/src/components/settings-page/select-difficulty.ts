@@ -33,9 +33,6 @@ export class SelectDifficulty extends BaseComponent {
       } else if (el.value === '8') {
         difficulty.cardsCount = 8;
       }
-
-      // console.log(this.element.getAttribute('value')); // null
-      // console.log(this.element.dataset.value);// undefind
     });
   }
 }
