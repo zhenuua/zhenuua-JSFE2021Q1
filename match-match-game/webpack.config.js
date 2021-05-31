@@ -24,10 +24,7 @@ module.exports = ({ development }) => ({
   mode: development ? 'development' : 'production',
   devtool: development ? 'inline-source-map' : false,
   entry: {
-    // heder: './src/header.ts',
-    //indexhtml: './src/index.html',
     indexts: './src/index.ts',
-    // app: './src/app.ts',
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -48,6 +45,7 @@ module.exports = ({ development }) => ({
       {
         test: /\.(woff(2)?|eot|ttf|otf)$/i,
         type: 'asset/resource',
+        //type: '../public',
       },
       {
         test: /\.css$/i,
@@ -64,13 +62,13 @@ module.exports = ({ development }) => ({
     new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
     new HtmlWebpackPlugin({
       inject: true,
-      template: resolveAppPath('public/index.html'),
+      template: resolveAppPath('src/index.html'),
     }),
-    // new CopyPlugin({
-    //   patterns: [
-    //     { from: 'public' },
-    //   ],
-    // }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'public' },
+      ],
+    }),
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
   ],
   resolve: {

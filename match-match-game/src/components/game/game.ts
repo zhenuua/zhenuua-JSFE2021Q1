@@ -1,12 +1,14 @@
 import { delay } from '../../shared/delay';
 import { BaseComponent } from '../base-components';
 import { Card } from '../card/card';
-import { CardsField } from '../cards-field/cards-field';
+import { CardsField, SHOW_TIME } from '../cards-field/cards-field';
 import { Timer } from '../timer/timer';
 
 const FLIP_DELAY = 1000;
 
 export class Game extends BaseComponent {
+  private timerId?: number;
+
   private readonly timer: Timer;
 
   private readonly cardsField: CardsField;
@@ -15,17 +17,33 @@ export class Game extends BaseComponent {
 
   private isAnimation = false;
 
-  constructor() { // time: string
+  constructor() {
     super('section', ['background-play-zone']);
 
-    this.timer = new Timer('00:30'); // time
+    this.timer = new Timer();
 
     this.element.appendChild(this.timer.element);
     this.cardsField = new CardsField();
     this.element.appendChild(this.cardsField.element);
   }
 
+  stopGame() {
+    window.clearInterval(this.timerId);
+    console.log('stop game');
+    this.timer.stopTimer();
+    this.cardsField.openCards();
+    const mainButton = document.querySelector('.button-game');
+    if (mainButton) {
+      console.log('fff');
+
+      mainButton.textContent = 'Start Game';
+    }
+
+    // alert('Game over, start new game!');
+  }
+
   newGame(images: string[]) {
+    this.timerId = window.setTimeout(() => this.timer.startTimer(), SHOW_TIME * 1000);
     // сюда добавить таймер при старте новой игры, метод финиш подсчет очков
 
     this.cardsField.clear();

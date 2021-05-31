@@ -13,7 +13,6 @@ export class HeaderMenuItem extends BaseComponent {
     const a = new BaseComponent('a', ['no-class']);
     this.element.appendChild(a.element);
     a.element.innerHTML = text;
-    // this.element.innerHTML = text;
 
     this.element.addEventListener('click', changeCurrentView);
   }

@@ -10,7 +10,7 @@ export class PopUpInput extends BaseComponent {
 
   private readonly inputCheckBox: InputCheckBox;
 
-  constructor(option: { inputTitleText: string, placeHolder: string }) {
+  constructor(option: { inputTitleText: string, placeHolder: string, validate: (text: string) => boolean }) {
     super('div', ['pop-up-input']);
     // Name-Block
     const nameBlock = new BaseComponent('div', ['name-block']);
@@ -19,7 +19,7 @@ export class PopUpInput extends BaseComponent {
     this.inputTitle = new InputTitle(option.inputTitleText);
     nameBlock.element.appendChild(this.inputTitle.element);
 
-    this.inputText = new InputText(option.placeHolder);
+    this.inputText = new InputText(option.placeHolder, option.validate);
     nameBlock.element.appendChild(this.inputText.element);
 
     // CheckBox

@@ -10,8 +10,9 @@ export class SelectCards extends BaseComponent {
     super('select', ['select-type', 'Roboto-14-21']);
 
     this.options = [
-      new Option('animals'),
-      new Option('vehicles'),
+      new Option('animals', 'animals'),
+      new Option('flags', 'flags'),
+      new Option('nature', 'nature'),
     ];
     for (const value of this.options) {
       this.element.appendChild(value.element);
