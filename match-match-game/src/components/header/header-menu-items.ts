@@ -13,8 +13,8 @@ export class HeaderMenuItems extends BaseComponent {
     const ul = new BaseComponent('ul', ['header-list', 'Roboto-12-15']);
     this.element.appendChild(ul.element);
 
-    function menuHandler(page: string): () => void {
-      return function () : void {
+    function menuHandler(page: string) :() => void {
+      return () => {
         changeCurrentView(page);
       };
     }

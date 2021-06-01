@@ -1,11 +1,9 @@
 import { delay } from '../../shared/delay';
 import { BaseComponent } from '../base-components';
 import { Card } from '../card/card';
-import { CardsField, SHOW_TIME } from '../cards-field/cards-field';
+import { CardsField } from '../cards-field/cards-field';
 import { Timer } from '../timer/timer';
-import { ButtonsNames } from '../../shared/constants';
-
-const FLIP_DELAY = 1000;
+import { ButtonsNames, Time } from '../../shared/constants';
 
 export class Game extends BaseComponent {
   private cards?: Card[];
@@ -42,7 +40,7 @@ export class Game extends BaseComponent {
   }
 
   newGame(images: string[]) : void {
-    this.timerId = window.setTimeout(() => this.timer.startTimer(), SHOW_TIME * 1000);
+    this.timerId = window.setTimeout(() => this.timer.startTimer(), Time.SHOW_TIME);
     this.cardsField.clear();
     this.cards = images
       .concat(images)
@@ -78,7 +76,7 @@ export class Game extends BaseComponent {
     }
 
     if (this.activeCard.image !== card.image) {
-      await delay(FLIP_DELAY);
+      await delay(Time.FLIP_DELAY);
       await Promise.all([this.activeCard.flipToBack(), card.flipToBack()]);
     } else {
       this.checkGameOver();

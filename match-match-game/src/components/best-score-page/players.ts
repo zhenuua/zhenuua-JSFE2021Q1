@@ -36,9 +36,4 @@ export class Players extends BaseComponent {
       this.element.appendChild(value.element);
     }
   }
-
-  // сортировка по количесту очков
-  // sortByScore(players) {
-  //   players.sort((a, b) => a.score > b.score ? 1 : -1);
-  // }
 }
