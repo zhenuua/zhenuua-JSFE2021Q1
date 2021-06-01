@@ -27,7 +27,7 @@ export class AboutItems extends BaseComponent {
         style: ['instruction-3'],
       }),
     ];
-    for (const value of this.aboutItems) { // forEach
+    for (const value of this.aboutItems) {
       this.element.appendChild(value.element);
     }
   }

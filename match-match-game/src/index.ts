@@ -1,5 +1,5 @@
 import './styles.scss';
-import { App } from './app';
+import { App } from './components/app';
 import { Header } from './components/header/header';
 import { Views, ButtonsNames } from './shared/constants';
 
@@ -26,10 +26,6 @@ window.onload = () => {
 
   const header = new Header(changeCurrentView);
   document.body.insertBefore(header.element, appElement);
-
-  const logoButton = document.querySelector('.logo-header');
-  if (!logoButton) throw Error('mainButton not found');
-  logoButton.addEventListener('click', () => { page = 'About'; });
 
   const mainButton = document.querySelector('.button-game');
   if (!mainButton) throw Error('mainButton not found');

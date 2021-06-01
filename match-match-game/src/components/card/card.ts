@@ -35,11 +35,4 @@ export class Card extends BaseComponent {
       });
     });
   }
-
-  // flipToBack() {
-  //     this.element.classList.add(FLIP_CLASS)
-  // }
-  // flipToFront() {
-  //     this.element.classList.remove(FLIP_CLASS)
-  // }
 }

@@ -21,7 +21,7 @@ export class Player extends BaseComponent {
     nameBlock.element.appendChild(p.element);
 
     const img = new BaseComponent('img', ['image-of-player']);
-    img.element.setAttribute('src', './users-images/logo-profile-without-photo.svg'); // options.image
+    img.element.setAttribute('src', './users-images/logo-profile-without-photo.svg');
     nameBlock.element.appendChild(img.element);
 
     const info = new BaseComponent('div', ['info-about-player']);

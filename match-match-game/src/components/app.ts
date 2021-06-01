@@ -1,11 +1,11 @@
-import { About } from './components/about-page/about-page';
-import { Settings } from './components/settings-page/settings-page';
-import { Game } from './components/game/game';
-import { BestScore } from './components/best-score-page/best-score-page';
-import { ImageCategoryModel } from './models/image-category-model';
-import { difficulty } from './components/settings-page/select-difficulty';
-import { typeCards } from './components/settings-page/select-game-cards';
-import { Views } from './shared/constants';
+import { About } from './about-page/about-page';
+import { Settings } from './settings-page/settings-page';
+import { Game } from './game/game';
+import { BestScore } from './best-score-page/best-score-page';
+import { ImageCategoryModel } from '../models/image-category-model';
+import { difficulty } from './settings-page/select-difficulty';
+import { typeCards } from './settings-page/select-game-cards';
+import { Views } from '../shared/constants';
 
 export class App {
   public game?: Game;

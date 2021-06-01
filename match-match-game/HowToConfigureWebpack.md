@@ -56,8 +56,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Hello world',
-      // template: './src/index.html',
+      title: 'match-match-game',
     }),
   ]
 }
