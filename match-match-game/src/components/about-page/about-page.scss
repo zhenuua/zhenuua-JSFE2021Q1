@@ -46,16 +46,18 @@
     box-sizing: border-box;
     background-color: #FFFFFF;
     color: rgba(0, 0, 0, 0.6);
+
+        &.-small-height{
+            height: 132px;
+        }
+        &.-medium-height{
+            height: 230px;
+        }
+        &.-big-height{
+            height: 240px;
+        }
 }
-.instruction-1{
-    height: 230px;
-}
-.instruction-2{
-    height: 132px;
-}
-.instruction-3{
-    height: 240px;
-}
+
 .image-instruction{
     height: fit-content;
 }

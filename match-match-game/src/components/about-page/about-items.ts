@@ -12,19 +12,19 @@ export class AboutItems extends BaseComponent {
         image: './about-images/about-image-1.png',
         textStepInner: 'Register new player in game',
         numberStepInner: 1,
-        style: ['instruction-1'],
+        style: ['-medium-height'],
       }),
       new AboutItem({
         image: './about-images/about-image-2.png',
         textStepInner: 'Configure your game settings',
         numberStepInner: 2,
-        style: ['instruction-2'],
+        style: ['-small-height'],
       }),
       new AboutItem({
         image: './about-images/about-image-3.png',
         textStepInner: 'Start you new game! Remember card positions and match it before times up.',
         numberStepInner: 3,
-        style: ['instruction-3'],
+        style: ['-big-height'],
       }),
     ];
     for (const value of this.aboutItems) {
