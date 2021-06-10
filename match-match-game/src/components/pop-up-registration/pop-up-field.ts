@@ -1,9 +1,10 @@
 import { BaseComponent } from '../base-components';
 import { Button } from '../button/button';
 import { PopUpInput } from './pop-up-input';
+import { scoreGame } from '../game/game';
 
 export class PopUpField extends BaseComponent {
-  private readonly PopUpInputs: PopUpInput[];
+  private PopUpInputs: PopUpInput[];
 
   private readonly buttonAddUser: Button;
 
@@ -16,16 +17,43 @@ export class PopUpField extends BaseComponent {
     this.element.appendChild(popContainerInput.element);
 
     const validateName = (textName: string) => {
-      console.log(textName);
-      return false;
+      const reNumber = /^[0-9]+$/;
+      const reSimbols = /[~!@#$%*()_—+=|:;"'`<>,.?/^]+/;
+      const reSpace = /^[ ]+$/;
+
+      if (textName.length === 0) {
+        return 'Поле не может быть пустым.';
+      }
+      if (reSpace.test(textName)) {
+        return 'Поле не может состоять только из пробелов.';
+      }
+      if (textName.length > 30) {
+        return 'Количество символов не должно превышать 30.';
+      }
+      if (reNumber.test(textName)) {
+        return 'Поле не может состоять только из цифр.';
+      }
+      if (reSimbols.test(textName)) {
+        return 'Поле не может содержать служебные символы.';
+      }
+
+      return '';
     };
-    const validateLastName = (textLastName: string) => {
-      console.log(textLastName);
-      return false;
-    };
+
     const validateEmail = (textEmail: string) => {
-      console.log(textEmail);
-      return false;
+      const reMail = /\S+@\S+\.\S+/;
+
+      if (!reMail.test(textEmail)) {
+        return 'Вы ввели некорректный email.';
+      }
+      if (textEmail.length === 0) {
+        return 'Поле не может быть пустым.';
+      }
+      if (textEmail.length > 30) {
+        return 'Количество символов не должно превышать 30.';
+      }
+
+      return '';
     };
 
     this.PopUpInputs = [
@@ -37,7 +65,7 @@ export class PopUpField extends BaseComponent {
       new PopUpInput({
         inputTitleText: 'Last Name',
         placeHolder: 'Doe',
-        validate: validateLastName,
+        validate: validateName,
       }),
       new PopUpInput({
         inputTitleText: 'E-mail',
@@ -61,10 +89,46 @@ export class PopUpField extends BaseComponent {
     const buttonsBlock = new BaseComponent('div', ['botton-pop-up-field']);
     popContainerBottons.element.appendChild(buttonsBlock.element);
 
-    this.buttonAddUser = new Button('Add user', ['botton-pop-up', 'add-user-botton', 'disabled']);
+    this.buttonAddUser = new Button('Add score', ['botton-pop-up', 'add-user-botton', 'disabled']);
     buttonsBlock.element.appendChild(this.buttonAddUser.element);
+    this.buttonAddUser.element.addEventListener('click', this.addScore);
 
-    this.buttonCancel = new Button('cancel', ['botton-pop-up', 'add-user-cancel']);
+    this.buttonCancel = new Button('Сancel', ['botton-pop-up', 'add-user-cancel']);
     buttonsBlock.element.appendChild(this.buttonCancel.element);
+    this.buttonCancel.element.addEventListener('click', this.Сancel);
   }
+
+  addScore = () : void => {
+    const nameInput = this.PopUpInputs[0].element.querySelector('.input-field') as HTMLInputElement;
+    const lastNameInput = this.PopUpInputs[1].element.querySelector('.input-field') as HTMLInputElement;
+    const emailInput = this.PopUpInputs[2].element.querySelector('.input-field') as HTMLInputElement;
+
+    const newScore = {
+      name: `${nameInput.value} ${lastNameInput.value}`,
+      email: emailInput.value,
+      score: scoreGame.score,
+    };
+    const close = document.querySelector('.showPopUp');
+    const oldScores = window.localStorage.getItem('scores');
+    if (oldScores) {
+      const oldScoresArray = JSON.parse(oldScores);
+      oldScoresArray.push(newScore);
+      window.localStorage.setItem('scores', JSON.stringify(oldScoresArray));
+      if (close) {
+        close.classList.remove('showPopUp');
+      }
+    } else {
+      window.localStorage.setItem('scores', JSON.stringify([newScore]));
+      if (close) {
+        close.classList.remove('showPopUp');
+      }
+    }
+  };
+
+  Сancel = () : void => {
+    const close = document.querySelector('.showPopUp');
+    if (close) {
+      close.classList.remove('showPopUp');
+    }
+  };
 }

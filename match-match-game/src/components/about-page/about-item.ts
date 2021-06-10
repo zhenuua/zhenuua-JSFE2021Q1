@@ -5,7 +5,7 @@ import { TextStep } from './text-step';
 export class AboutItem extends BaseComponent {
   private readonly numberStep: NumberStep;
 
-  private readonly textStep: TextStep;
+  private textStep: TextStep;
 
   constructor(options:{ image: string, textStepInner: string, numberStepInner: number, style: string[] }) {
     super('div', ['about-point']);

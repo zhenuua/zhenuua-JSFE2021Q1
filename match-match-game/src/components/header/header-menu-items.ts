@@ -18,9 +18,9 @@ export class HeaderMenuItems extends BaseComponent {
         changeCurrentView(page);
       };
     }
-
+    //'active-botton-menu'
     this.headerMenuItems = [
-      new HeaderMenuItem('./head-images/question.svg', 'About Game', ['active-botton-menu'], menuHandler(Views.About)),
+      new HeaderMenuItem('./head-images/question.svg', 'About Game', [], menuHandler(Views.About)),
       new HeaderMenuItem('./head-images/star.svg', 'Best Score', [], menuHandler(Views.Score)),
       new HeaderMenuItem('./head-images/gear.svg', 'Game Settings', [], menuHandler(Views.Settings)),
     ];
