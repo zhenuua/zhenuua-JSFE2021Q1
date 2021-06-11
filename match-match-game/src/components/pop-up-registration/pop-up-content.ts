@@ -1,7 +1,7 @@
 import { BaseComponent } from '../base-components';
 import { PopUpField } from './pop-up-field';
 import { Title } from '../title/title';
-import { scoreGame } from '../game/game';
+import { scoreGame } from '../score/score';
 
 import './pop-up.scss';
 

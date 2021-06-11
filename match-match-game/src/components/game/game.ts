@@ -6,10 +6,7 @@ import { Timer } from '../timer/timer';
 import { ButtonsNames, Time } from '../../shared/constants';
 import { PopUp } from '../pop-up-registration/pop-up';
 import { difficulty } from '../settings-page/select-difficulty';
-
-export const scoreGame = {
-  score: 0,
-};
+import { scoreGame } from '../score/score';
 
 export class Game extends BaseComponent {
   private cards?: Card[];

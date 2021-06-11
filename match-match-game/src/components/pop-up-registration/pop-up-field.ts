@@ -1,7 +1,7 @@
 import { BaseComponent } from '../base-components';
 import { Button } from '../button/button';
 import { PopUpInput } from './pop-up-input';
-import { scoreGame } from '../game/game';
+import { scoreGame } from '../score/score';
 
 export class PopUpField extends BaseComponent {
   private PopUpInputs: PopUpInput[];
