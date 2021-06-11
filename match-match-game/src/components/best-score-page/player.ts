@@ -8,7 +8,7 @@ export class Player extends BaseComponent {
 
   private readonly namePlayer: NamePlayer;
 
-  private readonly score: Score;
+  score: Score;
 
   constructor(option:{ name: string, email: string, score: number }) {
     super('div', ['player-score']);

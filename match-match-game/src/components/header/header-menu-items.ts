@@ -13,8 +13,13 @@ export class HeaderMenuItems extends BaseComponent {
     const ul = new BaseComponent('ul', ['header-list', 'Roboto-12-15']);
     this.element.appendChild(ul.element);
 
-    function menuHandler(page: string) :() => void {
-      return () => {
+    function menuHandler(page: string) :(event: MouseEvent) => void {
+      return (event: MouseEvent) => {
+        document.querySelectorAll('.header-item').forEach((item) => {
+          item.classList.remove('active-botton-menu');
+        });
+        const target = event.target as HTMLElement;
+        target.classList.add('active-botton-menu');
         changeCurrentView(page);
       };
     }
@@ -23,6 +28,7 @@ export class HeaderMenuItems extends BaseComponent {
       new HeaderMenuItem('./head-images/question.svg', 'About Game', ['active-botton-menu'], menuHandler(Views.About)),
       new HeaderMenuItem('./head-images/star.svg', 'Best Score', [], menuHandler(Views.Score)),
       new HeaderMenuItem('./head-images/gear.svg', 'Game Settings', [], menuHandler(Views.Settings)),
+
     ];
     for (const value of this.headerMenuItems) {
       ul.element.appendChild(value.element);

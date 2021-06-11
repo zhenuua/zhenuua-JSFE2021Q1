@@ -3,7 +3,7 @@ import { BaseComponent } from '../base-components';
 import './header.scss';
 
 export class HeaderMenuItem extends BaseComponent {
-  constructor(image: string, text: string, style: string[] = [], changeCurrentView: () => void) {
+  constructor(image: string, text: string, style: string[] = [], changeCurrentView: (event: MouseEvent) => void) {
     super('li', ['header-item'].concat(style));
 
     const img = new BaseComponent('img', ['logo-about-game']);

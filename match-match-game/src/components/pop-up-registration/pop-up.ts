@@ -16,7 +16,12 @@ export class PopUp extends BaseComponent {
     popUpBody.element.appendChild(this.PopUpcontent.element);
   }
 
-  // showPopUp(){
-  //   this.element.classList.add('')
-  // }
+  showPopUp() : void {
+    this.PopUpcontent.refreshScore();
+    this.element.classList.add('showPopUp');
+  }
+
+  closePopUp() : void {
+    this.element.classList.remove('showPopUp');
+  }
 }
