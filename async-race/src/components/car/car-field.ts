@@ -1,20 +1,20 @@
 import { BaseComponent } from '../base-components';
 import { Car } from './car';
-import { Get } from '../../shared/constants';
+import { Get, Quantity } from '../../shared/constants';
 
 import '../header/header.scss';
 
 export class CarField extends BaseComponent {
   cars: Car[];
 
-  constructor() {
+  refreshQuantityCars: () => void;
+
+  constructor(refreshQuantityCars: () => void) {
     super('div', ['rece-field']);
 
+    this.refreshQuantityCars = refreshQuantityCars;
     this.cars = [];
     this.getCars();
-    // this.removeCar()
-
-    // this.renderCars()
   }
 
   getCars() {
@@ -23,10 +23,11 @@ export class CarField extends BaseComponent {
       .then((data) => {
         this.cars = data.map((item:{ name: string, color: string, id: number }) => new Car({
           name: item.name, color: item.color, id: item.id,
-        }, () => this.removeCar(item.id)));
+        }, () => this.removeCar(item.id), () => this.handlerSelect(item.id, item.name, item.color)));
 
+        Quantity.quantityCars = this.cars.length;
+        this.refreshQuantityCars();
         this.renderCars();
-        console.log(this.cars);
       });
   }
 
@@ -38,23 +39,25 @@ export class CarField extends BaseComponent {
   }
 
   removeCar(id: number) {
-    // console.log(id);
-    console.log('remove');
-    // console.log(this.cars);
-    // console.log(this.cars);
-
-    // this.getCars()
-    // console.log(garage);
-
     fetch(`${Get.garage}/${id}`, { method: 'DELETE' })
       .then((response) => response.json())
       .then((data) => {
         this.getCars();
-        // this.renderCars();
       });
   }
 
-  // deleteCar(){
-  //   async (id: number) => (await fetch(`${garage}/${id}`, { method: 'DELETE' })).json();
-  // }
+  handlerSelect(id: number, name: string, color: string) {
+    const btnUpdate = document.querySelector('.update-btn') as HTMLElement;
+    btnUpdate.classList.remove('disabled');
+    const nameCar = document.getElementById('inputTextUpdate') as HTMLInputElement;
+    const colorCar = document.getElementById('inputColorUpdate') as HTMLInputElement;
+    const inputID = document.getElementById('input-id') as HTMLInputElement;
+    inputID.value = id.toString();
+
+    nameCar.value = name;
+    colorCar.value = color;
+
+    nameCar.classList.remove('disabled');
+    this.renderCars();
+  }
 }

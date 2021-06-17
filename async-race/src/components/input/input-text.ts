@@ -1,16 +1,22 @@
 import { BaseComponent } from '../base-components';
 
 export class InputText extends BaseComponent {
-  constructor() { // validate: (text: string) => string
+  constructor() {
     super('input', ['input']);
     this.element.setAttribute('type', 'text');
-    // this.element.setAttribute('id', 'create-name-car');
 
     this.element.addEventListener('input', () => {
-      // const elInput = this.element as HTMLInputElement;
-      // let nameCar = elInput.value;
-      // console.log(elInput.value);
+      const elInputCreate = document.getElementById('inputTextCreate') as HTMLInputElement;
+      const elInputUpdate = document.getElementById('inputTextUpdate') as HTMLInputElement;
 
+      document.querySelector('.create-btn')?.classList.add('disabled');
+      document.querySelector('.update-btn')?.classList.add('disabled');
+      if (elInputCreate.value !== '') {
+        document.querySelector('.create-btn')?.classList.remove('disabled');
+      }
+      if (elInputUpdate.value !== '') {
+        document.querySelector('.update-btn')?.classList.remove('disabled');
+      }
     });
   }
 }

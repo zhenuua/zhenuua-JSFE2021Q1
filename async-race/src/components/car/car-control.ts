@@ -15,13 +15,13 @@ export class CarControl extends BaseComponent {
 
   buttonStopEngine: Button;
 
-  constructor(modelCar: string, removeCar: ()=> void) { // handlerSelect
+  constructor(modelCar: string, removeCar: ()=> void, handlerSelect: ()=> void) {
     super('div', ['select-remove-car']);
 
     this.buttonSelect = new Button('select', ['button']);
     this.element.appendChild(this.buttonSelect.element);
 
-    // this.buttonSelect.element.addEventListener('click', handlerSelect)
+    this.buttonSelect.element.addEventListener('click', handlerSelect);
 
     this.buttonRemove = new Button('remove', ['button']);
     this.element.appendChild(this.buttonRemove.element);

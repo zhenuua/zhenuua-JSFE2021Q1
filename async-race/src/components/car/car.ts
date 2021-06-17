@@ -9,10 +9,10 @@ export class Car extends BaseComponent {
 
   reanderCarImage: ReanderCarImage;
 
-  constructor(option:{ name: string, color: string, id: number }, removeCar: ()=> void) {
+  constructor(option:{ name: string, color: string, id: number }, removeCar: ()=> void, handlerSelect: ()=> void) {
     super('div', ['car']);
 
-    this.carControl = new CarControl(option.name, removeCar);
+    this.carControl = new CarControl(option.name, removeCar, handlerSelect);
     this.element.appendChild(this.carControl.element);
 
     this.reanderCarImage = new ReanderCarImage(option.color);
