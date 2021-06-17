@@ -11,20 +11,5 @@ export class Header extends BaseComponent {
     this.element.appendChild(buttonGoGarage.element);
     const buttongoWinners = new Button('to winners', ['button-menu']);
     this.element.appendChild(buttongoWinners.element);
-
-    //   function menuHandler(page: string) {
-    //     return () => {
-    //       console.log(page);
-    //       changeCurrentView(page);
-    //     }
-
-    //   }
-
-    //   const goGarage = document.querySelectorAll('.button-menu')[0];
-
-    //   goGarage?.addEventListener('click', menuHandler('Garage'));
-
-  //   const goWinners = document.querySelectorAll('.button-menu')[1];
-  //   goWinners?.addEventListener('click', menuHandler('Winners'));
   }
 }

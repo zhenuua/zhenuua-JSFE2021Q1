@@ -1,11 +1,8 @@
-import { Footer } from './components/footer/footer';
 import { Header } from './components/header/header';
 import { Garage } from './pages/garage/garage';
 import { Winners } from './pages/winners/winners';
-// import { App } from './components/app';
 
 import './styles.scss';
-// let page = 'Garage';
 
 window.onload = () => {
   const main = document.createElement('main');
