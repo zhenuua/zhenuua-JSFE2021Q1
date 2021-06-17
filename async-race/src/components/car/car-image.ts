@@ -1,11 +1,7 @@
 import { BaseComponent } from '../base-components';
-import { Button } from '../button/button';
+// import { Button } from '../button/button';
 
 export class ReanderCarImage extends BaseComponent {
-  buttonStartEngine: Button;
-
-  buttonStopEngine: Button;
-
   constructor(color: string) {
     super('div', ['engine-field']);
     this.element.innerHTML = `<?xml version="1.0" encoding="iso-8859-1"?>
@@ -48,11 +44,6 @@ export class ReanderCarImage extends BaseComponent {
       </g>
     </g>
     </svg>`;
-    this.buttonStartEngine = new Button('A', ['button__start-stop', 'disabled']);
-    this.element.appendChild(this.buttonStartEngine.element);
-
-    this.buttonStopEngine = new Button('B', ['button__start-stop', 'disabled']);
-    this.element.appendChild(this.buttonStopEngine.element);
   }
 }
 

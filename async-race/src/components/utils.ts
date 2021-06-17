@@ -15,5 +15,5 @@ const getRandomColor = () : string => {
   }
   return color;
 };
-export const generateRandomCar = () => ({ name: getRandomName(), color: getRandomColor() });
+// export const generateRandomCar = () => ({ name: getRandomName(), color: getRandomColor() });
 export const generateRandomCars = (count = 100) => new Array(count).fill(1).map((_) => ({ name: getRandomName(), color: getRandomColor() }));
