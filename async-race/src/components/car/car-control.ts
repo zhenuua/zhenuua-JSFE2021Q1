@@ -36,6 +36,5 @@ export class CarControl extends BaseComponent {
 
     this.buttonStopEngine = new Button('Stop', ['button__start-stop', 'disabled']);
     this.element.appendChild(this.buttonStopEngine.element);
-    // this.element.innerHTML = text;
   }
 }

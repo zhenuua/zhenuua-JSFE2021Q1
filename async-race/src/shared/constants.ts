@@ -1,16 +1,5 @@
-export enum Views {
-  Settings = 'Settings',
-  Score = 'Score',
-  Game = 'Game',
-  About = 'About',
-}
+const base = 'http://127.0.0.1:3000';
 
-export const ButtonsNames = {
-  startGame: 'Start Game',
-  stopGame: 'Stop Game',
-};
-
-export const Time = {
-  FLIP_DELAY: 1000,
-  SHOW_TIME: 5000,
+export const Get = {
+  garage: `${base}/garage`,
 };
