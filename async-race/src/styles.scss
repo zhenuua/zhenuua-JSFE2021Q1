@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.button-menu:hover, .button:hover, .button__start-stop:hover{
+  background-color:#46f6e8;
+}
+.settings-race{
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.title-page{
+    &__bigSize{
+      font-size: 30px;
+    }
+    &__smallSize{
+      font-size: 20px;
+    }
+}
+.rece-field{
+  margin: 50px;
+}
+.car{
+  margin-top: 20px;
+}
+.select-remove-car{
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+
+}
+.engine-field{
+  display: flex;
+  align-items: center;
+  height: 35px;
+}
+.road{
+  margin: 0px;
+  border: none; 
+  height: 4px;
+  background-color: blue;
+}
+.button{
+  margin-right: 10px;
+  width: 80px;
+  height: 25px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(255, 255, 82);
+}
+.button__generate{
+  width: 125px;
+}
+.button__start-stop{
+  margin: 0 10px;
+  width: 80px;
+  height: 25px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.footer{
+  display: flex;
+  margin-left: 50px;
+}
+.input{
+  margin-right: 10px;
+  width: 159px;;
+}
+.palette{
+  margin-right: 10px;
+}
+.setting{
+  margin-bottom: 5px;
+}
+.disabled{
+  opacity: 0.5;
+  pointer-events: none;
+}
+.title-car{
+  margin-left: 0;
+  font-size: 17px;
+}
