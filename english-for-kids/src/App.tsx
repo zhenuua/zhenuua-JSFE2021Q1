@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './modules/Header/header';
-import CardGrid from './modules/MainPage/CardGrid';
-import Footer from './modules/Footer/footer';
-import Stats from './modules/Stats/stats';
+import Header from './components/Header/header';
+import CardGrid from './components/MainPage/CardGrid';
+import Footer from './components/Footer/footer';
+import Stats from './components/Stats/stats';
 import { cardCategories, cards } from './assets/cards';
 
 import './styles.scss'
