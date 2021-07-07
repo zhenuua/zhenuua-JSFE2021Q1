@@ -4,12 +4,10 @@ import { cardCategories , cards } from '../../assets/cards'
 import './stats.scss';
 
 interface MyState {
-  
 }
 interface MyProps {
-
 }
-
+//TODO
 export default class Stats extends React.Component<MyProps, MyState> {
   render (){
     return (
