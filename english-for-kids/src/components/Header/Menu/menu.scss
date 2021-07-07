@@ -7,7 +7,6 @@
   z-index: 9;
 }
 .burger__line {
-  
   transition: all 0.3s ease-in;
   top: 12px;
   left: 0;
@@ -45,12 +44,8 @@
 .display-none{
   display: none;
 }
-
 .menu{
-  // transform: translateX(300px);
-  // transition-delay: 1s;
   transition: left .8s ease;
-  // transition: all 0.5s ease-in-out;
   padding: 100px 3%; 
   position:absolute;
   top: 0;
@@ -84,7 +79,6 @@
   }
   &__translate{
     left: 0;
-    // transform: translateX(300px);
   }
 }
 

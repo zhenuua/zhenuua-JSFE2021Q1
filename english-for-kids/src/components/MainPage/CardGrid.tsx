@@ -26,7 +26,11 @@ export default class CardGrid extends React.Component<MyProps, MyState> {
       <section className="cards-field">
         {this.props.itemsCategories.map((item) => {
           return (
-          <Card title={item.title} imgSrc={item.imgSrc}
+          <Card 
+            title={item.title}
+            imgSrc={item.imgSrc}
+            translation={item.translation}
+            audioSrc = {item.audioSrc}
             functionFromPerent={(page:string)=>{
               this.props.functionFromPerent(page)
             }}

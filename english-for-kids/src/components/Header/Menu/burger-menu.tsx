@@ -28,8 +28,14 @@ export default class BurgerMenu extends React.Component<MyProps, MyState> {
   //   }
     
   // }
-  changeBurger(){
+  changeBurger(){ //e: any
     this.props.clickHandler()
+
+    // let burgerMenu = document.querySelector('.menu')
+    // if (e.target !== burgerMenu) {
+    //   this.props.clickHandler()
+    // }
+   // if (event.target !== )
    // let classNameBurger = this.state.classNameBurger
 
     // if (this.state.isShow){
@@ -42,7 +48,6 @@ export default class BurgerMenu extends React.Component<MyProps, MyState> {
   }
 
   render(){
-    console.log(this.props.isShow)
     return (
       // onClick={()=>this.openCloseMenu()}
       <div className='burger' onClick={()=>this.changeBurger()}>  
