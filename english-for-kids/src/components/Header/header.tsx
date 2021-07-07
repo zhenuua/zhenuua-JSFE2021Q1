@@ -6,7 +6,7 @@ import MenuItems from "./Menu/menu-itams";
 import './header.scss';
 
 interface MyProps {
-  functionFromPerent: (page: string)=>void
+  changeCategory: (page: string)=>void
 }
 interface MyState {
   isShow: boolean
@@ -27,7 +27,7 @@ export default class Header extends React.Component<MyProps, MyState> {
     }
   }
   menuItemsHandler(page: string){
-    this.props.functionFromPerent(page);
+    this.props.changeCategory(page);
     this.openCloseMenu();
   }
 
@@ -37,7 +37,7 @@ export default class Header extends React.Component<MyProps, MyState> {
         <div>
           <BurgerMenu clickHandler={()=>this.openCloseMenu()} isShow={this.state.isShow} />
           <MenuItems isShow={this.state.isShow}
-            functionFromPerent={(page:string)=>{this.menuItemsHandler(page)}}
+            changeCategory={(page:string)=>{this.menuItemsHandler(page)}}
           // functionFromPerent={(page:string)=>{
           //   this.props.functionFromPerent(page);
           //   this.openCloseMenu();

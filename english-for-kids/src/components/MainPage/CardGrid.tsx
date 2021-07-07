@@ -14,7 +14,7 @@ interface MyState {
 }
 interface MyProps {
   itemsCategories: Categories[],
-  functionFromPerent: (page: string)=>void
+  changeCategory: (page: string)=>void
 }
 
 
@@ -32,7 +32,7 @@ export default class CardGrid extends React.Component<MyProps, MyState> {
             translation={item.translation}
             audioSrc = {item.audioSrc}
             functionFromPerent={(page:string)=>{
-              this.props.functionFromPerent(page)
+              this.props.changeCategory(page)
             }}
           />)
           })}

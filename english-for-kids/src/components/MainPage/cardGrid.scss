@@ -94,3 +94,17 @@
     background-repeat: no-repeat;
   }
 }
+.display-none{
+  display: none;
+}
+.card{
+  &__image__play{
+    height: 250px;
+  }
+}
+.flipped-button{
+  position: absolute;
+  height: 50px;
+  right: 5px;
+  bottom: -5px;
+}

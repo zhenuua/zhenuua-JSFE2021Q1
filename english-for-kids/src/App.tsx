@@ -28,7 +28,6 @@ export default class App extends React.Component<MyProps, MyState> {
   }
   
   render() {
-    console.log(this.state.activePage);
     let indexCategory = cardCategories
       .findIndex((element) => {
         if (this.state.activePage === element.nameCategory) {
@@ -36,20 +35,20 @@ export default class App extends React.Component<MyProps, MyState> {
         }
       })
 
-    let mainSection = <CardGrid itemsCategories={this.getItems()} functionFromPerent={(category: string) => { this.changeCategory(category) }} />
+    let mainSection = <CardGrid itemsCategories={this.getItems()} changeCategory={(category: string) => { this.changeCategory(category) }} />
 
     if (this.state.activePage === 'MainPage') {
-      mainSection = <CardGrid itemsCategories={this.getItems()} functionFromPerent={(category: string) => { this.changeCategory(category) }} />
+      mainSection = <CardGrid itemsCategories={this.getItems()} changeCategory={(category: string) => { this.changeCategory(category) }} />
     } else if (this.state.activePage === 'Stats') {
       mainSection = <Stats />
     } else if (this.state.activePage === cardCategories[indexCategory].nameCategory) {
-      mainSection = <CardGrid itemsCategories={this.getCards(indexCategory)} functionFromPerent={() => { }} />
+      mainSection = <CardGrid itemsCategories={this.getCards(indexCategory)} changeCategory={() => { }} />
     } else {
       mainSection = <div>{this.state.activePage}</div>
     }
     return (
       <div className='wrapper'>
-        <Header functionFromPerent={(category: string) => { this.changeCategory(category) }} />
+        <Header changeCategory={(category: string) => { this.changeCategory(category) }} />
         {mainSection}
         <Footer />
       </div>
