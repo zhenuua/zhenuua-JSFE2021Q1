@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0 auto;
+}
+
+/*main*/
+
+.background-play-zone{
+    margin: 15px auto 0;
+    width: 1000px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    padding: 5px 28px 0;
+    box-sizing: border-box;
+}
+
+/*animation*/
+
+.headen-item:hover{
+    background-color: #1E88E5;
+}
+
+@import url('./assets/fonts.scss');
