@@ -4,11 +4,11 @@ import MenuItems from './menu-itams'
 import './menu.scss';
 
 interface MyProps {
+  isShow: boolean,
   clickHandler: () => void
 }
 interface MyState {
-  isShow: boolean,
-  classNameBurger: 'burger'
+
 }
 
 export default class BurgerMenu extends React.Component<MyProps, MyState> {
@@ -42,14 +42,13 @@ export default class BurgerMenu extends React.Component<MyProps, MyState> {
   }
 
   render(){
-    
+    console.log(this.props.isShow)
     return (
       // onClick={()=>this.openCloseMenu()}
       <div className='burger' onClick={()=>this.changeBurger()}>  
-        <span className="burger__line" />
+        <span className={`burger__line ${this.props.isShow ? 'burger__line__active' : ''}`}  />
         {/* <MenuItems isShow={this.state.isShow} /> */}
       </div>
-      
     )
   }
 }

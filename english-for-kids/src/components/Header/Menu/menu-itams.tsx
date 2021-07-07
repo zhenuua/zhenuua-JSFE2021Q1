@@ -14,19 +14,12 @@ interface MyState {
 
 export default class MenuItems extends React.Component<MyProps, MyState> {
 
-  changeActivePage(category: string){
-    console.log('change page', category);
-    // let activePage = this.state.activePage;
-    // activePage = activePage + ' ' + 'active'
-    // this.setState({activePage})
-  }
   render(){
     let menuItems = [...cardCategories, {nameCategory: 'Stats', image: 'img/stats.jpg'},]
     menuItems = [{nameCategory: 'MainPage', image: 'img/home.jpg'}, ...menuItems]
 
-    if (this.props.isShow){
       return (
-        <ul className='menu'>
+        <ul className={`menu ${this.props.isShow ? 'menu__translate' : ''}`}>
           {menuItems
             .map((item)=>
             <li key={item.nameCategory} className='menu__link' onClick={()=>this.props.functionFromPerent(item.nameCategory)}>
@@ -35,7 +28,5 @@ export default class MenuItems extends React.Component<MyProps, MyState> {
             </li>)}
         </ul>
       )
-    }
-    return (<div></div>)
   }
 }

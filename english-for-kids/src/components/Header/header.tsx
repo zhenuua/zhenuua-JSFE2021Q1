@@ -35,7 +35,7 @@ export default class Header extends React.Component<MyProps, MyState> {
     return (
       <section className='header-field'>
         <div>
-          <BurgerMenu clickHandler={()=>this.openCloseMenu() } />
+          <BurgerMenu clickHandler={()=>this.openCloseMenu()} isShow={this.state.isShow} />
           <MenuItems isShow={this.state.isShow}
             functionFromPerent={(page:string)=>{this.menuItemsHandler(page)}}
           // functionFromPerent={(page:string)=>{

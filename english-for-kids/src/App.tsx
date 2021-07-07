@@ -30,7 +30,7 @@ export default class App extends React.Component<MyProps, MyState> {
   render() {
     console.log(this.state.activePage);
     let indexCategory = cardCategories
-      .findIndex((element, index) => {
+      .findIndex((element) => {
         if (this.state.activePage === element.nameCategory) {
           return true
         }
