@@ -26,7 +26,7 @@ export default class App extends React.Component<MyProps, MyState> {
   changeCategory(category: string) {
     this.setState({ activePage: category })
   }
-  
+
   render() {
     let indexCategory = cardCategories
       .findIndex((element) => {

@@ -14,20 +14,28 @@ interface MyState {
 
 export default class MenuItems extends React.Component<MyProps, MyState> {
 
+  state = { activePage: 'MainPage' }
+  toggleClass(nameCategory: string) {
+    this.props.changeCategory(nameCategory)
+    this.setState({ activePage: nameCategory })
+  };
+
   render() {
+    console.log(this.state.activePage);
+
     let menuItems = [...cardCategories, { nameCategory: 'Stats', image: 'img/stats.jpg' },];
     menuItems = [{ nameCategory: 'MainPage', image: 'img/home.jpg' }, ...menuItems];
-//console.log(menuItems[0].nameCategory);
 
     return (
       <ul className={`menu ${this.props.isShow ? 'menu__translate' : ''}`}>
         {menuItems
           .map((item) =>
-            <li key={item.nameCategory} className='menu__link' onClick={() =>
-              this.props.changeCategory(item.nameCategory)
-             
-              
-            }>
+            <li key={item.nameCategory}
+              className={`menu__link ${item.nameCategory === this.state.activePage ? 'active' : ''}`}
+              onClick=
+              {() =>
+                this.toggleClass(item.nameCategory)
+              }>
               <img className='menu__icon' src={item.image} />
               {item.nameCategory}
             </li>)}
