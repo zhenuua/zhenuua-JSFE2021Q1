@@ -6,7 +6,8 @@ import MenuItems from "./Menu/menu-itams";
 import './header.scss';
 
 interface MyProps {
-  changeCategory: (page: string)=>void
+  changeCategory: (page: string)=>void,
+  changeGameModeApp: (gameMode: string)=>void
 }
 interface MyState {
   isShow: boolean
@@ -45,7 +46,7 @@ export default class Header extends React.Component<MyProps, MyState> {
             />
         </div>
         <h1>English for kids</h1>
-        <Switcher />
+        <Switcher changeGameModeApp={(gameMode:string)=>{ this.props.changeGameModeApp(gameMode);}}/>
       </section>
     )
   }
