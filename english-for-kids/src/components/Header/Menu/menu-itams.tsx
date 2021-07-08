@@ -21,8 +21,6 @@ export default class MenuItems extends React.Component<MyProps, MyState> {
   };
 
   render() {
-    console.log(this.state.activePage);
-
     let menuItems = [...cardCategories, { nameCategory: 'Stats', image: 'img/stats.jpg' },];
     menuItems = [{ nameCategory: 'MainPage', image: 'img/home.jpg' }, ...menuItems];
 

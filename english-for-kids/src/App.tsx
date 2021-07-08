@@ -13,8 +13,13 @@ interface MyState {
   activePage: string
 }
 
+const DEFAULT_CATEGORY = "MainPage";
+const PAGE_STATS = 'Stats';
+
 export default class App extends React.Component<MyProps, MyState> {
-  state = { activePage: "MainPage" }
+
+  
+  state = { activePage: DEFAULT_CATEGORY }
 
   getItems() {
     return cardCategories.map((item) => { return { title: item.nameCategory, imgSrc: item.image } })
@@ -37,9 +42,9 @@ export default class App extends React.Component<MyProps, MyState> {
 
     let mainSection = <CardGrid itemsCategories={this.getItems()} changeCategory={(category: string) => { this.changeCategory(category) }} />
 
-    if (this.state.activePage === 'MainPage') {
+    if (this.state.activePage === DEFAULT_CATEGORY) {
       mainSection = <CardGrid itemsCategories={this.getItems()} changeCategory={(category: string) => { this.changeCategory(category) }} />
-    } else if (this.state.activePage === 'Stats') {
+    } else if (this.state.activePage === PAGE_STATS) {
       mainSection = <Stats />
     } else if (this.state.activePage === cardCategories[indexCategory].nameCategory) {
       mainSection = <CardGrid itemsCategories={this.getCards(indexCategory)} changeCategory={() => { }} />

@@ -5,49 +5,36 @@ import './switcher.scss';
 interface MyProps {
 }
 interface MyState {
-  playMode: string
+  gameMode: string
 }
 
 export default class Switcher extends React.Component<MyProps, MyState> {
 
-  state = { playMode: 'train' }
+  state = { gameMode: 'train' }
 
   changeGameMode() {
-    //console.log(this.state);
-    // if (this.state){
-    //   this.setState({ playMode: 'train' })
-    // } else {
-    //   this.setState({ playMode: 'play' })
-    // }
-    // console.log(this.state);
-   // this.setState({ playMode: true })
+    if (this.state.gameMode === 'train' ){
+      this.setState({ gameMode: 'play' })
+    } else {
+      this.setState({ gameMode: 'train' })
+    }
   }
 
-  render(){
-
-    let gameMode = 'train'
-    if (this.state){
-      gameMode = 'train'
+  render() {
+    let gameModeName = 'train'
+    if (this.state.gameMode === 'train') {
+      gameModeName = 'train'
     } else {
-      gameMode = 'play'
+      gameModeName = 'play'
     }
-
 
     return (
       <label className="switch">
-        <input type="checkbox" onChange={()=>this.changeGameMode()} />
-        <span className="slider round train" data-on="Train" data-off="Play"><p className='game-mode'>{gameMode}</p></span>
-        {/* <span className="slider round play display-none">Play</span> */}
+        <input type="checkbox" onChange={() => this.changeGameMode()} />
+        <span className="slider round train">
+          <p className='game-mode'>{gameModeName}</p>
+        </span>
       </label>
-      /* <div className="switch">
-        <label  className="checkbox-label">
-        <input type="checkbox" className="checkbox" id="switch__input"/>
-          <span className="train">Train</span>
-          <span className="play display-none">Play</span>
-          <span className="switch-bg"></span>
-        </label>
-      </div> */
     )
   }
 }
- /* for="switch__input"  */
