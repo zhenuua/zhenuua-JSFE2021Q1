@@ -13,7 +13,7 @@ export default class Switcher extends React.Component<MyProps, MyState> {
   state = { playMode: 'train' }
 
   changeGameMode() {
-    console.log(this.state);
+    //console.log(this.state);
     // if (this.state){
     //   this.setState({ playMode: 'train' })
     // } else {
