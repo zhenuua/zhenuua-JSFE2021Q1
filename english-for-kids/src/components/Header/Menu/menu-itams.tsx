@@ -16,8 +16,8 @@ export default class MenuItems extends React.Component<MyProps, MyState> {
 
   state = { activePage: 'MainPage' }
   toggleClass(nameCategory: string) {
-    this.props.changeCategory(nameCategory)
-    this.setState({ activePage: nameCategory })
+    this.props.changeCategory(nameCategory);
+    this.setState({ activePage: nameCategory });
   };
 
   render() {

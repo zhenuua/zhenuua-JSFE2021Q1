@@ -10,23 +10,29 @@ import './styles.scss'
 interface MyProps {
 }
 interface MyState {
-  activePage: string
+  activePage: string,
+  gameMode: string
 }
 
+const TRAIN_GAME_MODE = "train";
+const PLAY_GAME_MODE = "play";
 const DEFAULT_CATEGORY = "MainPage";
 const PAGE_STATS = 'Stats';
 
+
 export default class App extends React.Component<MyProps, MyState> {
 
-  
-  state = { activePage: DEFAULT_CATEGORY }
+
+  state = { activePage: DEFAULT_CATEGORY, gameMode: TRAIN_GAME_MODE }
 
   getItems() {
     return cardCategories.map((item) => { return { title: item.nameCategory, imgSrc: item.image } })
   }
   getCards(indexCategory: number) {
     cards[indexCategory].sort(() => Math.random() - 0.5);
-    return cards[indexCategory].map((item) => { return { title: item.word, imgSrc: item.image, translation: item.translation, audioSrc: item.audioSrc } })
+    return cards[indexCategory].map((item) => {
+      return { title: item.word, imgSrc: item.image, translation: item.translation, audioSrc: item.audioSrc }
+    })
   }
   changeCategory(category: string) {
     this.setState({ activePage: category })
