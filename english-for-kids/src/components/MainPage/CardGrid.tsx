@@ -27,6 +27,7 @@ export default class CardGrid extends React.Component<MyProps, MyState> {
         {this.props.itemsCategories.map((item) => {
           return (
           <Card 
+            key={item.title}
             title={item.title}
             imgSrc={item.imgSrc}
             translation={item.translation}
