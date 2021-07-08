@@ -38,15 +38,16 @@ export default class Card extends React.Component<MyProps, MyState> {
 
     let flippedButton = <div></div>
     if (this.props.audioSrc) {
-      flippedButton = <img className={`flipped-button ${this.state.isFlipped ? 'display-none' : ''}`} onClick={() => {
-
-        this.setState({ isFlipped: true })
-      }} src='./img/rotate.svg' />
+      flippedButton = <img className={`flipped-button ${this.state.isFlipped ? 'display-none' : ''}`}
+        onClick={() => {
+          this.setState({ isFlipped: true })
+        }}
+        src='./img/rotate.svg' />
     }
 
-    let inglishTittle = this.props.title
+    let languageTittle = this.props.title
     if (this.state.isFlipped && this.props.translation) {
-      inglishTittle = this.props.translation
+      languageTittle = this.props.translation
     }
 
     return (
@@ -54,9 +55,10 @@ export default class Card extends React.Component<MyProps, MyState> {
         onMouseLeave={(() => { this.setState({ isFlipped: false }) })}
         onClick={() => this.clickCard(this.props.title)}>
         <div className="card">
-          <img className={`card__image ${this.state.isFlipped ? 'card__image__flipped' : ''}`} src={this.props.imgSrc} />
+          <img className={`card__image ${this.state.isFlipped ? 'card__image__flipped' : ''}`}
+            src={this.props.imgSrc} />
           <hr className={`card__${isTrain ? 'hr-train' : 'hr-play'}`} />
-          <p className={`card__name ${this.state.isFlipped ? 'scale' : ''}`}>{inglishTittle}</p>
+          <p className={`card__name ${this.state.isFlipped ? 'scale' : ''}`}>{languageTittle}</p>
           {flippedButton}
         </div>
       </div>
