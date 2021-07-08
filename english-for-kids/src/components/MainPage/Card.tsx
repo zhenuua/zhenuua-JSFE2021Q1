@@ -41,8 +41,6 @@ export default class Card extends React.Component<MyProps, MyState> {
       flippedButton = <img className={`flipped-button ${this.state.isFlipped ? 'display-none' : ''}`} onClick={() => {
 
         this.setState({ isFlipped: true })
-
-        console.log('flipped');
       }} src='./img/rotate.svg' />
     }
 
@@ -50,7 +48,7 @@ export default class Card extends React.Component<MyProps, MyState> {
     if (this.state.isFlipped && this.props.translation) {
       inglishTittle = this.props.translation
     }
-    console.log(this.state.isFlipped);
+
     return (
       <div className={`card-container ${this.state.isFlipped ? 'flipped' : ''}`}
         onMouseLeave={(() => { this.setState({ isFlipped: false }) })}
