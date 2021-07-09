@@ -18,7 +18,7 @@ export default class Card extends React.Component<MyProps, MyState> {
   state = { playMode: false, isFlipped: false }
 
   clickCard(title: string) {
-    if (this.props.audioSrc) {
+    if (this.props.audioSrc && this.props.activeGameMode==='train') {
       this.playAudio(this.props.audioSrc)
     } else {
       this.props.changeCategory(title);
@@ -33,9 +33,12 @@ export default class Card extends React.Component<MyProps, MyState> {
   }
 
   render() {
-    const isTrain = true //TODO
 
     let flippedButton = <div></div>
+    let languageTittle = this.props.title
+    let displayNone = '';
+    let cardModePlay ='';
+
     if (this.props.audioSrc) {
       flippedButton = <img className={`flipped-button ${this.state.isFlipped || this.props.activeGameMode==='play' ? 'display-none' : ''}`}
         onClick={() => {
@@ -44,12 +47,10 @@ export default class Card extends React.Component<MyProps, MyState> {
         src='./img/rotate.svg' />
     }
 
-    let languageTittle = this.props.title
-    let displayNone = '';
-    let cardModePlay ='';
     if (this.state.isFlipped && this.props.translation) {
       languageTittle = this.props.translation
     }
+    
     if (this.props.activeGameMode==='play' && this.props.translation){
       cardModePlay = 'card__image__play'
       displayNone = 'display-none';

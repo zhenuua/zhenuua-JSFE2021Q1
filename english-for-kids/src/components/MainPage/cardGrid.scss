@@ -94,3 +94,24 @@
   right: 5px;
   bottom: -5px;
 }
+.button__game{
+  display: flex;
+  justify-content: center;
+  margin: 15px auto;
+  box-sizing: border-box;
+  padding: 20px 25px;
+  font-family: Roboto;
+  font-size: 24px;
+  width: 80%;
+  height: 65px;
+  max-width: 500px;
+  background: linear-gradient(90deg, #ff5722, #ff0000);
+  // background: linear-gradient(90deg,#00b7ff,#2600ff);
+  color: #fff;
+  border-radius: 10px;
+  transition: .5s;
+  cursor: pointer;
+  &__none{
+    display: none;
+  }
+}
