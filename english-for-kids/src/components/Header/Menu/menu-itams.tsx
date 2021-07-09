@@ -21,8 +21,8 @@ export default class MenuItems extends React.Component<MyProps, MyState> {
   };
 
   render() {
-    let menuItems = [{ nameCategory: 'MainPage', image: 'img/home.jpg' },...cardCategories, { nameCategory: 'Stats', image: 'img/stats.jpg' }];
-    //menuItems = [{ nameCategory: 'MainPage', image: 'img/home.jpg' }, ...menuItems];
+    let menuItems = [{ nameCategory: 'MainPage', image: 'img/home.jpg' },
+      ...cardCategories, { nameCategory: 'Stats', image: 'img/stats.jpg' }];
 
     return (
       <ul className={`menu ${this.props.isShow ? 'menu__translate' : ''}`}>

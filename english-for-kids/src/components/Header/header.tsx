@@ -7,7 +7,8 @@ import './header.scss';
 
 interface MyProps {
   changeCategory: (page: string)=>void,
-  changeGameModeApp: (gameMode: string)=>void
+  changeGameModeApp: (gameMode: string)=>void,
+  gameModeName: string
 }
 interface MyState {
   isShow: boolean
@@ -46,7 +47,7 @@ export default class Header extends React.Component<MyProps, MyState> {
             />
         </div>
         <h1>English for kids</h1>
-        <Switcher changeGameModeApp={(gameMode:string)=>{ this.props.changeGameModeApp(gameMode);}}/>
+        <Switcher changeGameModeApp={(gameMode:string)=>{ this.props.changeGameModeApp(gameMode);}} gameModeName={this.props.gameModeName}/>
       </section>
     )
   }

@@ -8,13 +8,15 @@ interface Categories {
   imgSrc:string,
   translation?: string,
   audioSrc?: string
+  
 }
 interface MyState {
   
 }
 interface MyProps {
   itemsCategories: Categories[],
-  changeCategory: (page: string)=>void
+  changeCategory: (page: string)=>void,
+  activeGameMode?: string
 }
 
 
@@ -28,11 +30,12 @@ export default class CardGrid extends React.Component<MyProps, MyState> {
           return (
           <Card 
             key={item.title}
+            activeGameMode={this.props.activeGameMode}
             title={item.title}
             imgSrc={item.imgSrc}
             translation={item.translation}
             audioSrc = {item.audioSrc}
-            functionFromPerent={(page:string)=>{
+            changeCategory={(page:string)=>{
               this.props.changeCategory(page)
             }}
           />)
