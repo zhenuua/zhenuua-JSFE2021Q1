@@ -69,6 +69,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    object-fit: cover;
     &__flipped{
       transform: rotateY(180deg) translateX(0); //scale(-1, 1)
       height: 190px;
@@ -81,11 +82,12 @@
 .display-none{
   display: none;
 }
-// .card{
-//   &__image__play{
-//     height: 250px;
-//   }
-// }
+.card{
+  &__image__play{
+    height: 250px;
+    border-radius: 5px;
+  }
+}
 .flipped-button{
   position: absolute;
   height: 50px;

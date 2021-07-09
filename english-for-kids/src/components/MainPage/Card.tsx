@@ -3,9 +3,10 @@ import React from 'react';
 interface MyProps {
   title: string,
   imgSrc: string,
-  functionFromPerent: (page: string) => void,
+  changeCategory: (page: string) => void,
   translation?: string,
-  audioSrc?: string
+  audioSrc?: string,
+  activeGameMode?: string,
 }
 interface MyState {
   playMode: boolean,
@@ -20,7 +21,7 @@ export default class Card extends React.Component<MyProps, MyState> {
     if (this.props.audioSrc) {
       this.playAudio(this.props.audioSrc)
     } else {
-      this.props.functionFromPerent(title);
+      this.props.changeCategory(title);
     }
   }
 
@@ -34,11 +35,9 @@ export default class Card extends React.Component<MyProps, MyState> {
   render() {
     const isTrain = true //TODO
 
-
-
     let flippedButton = <div></div>
     if (this.props.audioSrc) {
-      flippedButton = <img className={`flipped-button ${this.state.isFlipped ? 'display-none' : ''}`}
+      flippedButton = <img className={`flipped-button ${this.state.isFlipped || this.props.activeGameMode==='play' ? 'display-none' : ''}`}
         onClick={() => {
           this.setState({ isFlipped: true })
         }}
@@ -46,8 +45,17 @@ export default class Card extends React.Component<MyProps, MyState> {
     }
 
     let languageTittle = this.props.title
+    let displayNone = '';
+    let cardModePlay ='';
     if (this.state.isFlipped && this.props.translation) {
       languageTittle = this.props.translation
+    }
+    if (this.props.activeGameMode==='play' && this.props.translation){
+      cardModePlay = 'card__image__play'
+      displayNone = 'display-none';
+    } else{
+      displayNone = '';
+      cardModePlay='';
     }
 
     return (
@@ -55,10 +63,10 @@ export default class Card extends React.Component<MyProps, MyState> {
         onMouseLeave={(() => { this.setState({ isFlipped: false }) })}
         onClick={() => this.clickCard(this.props.title)}>
         <div className="card">
-          <img className={`card__image ${this.state.isFlipped ? 'card__image__flipped' : ''}`}
+          <img className={`${cardModePlay} card__image ${this.state.isFlipped ? 'card__image__flipped' : ''}`}
             src={this.props.imgSrc} />
-          <hr className={`card__${isTrain ? 'hr-train' : 'hr-play'}`} />
-          <p className={`card__name ${this.state.isFlipped ? 'scale' : ''}`}>{languageTittle}</p>
+          <hr className={`${displayNone} card__${this.props.activeGameMode==='train' ? 'hr-train' : 'hr-play'}`} />
+          <p className={`${displayNone} card__name ${this.state.isFlipped ? 'scale' : ''}`}>{languageTittle}</p>
           {flippedButton}
         </div>
       </div>

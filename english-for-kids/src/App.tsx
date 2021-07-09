@@ -31,7 +31,7 @@ export default class App extends React.Component<MyProps, MyState> {
   getCards(indexCategory: number) {
     cards[indexCategory].sort(() => Math.random() - 0.5);
     return cards[indexCategory].map((item) => {
-      return { title: item.word, imgSrc: item.image, translation: item.translation, audioSrc: item.audioSrc }
+      return { title: item.word, imgSrc: item.image, translation: item.translation, audioSrc: item.audioSrc}
     })
   }
   changeCategory(category: string) {
@@ -43,21 +43,21 @@ export default class App extends React.Component<MyProps, MyState> {
   render() {
     let indexCategory = cardCategories
       .findIndex((element) => {
-        if (this.state.activePage === element.nameCategory) { //&& this.state.activeGameMode === 'train'
+        if (this.state.activePage === element.nameCategory) {
           return true
         }
       })
       
-    let mainSection = <CardGrid itemsCategories={this.getItems()} changeCategory={(category: string) => { this.changeCategory(category) }} />
+    let mainSection = <CardGrid itemsCategories={this.getItems()} changeCategory={(category: string) => { this.changeCategory(category)}} />
 
     if (this.state.activePage === DEFAULT_CATEGORY) {
-      mainSection = <CardGrid itemsCategories={this.getItems()} changeCategory={(category: string) => { this.changeCategory(category) }} />
+      mainSection = <CardGrid itemsCategories={this.getItems()} changeCategory={(category: string) => { this.changeCategory(category)}} activeGameMode={this.state.activeGameMode}/> //activeGameMode={this.state.activeGameMode}
     } else if (this.state.activePage === PAGE_STATS) {
       mainSection = <Stats />
-    } else if (this.state.activePage === cardCategories[indexCategory].nameCategory && this.state.activeGameMode === TRAIN_GAME_MODE) {
-      mainSection = <CardGrid itemsCategories={this.getCards(indexCategory)} changeCategory={() => { }} />
-    } else if (this.state.activePage === cardCategories[indexCategory].nameCategory && this.state.activeGameMode === PLAY_GAME_MODE){
-      mainSection = <CardGrid itemsCategories={this.getCards(indexCategory)} changeCategory={() => { }} />
+    } else if (this.state.activePage === cardCategories[indexCategory].nameCategory) { //&& this.state.activeGameMode === TRAIN_GAME_MODE
+      mainSection = <CardGrid itemsCategories={this.getCards(indexCategory)} changeCategory={() => { }} activeGameMode={this.state.activeGameMode} />
+    // } else if (this.state.activePage === cardCategories[indexCategory].nameCategory && this.state.activeGameMode === PLAY_GAME_MODE){
+    //   mainSection = <CardGrid itemsCategories={this.getCards(indexCategory)} changeCategory={() => { }} />
     } else {  
       mainSection = <div>{this.state.activePage}</div>
     }
@@ -68,7 +68,8 @@ export default class App extends React.Component<MyProps, MyState> {
       <div className='wrapper'>
         <Header
           changeCategory={(category: string) => { this.changeCategory(category) }}
-          changeGameModeApp={(gameMode: string) => {this.changeGameModeApp(gameMode)  }} 
+          changeGameModeApp={(gameMode: string) => {this.changeGameModeApp(gameMode) }} 
+          gameModeName = {this.state.activeGameMode}
         />
         {mainSection}
         <Footer />
