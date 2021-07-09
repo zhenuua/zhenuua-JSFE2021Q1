@@ -29,7 +29,7 @@ export default class App extends React.Component<MyProps, MyState> {
     return cardCategories.map((item) => { return { title: item.nameCategory, imgSrc: item.image } })
   }
   getCards(indexCategory: number) {
-    cards[indexCategory].sort(() => Math.random() - 0.5);
+    //cards[indexCategory].sort(() => Math.random() - 0.5);
     return cards[indexCategory].map((item) => {
       return { title: item.word, imgSrc: item.image, translation: item.translation, audioSrc: item.audioSrc}
     })
@@ -51,18 +51,15 @@ export default class App extends React.Component<MyProps, MyState> {
     let mainSection = <CardGrid itemsCategories={this.getItems()} changeCategory={(category: string) => { this.changeCategory(category)}} />
 
     if (this.state.activePage === DEFAULT_CATEGORY) {
-      mainSection = <CardGrid itemsCategories={this.getItems()} changeCategory={(category: string) => { this.changeCategory(category)}} activeGameMode={this.state.activeGameMode}/> //activeGameMode={this.state.activeGameMode}
+      mainSection = <CardGrid itemsCategories={this.getItems()} changeCategory={(category: string) => { this.changeCategory(category)}} activeGameMode={this.state.activeGameMode} activePage={this.state.activePage}/> //activeGameMode={this.state.activeGameMode}
     } else if (this.state.activePage === PAGE_STATS) {
       mainSection = <Stats />
-    } else if (this.state.activePage === cardCategories[indexCategory].nameCategory) { //&& this.state.activeGameMode === TRAIN_GAME_MODE
+    } else if (this.state.activePage === cardCategories[indexCategory].nameCategory) { 
       mainSection = <CardGrid itemsCategories={this.getCards(indexCategory)} changeCategory={() => { }} activeGameMode={this.state.activeGameMode} />
-    // } else if (this.state.activePage === cardCategories[indexCategory].nameCategory && this.state.activeGameMode === PLAY_GAME_MODE){
-    //   mainSection = <CardGrid itemsCategories={this.getCards(indexCategory)} changeCategory={() => { }} />
-    } else {  
-      mainSection = <div>{this.state.activePage}</div>
     }
+
     //GAME MODE
-    console.log(this.state.activePage, this.state.activeGameMode);
+    //console.log(this.state.activePage, this.state.activeGameMode);
     
     return (
       <div className='wrapper'>
