@@ -88,6 +88,15 @@
     border-radius: 5px;
   }
 }
+.card__disable, .card__right:hover{
+  pointer-events: none;
+  filter: blur(5px);
+  transform: translateZ(0rem);
+  //opacity: 0.2;
+}
+
+
+
 .flipped-button{
   position: absolute;
   height: 50px;
