@@ -3,6 +3,7 @@ import Header from './components/Header/header';
 import CardGrid from './components/MainPage/CardGrid';
 import Footer from './components/Footer/footer';
 import Stats from './components/Stats/stats';
+import GameOver from './components/GameOver/GameOver'
 import { cardCategories, cards } from './assets/cards';
 
 import './styles.scss'
@@ -13,7 +14,7 @@ interface MyState {
   activePage: string,
   activeGameMode: string,
 
- // isPlaying: boolean
+  // isPlaying: boolean
 }
 
 const TRAIN_GAME_MODE = "train";
@@ -37,8 +38,8 @@ export default class App extends React.Component<MyProps, MyState> {
   }
   getCards(indexCategory: number) {
     //cards[indexCategory].sort(() => Math.random() - 0.5);
-    
-    
+
+
     return cards[indexCategory].map((item) => {
       return {
         title: item.word,
@@ -49,10 +50,10 @@ export default class App extends React.Component<MyProps, MyState> {
     })
   }
 
-  getSoudsCategory(indexCategory: number){
-    let arrSoudsCategory : string[] = []
-    for (let i=0; i<cards[indexCategory].length; i++){
-      arrSoudsCategory.push(cards[indexCategory][i].audioSrc) 
+  getSoudsCategory(indexCategory: number) {
+    let arrSoudsCategory: string[] = []
+    for (let i = 0; i < cards[indexCategory].length; i++) {
+      arrSoudsCategory.push(cards[indexCategory][i].audioSrc)
     }
     return arrSoudsCategory.sort(() => Math.random() - 0.5);
   }
@@ -81,7 +82,7 @@ export default class App extends React.Component<MyProps, MyState> {
       />
 
     if (this.state.activePage === DEFAULT_PAGE) {
-      mainSection = 
+      mainSection =
         <CardGrid
           itemsCategories={this.getItems()}
           changeCategory={(category: string) => { this.changeCategory(category) }}
@@ -93,20 +94,22 @@ export default class App extends React.Component<MyProps, MyState> {
 
     } else if (this.state.activePage === PAGE_STATS) {
       mainSection = <Stats />
-
+    } else if (this.state.activePage === 'GameOver') {
+      mainSection = 
+      <GameOver 
+        changeCategory={(category: string) => { this.changeCategory(category) }}
+      />
     } else if (this.state.activePage === cardCategories[indexCategory].nameCategory) {
       mainSection =
         <CardGrid
           itemsCategories={this.getCards(indexCategory)}
-          changeCategory={() => { }}
+          changeCategory={(category: string) => { this.changeCategory(category) }}
           activeGameMode={this.state.activeGameMode}
-          arrSoudsCategory = {this.getSoudsCategory(indexCategory)}
-          activePage={this.state.activePage} //может убрать
+          arrSoudsCategory={this.getSoudsCategory(indexCategory)}
+          activePage={this.state.activePage}
         />
     }
 
-    //GAME MODE
-    //console.log(this.state.activePage, this.state.activeGameMode);
 
     return (
       <div className='wrapper'>

@@ -19,20 +19,20 @@ interface MyState {
 
 export default class Card extends React.Component<MyProps, MyState> {
 
-  state = { 
+  state = {
     playMode: false,
     isFlipped: false,
     disabled: false
-   }
+  }
 
   clickCard(title: string) {
-    
+
     if (this.props.audioSrc) {
-      if (this.props.activeGameMode === 'play' && this.props.nameButtonGame === 'Repeat Word'){
-        if (this.props.compaireCurrentSound(this.props.audioSrc)){
-          this.setState({disabled : true})
+      if (this.props.activeGameMode === 'play' && this.props.nameButtonGame === 'Repeat Word') {
+        if (this.props.compaireCurrentSound(this.props.audioSrc)) {
+          this.setState({ disabled: true })
         }
-      } else if (this.props.activeGameMode === 'train'){
+      } else if (this.props.activeGameMode === 'train') {
         this.playAudio(this.props.audioSrc)
       }
     } else {
@@ -78,7 +78,8 @@ export default class Card extends React.Component<MyProps, MyState> {
 
     return (
       <div className=
-      {`card-container ${this.state.isFlipped ? 'flipped' : '' } ${this.state.disabled ? 'card__disable': ''}  ` }
+        {`card-container ${this.state.isFlipped ? 'flipped' : ''} 
+        ${this.state.disabled ? 'card__disable' : ''}`}
 
         onMouseLeave={(() => {
           if (this.state.isFlipped === true) {

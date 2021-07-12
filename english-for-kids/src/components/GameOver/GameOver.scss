@@ -1,0 +1,10 @@
+.game-over{
+  &__field{
+    display: flex;
+    justify-content: center;
+  }
+  &__image{
+    margin: 150px 0;
+    height: 250px;
+  }
+}

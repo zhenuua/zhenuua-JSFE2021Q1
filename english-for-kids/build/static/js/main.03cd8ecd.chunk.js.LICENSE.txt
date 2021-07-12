@@ -1,1 +1,0 @@
-//!!!!!!!!!!this.props.arrSoudsCategory && && this.state.currentSound <= this.props.arrSoudsCategory.length
