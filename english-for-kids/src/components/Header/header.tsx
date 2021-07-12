@@ -43,7 +43,9 @@ export default class Header extends React.Component<MyProps, MyState> {
           />
         </div>
         <h1>English for kids</h1>
-        <Switcher changeGameModeApp={(gameMode:string)=>{ this.props.changeGameModeApp(gameMode);}} gameModeName={this.props.gameModeName}/>
+        <Switcher changeGameModeApp={(gameMode:string)=>{
+          this.props.changeGameModeApp(gameMode);}} gameModeName={this.props.gameModeName}
+        />
       </section>
     )
   }

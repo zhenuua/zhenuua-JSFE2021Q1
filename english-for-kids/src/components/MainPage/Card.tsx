@@ -1,15 +1,15 @@
-
 import React from 'react';
+import { Views, ButtonsNames, linkIcon } from '../../assets/constants';
 
 interface MyProps {
   title: string,
   imgSrc: string,
-  changeCategory: (page: string) => void,
+  nameButtonGame: string,
   translation?: string,
   audioSrc?: string,
   activeGameMode?: string,
+  changeCategory: (page: string) => void,
   compaireCurrentSound: (sound: string) => boolean,
-  nameButtonGame: string
 }
 interface MyState {
   playMode: boolean,
@@ -28,11 +28,11 @@ export default class Card extends React.Component<MyProps, MyState> {
   clickCard(title: string) {
 
     if (this.props.audioSrc) {
-      if (this.props.activeGameMode === 'play' && this.props.nameButtonGame === 'Repeat Word') {
+      if (this.props.activeGameMode === Views.PLAY_MODE && this.props.nameButtonGame === ButtonsNames.REPEAT_WORD) {
         if (this.props.compaireCurrentSound(this.props.audioSrc)) {
           this.setState({ disabled: true })
         }
-      } else if (this.props.activeGameMode === 'train') {
+      } else if (this.props.activeGameMode === Views.TRAIN_MODE) {
         this.playAudio(this.props.audioSrc)
       }
     } else {
@@ -47,7 +47,6 @@ export default class Card extends React.Component<MyProps, MyState> {
     audio.play();
   }
 
-
   render() {
 
     let flippedButton = <div></div>
@@ -55,20 +54,22 @@ export default class Card extends React.Component<MyProps, MyState> {
     let displayNone = '';
     let cardModePlay = '';
 
-
     if (this.props.audioSrc) {
-      flippedButton = <img className={`flipped-button ${this.state.isFlipped || this.props.activeGameMode === 'play' ? 'display-none' : ''}`}
-        onClick={() => {
-          this.setState({ isFlipped: true })
-        }}
-        src='./img/rotate.svg' />
+      flippedButton =
+        <img className={`flipped-button ${this.state.isFlipped ||
+          this.props.activeGameMode === 'play' ? 'display-none' : ''}`}
+          onClick={() => {
+            this.setState({ isFlipped: true })
+          }}
+          src={linkIcon.ROTATE}
+        />
     }
 
     if (this.state.isFlipped && this.props.translation) {
       languageTittle = this.props.translation
     }
 
-    if (this.props.activeGameMode === 'play' && this.props.translation) {
+    if (this.props.activeGameMode === Views.PLAY_MODE && this.props.translation) {
       cardModePlay = 'card__image__play'
       displayNone = 'display-none';
     } else {
@@ -97,6 +98,5 @@ export default class Card extends React.Component<MyProps, MyState> {
       </div>
     )
   }
-
 
 }
