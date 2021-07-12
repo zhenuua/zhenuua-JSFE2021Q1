@@ -13,8 +13,7 @@ interface MyProps {
 interface MyState {
   activePage: string,
   activeGameMode: string,
-
-  // isPlaying: boolean
+  mistakes: number
 }
 
 const TRAIN_GAME_MODE = "train";
@@ -26,7 +25,7 @@ const PAGE_STATS = 'Stats';
 export default class App extends React.Component<MyProps, MyState> {
 
 
-  state = { activePage: DEFAULT_PAGE, activeGameMode: TRAIN_GAME_MODE }
+  state = { activePage: DEFAULT_PAGE, activeGameMode: TRAIN_GAME_MODE, mistakes: 0 }
 
   getItems() {
     return cardCategories.map((item) => {
@@ -63,6 +62,12 @@ export default class App extends React.Component<MyProps, MyState> {
   changeGameModeApp(gameMode: string) {
     this.setState({ activeGameMode: gameMode })
   }
+  countMistakes(mistakes: number){
+    console.log('APP', mistakes);
+    this.setState({mistakes: mistakes})
+  }
+
+
   render() {
     let indexCategory = cardCategories
       .findIndex((element) => {
@@ -75,7 +80,6 @@ export default class App extends React.Component<MyProps, MyState> {
       <CardGrid
         itemsCategories={this.getItems()}
         changeCategory={(category: string) => { this.changeCategory(category) }}
-
 
         activeGameMode={this.state.activeGameMode} //может убрать
         activePage={this.state.activePage} //может убрать
@@ -98,6 +102,7 @@ export default class App extends React.Component<MyProps, MyState> {
       mainSection = 
       <GameOver 
         changeCategory={(category: string) => { this.changeCategory(category) }}
+        mistakes = {this.state.mistakes}
       />
     } else if (this.state.activePage === cardCategories[indexCategory].nameCategory) {
       mainSection =
@@ -107,6 +112,7 @@ export default class App extends React.Component<MyProps, MyState> {
           activeGameMode={this.state.activeGameMode}
           arrSoudsCategory={this.getSoudsCategory(indexCategory)}
           activePage={this.state.activePage}
+          countMistakes={(mistakes: number)=>{this.countMistakes(mistakes)}}
         />
     }
 

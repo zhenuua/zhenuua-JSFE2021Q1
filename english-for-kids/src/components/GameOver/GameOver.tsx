@@ -6,6 +6,7 @@ interface MyState {
 }
 interface MyProps {
   changeCategory: (page: string) => void,
+  mistakes: number
 }
 
 export default class GameOver extends React.Component<MyProps, MyState> {
@@ -18,21 +19,39 @@ export default class GameOver extends React.Component<MyProps, MyState> {
   }
 
   render(){
+    const winnerMassage = 'You win!';
+    const failMassage = 'You fail!';
+    const imageWinSrc = './img/success.jpg';
+    const imageFailSrc = './img/failure.jpg';
+    const audioWinSrc = 'audio/success.mp3';
+    const audioFailSrc = 'audio/failure.mp3';
+    let massage = '';
+    let imageGameOver = '';
+    let soundGameOver = '';
+    if (this.props.mistakes === 0){
+      massage = winnerMassage;
+      imageGameOver = imageWinSrc;
+      soundGameOver = audioWinSrc;
+    } else {
+      massage = failMassage;
+      imageGameOver = imageFailSrc;
+      soundGameOver = audioFailSrc;
+    }
 
-    let imageWinSrc = './img/success.jpg'
-    let imageFailSrc = './img/failure.jpg'
-    this.playAudio('audio/success.mp3');
+    this.playAudio(soundGameOver);
+
     let goMainPage: ReturnType<typeof setTimeout>;
     goMainPage = setTimeout(()=>{
       this.props.changeCategory('MainPage');
-    }, 3000);
+    }, 4000);
 
     return (
       <section className='game-over__field'>
-        <h1></h1>
-        <img className='game-over__image' src={imageWinSrc} />
-        {/* <img className={`${cardModePlay} card__image ${this.state.isFlipped ? 'card__image__flipped' : ''}`}
-            src={this.props.imgSrc} /> */}
+        <h1 className='game-over__text'>{massage}</h1>
+        <h2 className={`${this.props.mistakes === 0 ? 'display-none' : 'game-over__text'}`}>
+          You have: {this.props.mistakes} errors!
+        </h2>
+        <img className='game-over__image' src={imageGameOver} />
       </section>
     )
   }
