@@ -14,8 +14,9 @@ interface MyState {
   nameButtonGame: string,
   currentSound: number
 
-  startGameActivePage: string, //?
-  startGameactiveGameMode: string //?
+  startGameActivePage: string,
+  startGameactiveGameMode: string,
+  isGameOver: boolean
 }
 interface MyProps {
   itemsCategories: Categories[],
@@ -30,9 +31,10 @@ export default class CardGrid extends React.Component<MyProps, MyState> {
 
   state = {
     nameButtonGame: 'Start Game',
-    startGameActivePage: '', //?
-    startGameactiveGameMode: '', //?
-    currentSound: 0
+    startGameActivePage: '',
+    startGameactiveGameMode: '',
+    currentSound: 0,
+    isGameOver: false
   }
   static getDerivedStateFromProps(nextProps: MyProps, prevState: MyState) { //до рпендара
     if (nextProps.activeGameMode !== prevState.startGameactiveGameMode ||
@@ -43,11 +45,12 @@ export default class CardGrid extends React.Component<MyProps, MyState> {
       ...prevState
     };
   }
-  componentDidUpdate(prevProps: MyProps, prevState: MyState) { //после рендера
-    if (this.state.currentSound !== prevState.currentSound ) { //!!!!!!!!!!this.props.arrSoudsCategory && && this.state.currentSound <= this.props.arrSoudsCategory.length
-      this.playCurrentSound()
-    }
-  }
+
+  // componentDidUpdate(prevProps: MyProps, prevState: MyState) { //после рендера
+  //   if (this.state.currentSound !== prevState.currentSound ) { //!!!!!!!!!!this.props.arrSoudsCategory && && this.state.currentSound <= this.props.arrSoudsCategory.length
+  //     this.playCurrentSound()
+  //   }
+  // }
 
   playAudio(audioSrc: string) {
     const audio = new Audio();
@@ -55,55 +58,74 @@ export default class CardGrid extends React.Component<MyProps, MyState> {
     audio.currentTime = 0;
     audio.play();
   }
-  stopGame(activeGameMode: string, activePage: string) {
 
-    if (this.state.startGameactiveGameMode !== activeGameMode || this.state.startGameActivePage !== activePage) {
-      this.setState({ nameButtonGame: 'Start Game' })
-    }
-  }
+  // stopGame(activeGameMode: string, activePage: string) {
+  //   if (this.state.startGameactiveGameMode !== activeGameMode || this.state.startGameActivePage !== activePage) {
+  //     this.setState({ nameButtonGame: 'Start Game' })
+  //   }
+  // }
 
-  compaireCurrentSound = (sound: string) : boolean => {
+  compaireCurrentSound = (sound: string): boolean => {
 
     if (this.props.arrSoudsCategory &&
-       this.props.arrSoudsCategory[this.state.currentSound] === sound){
+      this.props.arrSoudsCategory[this.state.currentSound] === sound) {
       this.playAudio('audio/correct.mp3');
-      this.setState({currentSound: this.state.currentSound + 1})
-
+      this.setState({ currentSound: this.state.currentSound + 1 });
       console.log(this.state.currentSound);
-      
-
       return true
     } else {
       this.playAudio('audio/error.mp3')
       return false
     }
   }
-  gameOver(){
-    alert('WIN!')
-  }
-  playCurrentSound(){
-    if (this.props.arrSoudsCategory)
-    if (this.props.arrSoudsCategory > this.props.arrSoudsCategory){
-      this.setState({currentSound: 0})
-      this.gameOver()
-    } else {
-      this.playAudio(this.props.arrSoudsCategory[this.state.currentSound])
-    }
+
+
+  playCurrentSound() {
+     if (this.props.arrSoudsCategory)
+    //   if (this.props.arrSoudsCategory > this.props.arrSoudsCategory) {
+    //     this.setState({ currentSound: 0 })
+    //     console.log('gameOver');
+
+    //   } else {
+      if (this.state.currentSound > this.props.arrSoudsCategory.length-1){
+        console.log('over');
+        //this.props.changeCategory('MainPage')
+        this.setState(
+          {
+            nameButtonGame: 'Start Game',
+            currentSound: 0,
+            isGameOver: true
+            //startGameActivePage: 'MainPage'
+          }
+        ) 
+        
+      } else {
+        this.playAudio(this.props.arrSoudsCategory[this.state.currentSound])
+      }
+        
+     // }
   }
 
   startGame(activeGameMode: string, activePage: string) {
+
     this.setState(
       {
         nameButtonGame: 'Repeat Word',
         startGameactiveGameMode: activeGameMode,
-        startGameActivePage: activePage 
+        startGameActivePage: activePage
       }
     )
   }
 
   render() {
-    if (this.state.nameButtonGame === 'Repeat Word'){
+    if (this.state.nameButtonGame === 'Repeat Word') {
       this.playCurrentSound()
+    }
+    if (this.state.isGameOver === true){
+      console.log('go main');
+      this.setState({isGameOver: false});
+      this.props.changeCategory('GameOver')
+      
     }
     return (
       <section className='main'>
