@@ -5,6 +5,7 @@ import Footer from './components/Footer/footer';
 import Stats from './components/Stats/stats';
 import GameOver from './components/GameOver/GameOver'
 import { cardCategories, cards } from './assets/cards';
+import { Views } from './assets/constants';
 
 import './styles.scss'
 
@@ -16,16 +17,13 @@ interface MyState {
   mistakes: number
 }
 
-const TRAIN_GAME_MODE = "train";
-const PLAY_GAME_MODE = "play";
-const DEFAULT_PAGE = "MainPage";
-const PAGE_STATS = 'Stats';
-
-
 export default class App extends React.Component<MyProps, MyState> {
 
-
-  state = { activePage: DEFAULT_PAGE, activeGameMode: TRAIN_GAME_MODE, mistakes: 0 }
+  state = {
+    activePage: Views.MAIN,
+    activeGameMode: Views.TRAIN_MODE,
+    mistakes: 0
+  }
 
   getItems() {
     return cardCategories.map((item) => {
@@ -36,9 +34,6 @@ export default class App extends React.Component<MyProps, MyState> {
     })
   }
   getCards(indexCategory: number) {
-    //cards[indexCategory].sort(() => Math.random() - 0.5);
-
-
     return cards[indexCategory].map((item) => {
       return {
         title: item.word,
@@ -48,7 +43,6 @@ export default class App extends React.Component<MyProps, MyState> {
       }
     })
   }
-
   getSoudsCategory(indexCategory: number) {
     let arrSoudsCategory: string[] = []
     for (let i = 0; i < cards[indexCategory].length; i++) {
@@ -62,9 +56,8 @@ export default class App extends React.Component<MyProps, MyState> {
   changeGameModeApp(gameMode: string) {
     this.setState({ activeGameMode: gameMode })
   }
-  countMistakes(mistakes: number){
-    console.log('APP', mistakes);
-    this.setState({mistakes: mistakes})
+  countMistakes(mistakes: number) {
+    this.setState({ mistakes: mistakes })
   }
 
 
@@ -80,30 +73,27 @@ export default class App extends React.Component<MyProps, MyState> {
       <CardGrid
         itemsCategories={this.getItems()}
         changeCategory={(category: string) => { this.changeCategory(category) }}
-
-        activeGameMode={this.state.activeGameMode} //может убрать
-        activePage={this.state.activePage} //может убрать
+        activeGameMode={this.state.activeGameMode}
+        activePage={this.state.activePage}
       />
 
-    if (this.state.activePage === DEFAULT_PAGE) {
+    if (this.state.activePage === Views.MAIN) {
       mainSection =
         <CardGrid
           itemsCategories={this.getItems()}
           changeCategory={(category: string) => { this.changeCategory(category) }}
-
-
-          activeGameMode={this.state.activeGameMode}//может убрать
-          activePage={this.state.activePage}//может убрать
+          activeGameMode={this.state.activeGameMode}
+          activePage={this.state.activePage}
         />
 
-    } else if (this.state.activePage === PAGE_STATS) {
+    } else if (this.state.activePage === Views.STATS) {
       mainSection = <Stats />
-    } else if (this.state.activePage === 'GameOver') {
-      mainSection = 
-      <GameOver 
-        changeCategory={(category: string) => { this.changeCategory(category) }}
-        mistakes = {this.state.mistakes}
-      />
+    } else if (this.state.activePage === Views.GAMEOVER) {
+      mainSection =
+        <GameOver
+          changeCategory={(category: string) => { this.changeCategory(category) }}
+          mistakes={this.state.mistakes}
+        />
     } else if (this.state.activePage === cardCategories[indexCategory].nameCategory) {
       mainSection =
         <CardGrid
@@ -112,10 +102,9 @@ export default class App extends React.Component<MyProps, MyState> {
           activeGameMode={this.state.activeGameMode}
           arrSoudsCategory={this.getSoudsCategory(indexCategory)}
           activePage={this.state.activePage}
-          countMistakes={(mistakes: number)=>{this.countMistakes(mistakes)}}
+          countMistakes={(mistakes: number) => { this.countMistakes(mistakes) }}
         />
     }
-
 
     return (
       <div className='wrapper'>

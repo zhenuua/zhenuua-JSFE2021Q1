@@ -12,21 +12,6 @@ interface MyState {
 
 export default class BurgerMenu extends React.Component<MyProps, MyState> {
 
-  // constructor(props: any){
-  //   super(props);
-  //   this.state = {
-  //     isShow: false
-  //   }
-  // }
-  // openCloseMenu() {
-  //   console.log('menu open');
-  //   if (this.state.isShow){
-  //     this.setState({isShow: false})
-  //   } else {
-  //     this.setState({isShow: true})
-  //   }
-  // }
-
   render(){
     return (
       <div className='burger' onClick={()=>this.props.clickHandler()}>  

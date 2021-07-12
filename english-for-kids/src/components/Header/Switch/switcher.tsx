@@ -1,9 +1,10 @@
 import React from "react";
+import { Views } from '../../../assets/constants';
 
 import './switcher.scss';
 
 interface MyProps {
-  changeGameModeApp: (gameMode: string)=>void,
+  changeGameModeApp: (gameMode: string) => void,
   gameModeName: string
 }
 interface MyState {
@@ -12,15 +13,15 @@ interface MyState {
 export default class Switcher extends React.Component<MyProps, MyState> {
 
   changeGameMode() {
-    if (this.props.gameModeName === 'train' ){
-      this.props.changeGameModeApp('play');
+    if (this.props.gameModeName === Views.TRAIN_MODE) {
+      this.props.changeGameModeApp(Views.PLAY_MODE);
     } else {
-      this.props.changeGameModeApp('train');
+      this.props.changeGameModeApp(Views.TRAIN_MODE);
     }
   }
 
   render() {
-    
+
     return (
       <label className="switch">
         <input type="checkbox" onChange={() => this.changeGameMode()} />

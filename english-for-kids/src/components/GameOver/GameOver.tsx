@@ -1,6 +1,11 @@
 import React from "react";
+import { Views, linkAudio, linkIcon } from '../../assets/constants';
 
 import './GameOver.scss';
+
+const WINNER_MASSAGE = 'You win!';
+const FAIL_MASSAGE = 'You fail!';
+const SHOW_TIME = 5000;
 
 interface MyState {
 }
@@ -19,31 +24,27 @@ export default class GameOver extends React.Component<MyProps, MyState> {
   }
 
   render(){
-    const winnerMassage = 'You win!';
-    const failMassage = 'You fail!';
-    const imageWinSrc = './img/success.jpg';
-    const imageFailSrc = './img/failure.jpg';
-    const audioWinSrc = 'audio/success.mp3';
-    const audioFailSrc = 'audio/failure.mp3';
+
     let massage = '';
-    let imageGameOver = '';
-    let soundGameOver = '';
+    let imageSrcGameOver = '';
+    let soundSrcGameOver = '';
+
     if (this.props.mistakes === 0){
-      massage = winnerMassage;
-      imageGameOver = imageWinSrc;
-      soundGameOver = audioWinSrc;
+      massage = WINNER_MASSAGE;
+      imageSrcGameOver = linkIcon.SUCCESS;
+      soundSrcGameOver = linkAudio.WIN;
     } else {
-      massage = failMassage;
-      imageGameOver = imageFailSrc;
-      soundGameOver = audioFailSrc;
+      massage = FAIL_MASSAGE;
+      imageSrcGameOver = linkIcon.FAILURE;
+      soundSrcGameOver = linkAudio.FAIL;
     }
 
-    this.playAudio(soundGameOver);
+    this.playAudio(soundSrcGameOver);
 
     let goMainPage: ReturnType<typeof setTimeout>;
     goMainPage = setTimeout(()=>{
-      this.props.changeCategory('MainPage');
-    }, 4000);
+      this.props.changeCategory(Views.MAIN);
+    }, SHOW_TIME);
 
     return (
       <section className='game-over__field'>
@@ -51,7 +52,7 @@ export default class GameOver extends React.Component<MyProps, MyState> {
         <h2 className={`${this.props.mistakes === 0 ? 'display-none' : 'game-over__text'}`}>
           You have: {this.props.mistakes} errors!
         </h2>
-        <img className='game-over__image' src={imageGameOver} />
+        <img className='game-over__image' src={imageSrcGameOver} />
       </section>
     )
   }

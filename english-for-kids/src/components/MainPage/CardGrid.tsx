@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import { Views, ButtonsNames, linkAudio } from '../../assets/constants';
 
 import './cardGrid.scss'
 
@@ -13,44 +14,43 @@ interface Categories {
 interface MyState {
   nameButtonGame: string,
   currentSound: number
-
   startGameActivePage: string,
   startGameactiveGameMode: string,
   isGameOver: boolean,
-  opensCard: number
+  errorsClick: number
 }
 interface MyProps {
   itemsCategories: Categories[],
-  changeCategory: (page: string) => void,
   activeGameMode: string,
   activePage: string,
   arrSoudsCategory?: string[],
+  changeCategory: (page: string) => void,
   countMistakes?: (mistakes: number) => void
 }
-
 
 export default class CardGrid extends React.Component<MyProps, MyState> {
 
   state = {
-    nameButtonGame: 'Start Game',
+    nameButtonGame: ButtonsNames.START_GAME,
     startGameActivePage: '',
     startGameactiveGameMode: '',
     currentSound: 0,
     isGameOver: false,
-    opensCard: 0
+    errorsClick: 0
   }
-  static getDerivedStateFromProps(nextProps: MyProps, prevState: MyState) { //до рпендара
+
+  static getDerivedStateFromProps(nextProps: MyProps, prevState: MyState) {
     if (nextProps.activeGameMode !== prevState.startGameactiveGameMode ||
       nextProps.activePage !== prevState.startGameActivePage) {
-      return { ...prevState, nameButtonGame: 'Start Game', opensCard: 0 }
+      return { ...prevState, nameButtonGame: ButtonsNames.START_GAME, errorsClick: 0 }
     }
     return {
       ...prevState
     };
   }
 
-  componentDidUpdate(prevProps: MyProps, prevState: MyState) { //после рендера
-    if (this.state.currentSound !== prevState.currentSound ) { //!!!!!!!!!!this.props.arrSoudsCategory && && this.state.currentSound <= this.props.arrSoudsCategory.length
+  componentDidUpdate(prevProps: MyProps, prevState: MyState) {
+    if (this.state.currentSound !== prevState.currentSound) {
       this.playCurrentSound()
     }
   }
@@ -62,57 +62,42 @@ export default class CardGrid extends React.Component<MyProps, MyState> {
     audio.play();
   }
 
-  // stopGame(activeGameMode: string, activePage: string) {
-  //   if (this.state.startGameactiveGameMode !== activeGameMode || this.state.startGameActivePage !== activePage) {
-  //     this.setState({ nameButtonGame: 'Start Game' })
-  //   }
-  // }
-
   compaireCurrentSound = (sound: string): boolean => {
-
-    // this.setState({opensCard: this.state.opensCard + 1})
-    // console.log(1, this.state.opensCard);
 
     if (this.props.arrSoudsCategory &&
       this.props.arrSoudsCategory[this.state.currentSound] === sound) {
-      this.playAudio('audio/correct.mp3');
+      this.playAudio(linkAudio.CORRECT);
       this.setState({ currentSound: this.state.currentSound + 1 });
-      // this.setState({ opensCard: this.state.opensCard + 1 })
-
       return true
     } else {
-      this.playAudio('audio/error.mp3')
-      this.setState({ opensCard: this.state.opensCard + 1 })
+      this.playAudio(linkAudio.ERROR)
+      this.setState({ errorsClick: this.state.errorsClick + 1 })
       return false
     }
   }
 
-
   playCurrentSound() {
     if (this.props.arrSoudsCategory)
-
       if (this.state.currentSound > this.props.arrSoudsCategory.length - 1) {
         if (this.props.countMistakes)
-          this.props.countMistakes(this.state.opensCard)
+          this.props.countMistakes(this.state.errorsClick)
         this.setState(
           {
-            nameButtonGame: 'Start Game',
+            nameButtonGame: ButtonsNames.START_GAME,
             currentSound: 0,
             isGameOver: true
           }
         )
-
       } else {
         this.playAudio(this.props.arrSoudsCategory[this.state.currentSound])
       }
-
   }
 
   startGame(activeGameMode: string, activePage: string) {
     this.playCurrentSound()
     this.setState(
       {
-        nameButtonGame: 'Repeat Word',
+        nameButtonGame: ButtonsNames.REPEAT_WORD,
         startGameactiveGameMode: activeGameMode,
         startGameActivePage: activePage
       }
@@ -122,10 +107,8 @@ export default class CardGrid extends React.Component<MyProps, MyState> {
   render() {
 
     if (this.state.isGameOver === true) {
-      console.log('go main');
       this.setState({ isGameOver: false });
-      this.props.changeCategory('GameOver')
-
+      this.props.changeCategory(Views.GAMEOVER)
     }
     return (
       <section className='main'>
@@ -151,19 +134,15 @@ export default class CardGrid extends React.Component<MyProps, MyState> {
           className=
           {
             `button__game${this.props.activeGameMode === 'train' ||
-              this.props.activePage === 'MainPage' ? '__none' : ''}`
+              this.props.activePage === Views.MAIN ? '__none' : ''}`
           }
-
           onClick={() => {
             this.startGame(this.props.activeGameMode, this.props.activePage)
           }}
         >
-
           {this.state.nameButtonGame}
         </button>
       </section>
-
-
     )
   }
 }

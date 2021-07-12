@@ -7,13 +7,8 @@ interface MyState {
 }
 interface MyProps {
 }
-//TODO
+
 export default class Stats extends React.Component<MyProps, MyState> {
-
-
-
-
-
 
   render() {
     let stringTable: {
@@ -23,27 +18,19 @@ export default class Stats extends React.Component<MyProps, MyState> {
       DEFAULT: number
     };
 
-    //let stringTable: JSX.Element;
-
     let allStringTable = [];
     let DEFAULT_NUMBER_STATS = 0;
     let indexInCategory = 0;
 
     for (let findNameCategory of cardCategories) {
-      // console.log(1, findNameCategory.nameCategory);
       indexInCategory = cardCategories
         .findIndex((element) => {
           if (findNameCategory.nameCategory === element.nameCategory) {
             return true
           }
         })
-      // console.log(2, indexInCategory);
-
       const lendsCards = cards.length;
       for (let i = 0; i < lendsCards; i++) {
-
-        // console.log(cards[i]);
-
         stringTable = {
           nameCat: findNameCategory.nameCategory,
           word: cards[indexInCategory][i].word,
@@ -51,30 +38,7 @@ export default class Stats extends React.Component<MyProps, MyState> {
           DEFAULT: DEFAULT_NUMBER_STATS
         }
         allStringTable.push(stringTable);
-        // <tr className='table__string'>
-        //   <th>${findNameCategory.nameCategory}</th>
-        //   <th>${cards[indexInCategory][i].word}</th>
-        //   <th>${cards[indexInCategory][i].translation}</th>
-        //   <th>${DEFAULT_NUMBER_STATS}</th>
-        //   <th>${DEFAULT_NUMBER_STATS}</th>
-        //   <th>${DEFAULT_NUMBER_STATS}</th>
-        //   <th>${DEFAULT_NUMBER_STATS}</th>
-        // </tr>
-        //allStringTable += stringTable
-        // let aaaaa = allStringTable.replace(/^'(.+(?="$))'$/, '$1')
-        //console.log(allStringTable);
-
-        //  const html = '<div>Example HTML string</div>';
-        //  return <div>{ ReactHtmlParser(html) }</div>;
-
-        // React.renderToString(<div>p</div>);
-        //allStringTable += stringTable
-        //console.log(allStringTable);
-
-
       }
-      //console.log(nameCategory.nameCategory);
-
     }
 
     return (
@@ -112,9 +76,6 @@ export default class Stats extends React.Component<MyProps, MyState> {
       </section>
     )
   }
-  // nameCat: findNameCategory.nameCategory,
-  // word: cards[indexInCategory][i].word,
-  // translation: cards[indexInCategory][i].translation,
-  // DEFAULT: DEFAULT_NUMBER_STATS
+
 }
 
