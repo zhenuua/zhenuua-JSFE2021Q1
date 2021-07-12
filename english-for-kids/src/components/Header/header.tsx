@@ -40,11 +40,7 @@ export default class Header extends React.Component<MyProps, MyState> {
           <BurgerMenu clickHandler={()=>this.openCloseMenu()} isShow={this.state.isShow} />
           <MenuItems isShow={this.state.isShow}
             changeCategory={(page:string)=>{this.menuItemsHandler(page)}}
-          // functionFromPerent={(page:string)=>{
-          //   this.props.functionFromPerent(page);
-          //   this.openCloseMenu();
-          //   }} 
-            />
+          />
         </div>
         <h1>English for kids</h1>
         <Switcher changeGameModeApp={(gameMode:string)=>{ this.props.changeGameModeApp(gameMode);}} gameModeName={this.props.gameModeName}/>
