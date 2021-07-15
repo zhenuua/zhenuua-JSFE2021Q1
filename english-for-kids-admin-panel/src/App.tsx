@@ -7,6 +7,8 @@ import GameOver from './components/GameOver/GameOver'
 import { cardCategories, cards } from './assets/cards';
 import { Views } from './assets/constants';
 
+import AdminMain from './components/AdminPage/App-admin';
+
 import './styles.scss'
 
 interface MyProps {
@@ -69,6 +71,14 @@ export default class App extends React.Component<MyProps, MyState> {
         }
       })
 
+    let header =
+      <Header
+        changeCategory={(category: string) => { this.changeCategory(category) }}
+        changeGameModeApp={(gameMode: string) => { this.changeGameModeApp(gameMode) }}
+        gameModeName={this.state.activeGameMode}
+      />
+
+
     let mainSection =
       <CardGrid
         itemsCategories={this.getItems()}
@@ -76,6 +86,10 @@ export default class App extends React.Component<MyProps, MyState> {
         activeGameMode={this.state.activeGameMode}
         activePage={this.state.activePage}
       />
+    let footer = <Footer />
+
+
+
 
     if (this.state.activePage === Views.MAIN) {
       mainSection =
@@ -85,7 +99,13 @@ export default class App extends React.Component<MyProps, MyState> {
           activeGameMode={this.state.activeGameMode}
           activePage={this.state.activePage}
         />
-
+    } else if (this.state.activePage === Views.ADMIN) { //TODO
+      header = <div></div>
+      footer = <div></div>
+      mainSection =
+        <AdminMain
+          changeCategory={(category: string) => { this.changeCategory(category) }}
+        />
     } else if (this.state.activePage === Views.STATS) {
       mainSection = <Stats />
     } else if (this.state.activePage === Views.GAMEOVER) {
@@ -107,14 +127,11 @@ export default class App extends React.Component<MyProps, MyState> {
     }
 
     return (
-      <div className='wrapper'>
-        <Header
-          changeCategory={(category: string) => { this.changeCategory(category) }}
-          changeGameModeApp={(gameMode: string) => { this.changeGameModeApp(gameMode) }}
-          gameModeName={this.state.activeGameMode}
-        />
+
+      <div className=''>
+        {header}
         {mainSection}
-        <Footer />
+        {footer}
       </div>
 
     )

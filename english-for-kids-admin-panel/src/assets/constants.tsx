@@ -4,6 +4,7 @@ export enum Views {
   MAIN = 'MainPage',
   STATS = 'Stats',
   GAMEOVER = 'GameOver',
+  ADMIN = 'Admin'
 }
 
 export const ButtonsNames = {

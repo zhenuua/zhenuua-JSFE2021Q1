@@ -112,36 +112,37 @@ export default class CardGrid extends React.Component<MyProps, MyState> {
     }
     return (
       <section className='main'>
-        <div className="cards-field">
-          {this.props.itemsCategories.map((item) => {
-            return (
-              <Card
-                key={item.title}
-                activeGameMode={this.props.activeGameMode}
-                title={item.title}
-                imgSrc={item.imgSrc}
-                translation={item.translation}
-                audioSrc={item.audioSrc}
-                changeCategory={(page: string) => {
-                  this.props.changeCategory(page)
-                }}
-                compaireCurrentSound={this.compaireCurrentSound}
-                nameButtonGame={this.state.nameButtonGame}
-              />)
-          })}
-        </div>
-        <button
-          className=
-          {
-            `button__game${this.props.activeGameMode === 'train' ||
-              this.props.activePage === Views.MAIN ? '__none' : ''}`
-          }
-          onClick={() => {
-            this.startGame(this.props.activeGameMode, this.props.activePage)
-          }}
-        >
-          {this.state.nameButtonGame}
-        </button>
+          <div className="cards-field wrapper">
+            {this.props.itemsCategories.map((item) => {
+              return (
+                <Card
+                  key={item.title}
+                  activeGameMode={this.props.activeGameMode}
+                  title={item.title}
+                  imgSrc={item.imgSrc}
+                  translation={item.translation}
+                  audioSrc={item.audioSrc}
+                  changeCategory={(page: string) => {
+                    this.props.changeCategory(page)
+                  }}
+                  compaireCurrentSound={this.compaireCurrentSound}
+                  nameButtonGame={this.state.nameButtonGame}
+                />)
+            })}
+          </div>
+          <button
+            className=
+            {
+              `button__game${this.props.activeGameMode === 'train' ||
+                this.props.activePage === Views.MAIN ? '__none' : ''}`
+            }
+            onClick={() => {
+              this.startGame(this.props.activeGameMode, this.props.activePage)
+            }}
+          >
+            {this.state.nameButtonGame}
+          </button>
+
       </section>
     )
   }
