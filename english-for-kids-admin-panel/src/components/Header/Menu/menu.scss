@@ -1,0 +1,218 @@
+.burger {
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 3;
+}
+.burger__line {
+  transition: all 0.3s ease-in;
+  top: 12px;
+  left: 0;
+}
+.burger__line,
+.burger__line::before,
+.burger__line::after {
+  transition: all 0.3s ease-in;
+  content: "";
+  position: absolute;
+  background-color: #2196f3;
+  border-radius: 5px;
+  width: 100%;
+  height: 3px;
+}
+.burger__line::before {
+  top: 10px;
+}
+.burger__line::after {
+  top: -10px;
+}
+.burger__line__active,
+.burger__line__active::before,
+.burger__line__active::after {
+  transition: all 0.3s ease-in;
+}
+.burger__line__active::before {
+  background: #ff1500;
+  transform: translateY(-10px) rotate(-45deg);
+}
+.burger__line__active::after {
+  transform: translateY(10px) rotate(+45deg);
+  background: #ff1500;
+}
+.burger__line__active {
+  background: transparent;
+}
+.display-none {
+  display: none;
+}
+.menu {
+  transition: left 0.8s ease;
+  padding: 100px 3%;
+  position: absolute;
+  top: 0;
+  left: -320px;
+  background-color: #03a9f4;
+  z-index: 2;
+  width: 320px;
+  height: 100%;
+  box-sizing: border-box;
+  &__link {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    text-decoration-line: underline;
+    color: #ffffff;
+    padding: 8px 0;
+  }
+  &__icon {
+    margin-right: 10px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    backface-visibility: hidden;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &__translate {
+    left: 0;
+  }
+}
+
+.active {
+  color: #ff5722;
+}
+.menu__link:hover {
+  cursor: pointer;
+  color: #ff5722;
+}
+
+.popup {
+  position: fixed;
+
+  background-color: aqua;
+}
+
+.popup-main {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  z-index: 9;
+  overflow-y: auto;
+  /* transition: all 0.8s ease 0s;
+  для анимации:opacity: 0;visibility: hidden;
+  */
+}
+.popup-body {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*padding: 30px 10px; чтоб не прилепало*/
+}
+.popup-content {
+  background-color: #f7f7f7;
+  background-position: top;
+  background-repeat: no-repeat;
+  width: 812px;
+  height: 571px;
+  position: relative;
+  border-radius: 5px;
+}
+.popup-title {
+  justify-content: center;
+  align-items: center;
+  height: 85px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 56px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: rgba(0, 0, 0, 0.8);
+}
+.popup-inputs {
+  padding: 60px;
+}
+.popup-name-block {
+  margin: 5px 0;
+  font-family: Roboto;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+.invalid-password{
+  color: rgb(255, 0, 0);
+}
+.popup-login-input {
+  border-radius: 5px;
+  font-family: Roboto;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 56px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+.popup-control {
+  position: absolute;
+  bottom: 0;
+  padding: 0 120px;
+  display: flex;
+  width: 100%;
+  height: 105px;
+  background: #4fbe79;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.btn {
+  width: 248px;
+  height: 60px;
+  font-family: Roboto;
+  font-size: 22px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  justify-content: center;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &__login {
+    position: absolute;
+    bottom: 10%;
+    background-color: inherit;
+  }
+  &__control__login {
+    background-color: inherit;
+  }
+  &__control__cancel {
+    background-color: #e53935;
+  }
+  &__login:hover {
+    background-color: #2794c5;
+  }
+  &__control__cancel:hover {
+    background-color: #bd3f3c;
+  }
+  &__control__login:hover {
+    background-color: #3d925d;
+  }
+}

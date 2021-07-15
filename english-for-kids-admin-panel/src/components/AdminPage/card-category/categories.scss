@@ -1,0 +1,73 @@
+.card-admin__category {
+  margin: 10px;
+  position: relative;
+  width: 300px;
+  height: 244px;
+
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.card-admin-title {
+  margin-top: 23px;
+  justify-content: center;
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+.btn-category-add {
+  margin-top: 33px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.card-admin-field {
+  display: flex;
+}
+.close-card {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+.quantity-words {
+  margin: 30px auto 60px;
+  justify-content: center;
+  font-family: Roboto;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  text-transform: uppercase;
+}
+.category-control {
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-category-control {
+  width: 115px;
+  justify-content: center;
+  background: inherit;
+  border: 2px solid #00bf82;
+  box-sizing: border-box;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: Roboto;
+  font-size: 22px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #00bf82;
+}
+.btn-category-control:hover {
+  background: #f7f7f7;
+}
