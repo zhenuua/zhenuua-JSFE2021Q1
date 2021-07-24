@@ -12,8 +12,8 @@ interface MyProps {
 interface MyState {
   activePage: string,
   isShowPopup: boolean,
-  isCorrectPassword: boolean,
-  login: string
+  password: string,
+  login: string,
 }
 
 export default class MenuItems extends React.Component<MyProps, MyState> {
@@ -21,7 +21,7 @@ export default class MenuItems extends React.Component<MyProps, MyState> {
   state = {
     activePage: Views.MAIN,
     isShowPopup: false,
-    isCorrectPassword: false,
+    password: '',
     login: ''
   }
 
@@ -37,35 +37,32 @@ export default class MenuItems extends React.Component<MyProps, MyState> {
       this.setState({ isShowPopup: true })
     }
   }
-  loginInput(event: InputEvent) {
-    //if (this.state.login)
-    console.log(this.state.login);
 
-    const target = event.target;
-    console.log(target);
-
-    // const value = target.value;
-    // // const name = target.name;
-
-    // this.setState({
-    //   login: value
-    // });
-    // this.setState({login: })
+  loginInput(value: string) {
+    this.setState({
+      login: value
+    });
   }
 
+  passwordInput(value: string){
+    this.setState({
+      password: value
+    });
+  }
 
-  //validate(event) {}
-
-  login() {
-    //if (this.state.isCorrectPassword === true) {
+  validate() {
+    if (this.state.login === 'admin' && this.state.password === 'admin') {
     this.openClosePopup();
     this.props.changeCategory('Admin');
-    console.log('login');
-    // }
+    }
   }
+  
   cancel() {
     this.openClosePopup();
-    console.log('cancel');
+    this.setState({
+      login: '',
+      password: ''
+    })
   }
 
 
@@ -87,26 +84,30 @@ export default class MenuItems extends React.Component<MyProps, MyState> {
               {item.nameCategory}
             </li>)}
         <button className='btn btn__login' onClick={() => this.openClosePopup()} >Login</button>
+
         <div className={`${this.state.isShowPopup === true ? 'popup-main' : 'display-none'}`}>
           <div className='popup-body'>
             <div className='popup-content'>
               <div className='popup-title'>Login</div>
               <div className='popup-inputs'>
+
                 <p className="popup-name-block">login</p>
                 <input required className="popup-login-input" type="text" placeholder="login"
                   value={this.state.login}
-                  onChange={() => this.loginInput}
+                  onChange={(e: React.FormEvent<HTMLInputElement>) => this.loginInput(e.currentTarget.value)}
                 />
 
                 <p className="popup-name-block">password </p>
                 <input required className="popup-login-input" type="password" placeholder="password"
-
+                  value={this.state.password}
+                  onChange={(e: React.FormEvent<HTMLInputElement>) => this.passwordInput(e.currentTarget.value)}
                 />
+                
                 <p className="popup-name-block invalid-password">Invalid password </p>
               </div>
               <div className='popup-control'>
                 <button className='btn btn__control__cancel' onClick={() => this.cancel()}>Cancel</button>
-                <button className='btn btn__control__login' onClick={() => this.login()}>Login</button>
+                <button className='btn btn__control__login' onClick={() => this.validate()}>Login</button>
               </div>
             </div>
           </div>
