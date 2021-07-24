@@ -25,7 +25,7 @@ interface MyProps {
 //   ..
 // );
 
-export default class AdminHeader extends React.Component<MyProps, MyState> {
+export default class HeaderAdmin extends React.Component<MyProps, MyState> {
 
   exitAdmin() {
     console.log('exitAdmin');
