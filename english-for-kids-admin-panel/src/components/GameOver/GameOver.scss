@@ -1,0 +1,19 @@
+.game-over{
+  &__field{
+    display: flex;
+    flex-direction: column;
+  }
+  &__text{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    color: #ff1500;
+  }
+  &__image{
+    margin: 50px auto;
+    height: 250px;
+  }
+}
+.display-none{
+  display: none;
+}
